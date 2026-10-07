@@ -21,7 +21,16 @@ const Home = () => {
     script.src = "https://widget.rss.app/v1/ticker.js";
     script.async = true;
     document.body.appendChild(script);
-    return () => { document.body.removeChild(script); };
+    
+    const carouselScript = document.createElement('script');
+    carouselScript.src = "https://widget.rss.app/v1/carousel.js";
+    carouselScript.async = true;
+    document.body.appendChild(carouselScript);
+
+    return () => { 
+      if (document.body.contains(script)) document.body.removeChild(script); 
+      if (document.body.contains(carouselScript)) document.body.removeChild(carouselScript); 
+    };
   }, []);
 
   useEffect(() => {
@@ -241,6 +250,34 @@ const Home = () => {
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* Latest Updates - Carousel Section */}
+      <section className="py-24 bg-[#f8f9fa] relative overflow-hidden border-t border-black/5">
+        <div className="max-w-[1600px] mx-auto px-4 md:px-8">
+          <div className="mb-12 text-center space-y-4">
+            <Reveal>
+              <div className="flex items-center justify-center gap-4">
+                <div className="h-px w-12 bg-[#ff7e54]" />
+                <span className="text-[11px] font-black text-[#ff7e54] uppercase tracking-[0.4em]">
+                  {t('gallery.tag')}
+                </span>
+                <div className="h-px w-12 bg-[#ff7e54]" />
+              </div>
+            </Reveal>
+            <Reveal delay={100}>
+              <h2 className="text-4xl md:text-5xl font-headline font-black text-[#1a1a2e]">
+                {t('gallery.title1')} <span className="text-[#ff7e54]">{t('gallery.title2')}</span>
+              </h2>
+            </Reveal>
+          </div>
+          
+          <Reveal delay={200}>
+            <div className="w-full bg-white rounded-[2rem] p-4 md:p-8 editorial-shadow border border-black/5">
+              <div dangerouslySetInnerHTML={{ __html: '<rssapp-carousel id="rgfWKAD7q2Ap8Gei"></rssapp-carousel>' }} />
+            </div>
+          </Reveal>
         </div>
       </section>
 
