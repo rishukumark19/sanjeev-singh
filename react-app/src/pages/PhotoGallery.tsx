@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Reveal from '../components/Reveal';
 import { useLanguage } from '../context/LanguageContext';
@@ -5,7 +6,17 @@ import { useLanguage } from '../context/LanguageContext';
 const PhotoGallery = () => {
   const { t } = useLanguage();
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://static.elfsight.com/platform/platform.js";
+    script.setAttribute('data-use-service-core', '');
+    script.defer = true;
+    document.body.appendChild(script);
 
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="bg-white min-h-screen pt-[72px]">
@@ -49,23 +60,30 @@ const PhotoGallery = () => {
           </div>
         </Reveal>
 
-        <div className="flex justify-center max-w-4xl mx-auto">
-          <Reveal delay={100}>
-            <div className="w-full max-w-[500px] bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 p-2 transition-all duration-700 hover:shadow-[#1877F2]/20">
-              <div className="bg-[#f0f2f5] rounded-[1.5rem] overflow-hidden relative ring-1 ring-inset ring-black/5 min-h-[800px] flex justify-center">
-                {/* Subtle Top & Bottom Fade Overlays */}
-                <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-[#f0f2f5] to-transparent z-10 pointer-events-none opacity-50" />
-                <iframe
-                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069661650642&tabs=timeline&width=500&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                  width="100%" height="800"
-                  style={{ border: 'none', overflow: 'hidden', maxWidth: '500px' }}
-                  scrolling="no" frameBorder="0" allowFullScreen={true}
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  title="Facebook Timeline Feed"
-                  className="w-full h-full mix-blend-multiply"
-                />
-                <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#f0f2f5] to-transparent z-10 pointer-events-none" />
+        <div className="max-w-[1400px] mx-auto w-full">
+          <Reveal delay={200}>
+            {/* Elfsight Facebook Feed Widget Container */}
+            <div className="bg-[#f8f9fa] rounded-[2.5rem] editorial-shadow p-8 border border-transparent hover:border-[#ff7e54]/10 transition-all duration-700 w-full min-h-[600px] flex flex-col justify-center">
+              
+              {/* Note: The user needs to replace 'YOUR_ELFSIGHT_WIDGET_ID' with their actual free widget ID from elfsight.com */}
+              <div className="elfsight-app-YOUR_ELFSIGHT_WIDGET_ID" data-elfsight-app-lazy></div>
+              
+              <div className="mt-8 text-center bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl max-w-3xl mx-auto">
+                <span className="material-symbols-outlined text-4xl text-[#ff7e54] mb-4">settings_applications</span>
+                <h3 className="text-2xl font-black text-[#1a1a2e] mb-4 uppercase tracking-wide font-headline">Dynamic Grid Setup Required</h3>
+                <p className="text-slate-600 text-lg leading-relaxed mb-6 font-body">
+                  Facebook prevents custom websites from automatically generating grids of recent posts. To enable a beautiful, self-updating grid here, you'll need to use a specialized widget.
+                </p>
+                <div className="text-left bg-[#f8f9fa] p-6 rounded-2xl mb-6">
+                  <ol className="list-decimal pl-5 space-y-3 text-slate-700">
+                    <li>Create a free account and widget at <a href="https://elfsight.com/facebook-feed-widget/" target="_blank" rel="noopener noreferrer" className="text-[#ff7e54] font-bold hover:underline">Elfsight Facebook Feed</a>.</li>
+                    <li>Connect your Facebook page and select a Grid template.</li>
+                    <li>Copy your unique <strong>Widget ID</strong> from their provided code.</li>
+                    <li>Open <code>src/pages/PhotoGallery.tsx</code> and replace <code>YOUR_ELFSIGHT_WIDGET_ID</code> on line 77 with your ID.</li>
+                  </ol>
+                </div>
               </div>
+
             </div>
           </Reveal>
         </div>
