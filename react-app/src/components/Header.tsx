@@ -25,8 +25,6 @@ const Header = () => {
   const links = [
     { label: t('nav.home'), to: '/' },
     { label: t('nav.about'), to: '/about' },
-    { label: t('nav.press'), to: '/press' },
-    { label: t('nav.videos'), to: '/videos' },
     { label: t('nav.gallery'), to: '/photos' },
     { label: t('nav.contact'), to: '/contact' },
   ];

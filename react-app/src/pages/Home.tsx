@@ -244,28 +244,31 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Facebook Wall */}
             <Reveal delay={50}>
-              <div className="group h-full flex flex-col">
-                <div className="p-8 bg-[#f8f9fa] rounded-t-[2rem] border-b-0 border-transparent group-hover:bg-[#ff7e54]/5 transition-colors">
+              <div className="bg-white p-2 rounded-[2rem] flex flex-col group h-full border border-gray-100 shadow-2xl hover:shadow-[#1877F2]/20 transition-all duration-500">
+                <div className="p-6 pb-4 flex justify-between items-center">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#1877F2] rounded-xl flex items-center justify-center text-white">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#1877F2] to-[#0d5ac7] rounded-xl flex items-center justify-center text-white shadow-lg shadow-[#1877F2]/30 group-hover:scale-110 transition-transform duration-500">
                       <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" /></svg>
                     </div>
                     <div>
                       <h4 className="font-headline font-black text-[#1a1a2e] uppercase tracking-wider">{t('home.social.fb_name')}</h4>
-                      <p className="text-[10px] font-black text-[#ff7e54] uppercase tracking-widest">{t('home.social.fb_sub')}</p>
+                      <p className="text-[10px] font-black text-[#1877F2] uppercase tracking-widest">{t('home.social.fb_sub')}</p>
                     </div>
                   </div>
                 </div>
-                <div className="bg-[#f8f9fa] rounded-b-[2rem] overflow-hidden flex-grow min-h-[500px]">
+                <div className="flex-grow rounded-[1.5rem] overflow-hidden bg-[#f0f2f5] mx-2 mb-2 relative ring-1 ring-inset ring-black/5 flex justify-center">
+                  {/* Subtle Top & Bottom Fade Overlays to make the iframe blend in */}
+                  <div className="absolute top-0 left-0 w-full h-6 bg-gradient-to-b from-[#f0f2f5] to-transparent z-10 pointer-events-none opacity-50" />
                   <iframe
-                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069661650642&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069661650642&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
                     width="100%" height="500"
-                    style={{ border: 'none', overflow: 'hidden' }}
+                    style={{ border: 'none', overflow: 'hidden', maxWidth: '340px' }}
                     scrolling="no" frameBorder="0" allowFullScreen={true}
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                     title="Facebook Feed"
-                    className="w-full h-full brightness-95"
+                    className="w-full h-full mix-blend-multiply"
                   />
+                  <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#f0f2f5] to-transparent z-10 pointer-events-none" />
                 </div>
               </div>
             </Reveal>
