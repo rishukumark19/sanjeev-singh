@@ -24,9 +24,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Nav
     'nav.home': 'Home',
     'nav.about': 'About',
-    'nav.press': 'Press',
     'nav.videos': 'Videos',
-    'nav.gallery': 'Updates',
+    'nav.gallery': 'Gallery',
     'nav.contact': 'Contact',
     'nav.subtitle': 'Former MLA · Jharia',
     'nav.call': 'Call',
@@ -187,9 +186,8 @@ const translations: Record<Language, Record<string, string>> = {
     // Nav
     'nav.home': 'होम',
     'nav.about': 'परिचय',
-    'nav.press': 'प्रेस',
     'nav.videos': 'वीडियो',
-    'nav.gallery': 'अपडेट्स',
+    'nav.gallery': 'गैलरी',
     'nav.contact': 'संपर्क',
     'nav.subtitle': 'पूर्व विधायक · झरिया',
     'nav.call': 'कॉल',
