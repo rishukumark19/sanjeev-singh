@@ -8,9 +8,8 @@ const PhotoGallery = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = "https://static.elfsight.com/platform/platform.js";
-    script.setAttribute('data-use-service-core', '');
-    script.defer = true;
+    script.src = "https://widget.rss.app/v1/wall.js";
+    script.async = true;
     document.body.appendChild(script);
 
     return () => {
@@ -62,28 +61,9 @@ const PhotoGallery = () => {
 
         <div className="max-w-[1400px] mx-auto w-full">
           <Reveal delay={200}>
-            {/* Elfsight Facebook Feed Widget Container */}
-            <div className="bg-[#f8f9fa] rounded-[2.5rem] editorial-shadow p-8 border border-transparent hover:border-[#ff7e54]/10 transition-all duration-700 w-full min-h-[600px] flex flex-col justify-center">
-              
-              {/* Note: The user needs to replace 'YOUR_ELFSIGHT_WIDGET_ID' with their actual free widget ID from elfsight.com */}
-              <div className="elfsight-app-YOUR_ELFSIGHT_WIDGET_ID" data-elfsight-app-lazy></div>
-              
-              <div className="mt-8 text-center bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl max-w-3xl mx-auto">
-                <span className="material-symbols-outlined text-4xl text-[#ff7e54] mb-4">settings_applications</span>
-                <h3 className="text-2xl font-black text-[#1a1a2e] mb-4 uppercase tracking-wide font-headline">Dynamic Grid Setup Required</h3>
-                <p className="text-slate-600 text-lg leading-relaxed mb-6 font-body">
-                  Facebook prevents custom websites from automatically generating grids of recent posts. To enable a beautiful, self-updating grid here, you'll need to use a specialized widget.
-                </p>
-                <div className="text-left bg-[#f8f9fa] p-6 rounded-2xl mb-6">
-                  <ol className="list-decimal pl-5 space-y-3 text-slate-700">
-                    <li>Create a free account and widget at <a href="https://elfsight.com/facebook-feed-widget/" target="_blank" rel="noopener noreferrer" className="text-[#ff7e54] font-bold hover:underline">Elfsight Facebook Feed</a>.</li>
-                    <li>Connect your Facebook page and select a Grid template.</li>
-                    <li>Copy your unique <strong>Widget ID</strong> from their provided code.</li>
-                    <li>Open <code>src/pages/PhotoGallery.tsx</code> and replace <code>YOUR_ELFSIGHT_WIDGET_ID</code> on line 77 with your ID.</li>
-                  </ol>
-                </div>
-              </div>
-
+            {/* RSS.app Facebook Feed Widget Container */}
+            <div className="bg-[#f8f9fa] rounded-[2.5rem] editorial-shadow p-8 border border-transparent hover:border-[#ff7e54]/10 transition-all duration-700 w-full min-h-[600px] flex flex-col justify-center overflow-hidden">
+              <div dangerouslySetInnerHTML={{ __html: '<rssapp-wall id="rgfWKAD7q2Ap8Gei"></rssapp-wall>' }} />
             </div>
           </Reveal>
         </div>
