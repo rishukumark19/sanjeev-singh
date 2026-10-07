@@ -32,13 +32,8 @@ const Home = () => {
 
       {/* Breaking News Ticker */}
       <section className="bg-[#1a1a2e] border-y border-[#ff7e54]/20 relative z-30 shadow-xl">
-        <div className="flex items-center w-full max-w-[1600px] mx-auto overflow-hidden">
-          <div className="bg-[#ff7e54] text-white font-black text-xs md:text-sm uppercase tracking-[0.2em] py-4 px-6 md:px-8 shrink-0 relative z-10 editorial-shadow">
-            {t('gallery.title1')} {t('gallery.title2')}
-          </div>
-          <div className="flex-grow bg-[#1a1a2e] relative overflow-hidden h-[52px]">
-             <div dangerouslySetInnerHTML={{ __html: '<rssapp-ticker id="rgfWKAD7q2Ap8Gei"></rssapp-ticker>' }} className="absolute inset-y-0 w-full flex items-center" />
-          </div>
+        <div className="w-full mx-auto overflow-hidden h-[52px] relative">
+          <div dangerouslySetInnerHTML={{ __html: '<rssapp-ticker id="rgfWKAD7q2Ap8Gei"></rssapp-ticker>' }} className="absolute inset-y-0 w-full flex items-center" />
         </div>
       </section>
 
