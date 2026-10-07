@@ -134,6 +134,12 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery.feed': 'Latest Photo Feed',
     'gallery.stream': 'Direct Stream',
     'gallery.home': 'HOME DASHBOARD',
+    
+    // Photos
+    'photos.tag': 'Image Archive',
+    'photos.title1': 'Photo',
+    'photos.title2': 'Gallery',
+    'photos.feed': 'Visual Journey',
 
     // Contact
     'contact.tag': 'Get In Touch',
@@ -291,6 +297,12 @@ const translations: Record<Language, Record<string, string>> = {
     'gallery.feed': 'नवीनतम फ़ोटो फ़ीड',
     'gallery.stream': 'डायरेक्ट स्ट्रीम',
     'gallery.home': 'होम डैशबोर्ड',
+
+    // Photos
+    'photos.tag': 'छवि संग्रह',
+    'photos.title1': 'फोटो',
+    'photos.title2': 'गैलरी',
+    'photos.feed': 'दृश्य यात्रा',
 
     // Contact
     'contact.tag': 'संपर्क करें',
