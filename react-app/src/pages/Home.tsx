@@ -15,6 +15,15 @@ const Home = () => {
     { image: `${import.meta.env.BASE_URL}images/singh-mansion.jpg`, titleKey: 'home.slide5.title', subKey: 'home.slide5.sub' },
   ];
 
+  // Load RSS.app ticker script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://widget.rss.app/v1/ticker.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); };
+  }, []);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -84,6 +93,18 @@ const Home = () => {
                 />
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Breaking News Ticker */}
+      <section className="bg-[#1a1a2e] border-y border-[#ff7e54]/20 relative z-30 shadow-xl">
+        <div className="flex items-center w-full max-w-[1600px] mx-auto overflow-hidden">
+          <div className="bg-[#ff7e54] text-white font-black text-xs md:text-sm uppercase tracking-[0.2em] py-4 px-6 md:px-8 shrink-0 relative z-10 editorial-shadow">
+            {t('gallery.title1')} {t('gallery.title2')}
+          </div>
+          <div className="flex-grow bg-[#1a1a2e] relative overflow-hidden h-[52px]">
+             <div dangerouslySetInnerHTML={{ __html: '<rssapp-ticker id="rgfWKAD7q2Ap8Gei"></rssapp-ticker>' }} className="absolute inset-y-0 w-full flex items-center" />
           </div>
         </div>
       </section>
