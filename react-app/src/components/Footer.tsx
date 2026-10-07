@@ -28,7 +28,6 @@ const Footer = () => {
           <h4 className="text-sm font-bold uppercase tracking-widest text-primary-container">{t('footer.quick_links')}</h4>
           <ul className="space-y-3">
             <li><Link className="text-slate-400 hover:text-white transition-colors text-sm" to="/about">{t('footer.bio')}</Link></li>
-            <li><Link className="text-slate-400 hover:text-white transition-colors text-sm" to="/photos">{t('footer.gallery')}</Link></li>
             <li><Link className="text-slate-400 hover:text-white transition-colors text-sm" to="/gallery">{t('photos.tag')}</Link></li>
             <li><Link className="text-slate-400 hover:text-white transition-colors text-sm" to="/contact">{t('footer.contact')}</Link></li>
           </ul>

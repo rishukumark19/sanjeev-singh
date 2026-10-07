@@ -4,7 +4,6 @@ import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
-import PhotoGallery from './pages/PhotoGallery';
 import Gallery from './pages/Gallery';
 import ContactUs from './pages/ContactUs';
 
@@ -17,7 +16,6 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<AboutUs />} />
-            <Route path="photos" element={<PhotoGallery />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="contact" element={<ContactUs />} />
           </Route>
