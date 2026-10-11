@@ -4,6 +4,8 @@ import { useLanguage } from '../context/LanguageContext';
 const Footer = () => {
   const { t } = useLanguage();
   
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-slate-950 text-white w-full pt-16 pb-8 font-body">
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-8 md:mb-16">
@@ -50,13 +52,12 @@ const Footer = () => {
       
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 border-t border-white/10 pt-8 text-slate-400 text-sm">
         <div className="flex flex-col items-center md:items-start gap-1">
-          <p className="text-slate-500 font-medium">{t('footer.dev_by')}</p>
-          <p>© {new Date().getFullYear()} CrossTech. {t('footer.rights')}</p>
+          <p>© {currentYear} Sanjeev Singh. {t('footer.rights')}</p>
+          <p className="text-slate-500 text-xs font-medium">{t('footer.dev_by')}</p>
         </div>
         <div className="flex gap-6 sm:gap-8">
           <Link className="hover:text-white transition-colors" to="/privacy">{t('footer.privacy')}</Link>
           <Link className="hover:text-white transition-colors" to="/terms">{t('footer.terms')}</Link>
-          <Link className="hover:text-white transition-colors" to="/press-kit">{t('footer.press_kit')}</Link>
         </div>
       </div>
     </footer>
