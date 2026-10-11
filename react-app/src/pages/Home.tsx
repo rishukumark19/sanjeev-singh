@@ -30,8 +30,8 @@ const Home = () => {
       {/* Hero Carousel */}
       <HeroCarousel />
 
-      {/* Breaking News Ticker */}
-      <section className="bg-[#1a1a2e] border-y border-[#ff7e54]/20 relative z-30 shadow-xl overflow-hidden flex items-center">
+      {/* Breaking News Ticker (Hidden on Mobile) */}
+      <section className="hidden md:flex bg-[#1a1a2e] border-y border-[#ff7e54]/20 relative z-30 shadow-xl overflow-hidden items-center">
         <div className="w-full mx-auto h-[40px] md:h-[52px] relative mobile-ticker-zoom">
           <div 
             dangerouslySetInnerHTML={{ __html: '<rssapp-ticker id="rgfWKAD7q2Ap8Gei"></rssapp-ticker>' }} 
