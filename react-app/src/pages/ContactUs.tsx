@@ -20,12 +20,12 @@ const ContactUs = () => {
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <h1 className="text-4xl md:text-8xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
+              <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
                 {t('contact.title')}
               </h1>
             </Reveal>
             <Reveal delay={200}>
-              <p className="text-white/60 text-xl max-w-2xl mx-auto font-body mt-10 leading-relaxed italic">
+              <p className="text-white/60 text-base sm:text-xl max-w-2xl mx-auto font-body mt-6 md:mt-10 leading-relaxed italic">
                 {t('contact.sub')}
               </p>
             </Reveal>
@@ -33,41 +33,41 @@ const ContactUs = () => {
         </section>
 
         {/* Content Section - Asymmetric Layout */}
-        <section className="py-16 md:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+        <section className="py-12 md:py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start">
             {/* Left Column: Direct Channels */}
-            <div className="lg:col-span-4 space-y-16 max-w-md">
+            <div className="lg:col-span-4 space-y-10 md:space-y-16 max-w-md w-full">
               <Reveal>
-                <div className="space-y-6">
-                  <h2 className="text-4xl font-headline font-black text-[#1a1a2e] uppercase tracking-tight flex items-center gap-6">
-                    <span className="text-[#ff7e54]">Direct</span>
-                    {t('contact.chambers')}
+                <div className="space-y-4 sm:space-y-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-headline font-black text-[#1a1a2e] uppercase tracking-tight flex flex-wrap items-baseline gap-2 sm:gap-3">
+                    <span className="text-[#ff7e54]">{t('contact.direct')}</span>
+                    <span>{t('contact.chambers')}</span>
                   </h2>
-                  <div className="h-[2px] w-24 bg-[#ff7e54]" />
+                  <div className="h-[2px] w-20 sm:w-24 bg-[#ff7e54]" />
                 </div>
               </Reveal>
 
-              <div className="space-y-12">
+              <div className="space-y-8 sm:space-y-12">
                 <Reveal delay={50}>
-                  <div className="group flex gap-4 md:gap-8 items-start">
-                    <div className="w-16 h-16 bg-[#f8f9fa] text-[#ff7e54] rounded-[1.5rem] flex justify-center items-center shrink-0 border border-[#1a1a2e]/5 group-hover:bg-[#ff7e54] group-hover:text-white transition-all duration-500">
-                      <MapPin size={28} />
+                  <div className="group flex gap-4 md:gap-6 items-start">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#f8f9fa] text-[#ff7e54] rounded-2xl sm:rounded-[1.5rem] flex justify-center items-center shrink-0 border border-[#1a1a2e]/5 group-hover:bg-[#ff7e54] group-hover:text-white transition-all duration-500">
+                      <MapPin size={24} className="sm:w-7 sm:h-7" />
                     </div>
-                    <div className="space-y-2">
-                      <h4 className="text-[10px] font-black text-[#ff7e54] uppercase tracking-[0.4em]">{t('contact.office')}</h4>
-                      <p className="text-xl text-[#1a1a2e]/80 leading-relaxed font-headline font-medium">{t('contact.address')}</p>
+                    <div className="space-y-1 sm:space-y-2 min-w-0 flex-1">
+                      <h4 className="text-[10px] font-black text-[#ff7e54] uppercase tracking-[0.3em] sm:tracking-[0.4em]">{t('contact.office')}</h4>
+                      <p className="text-base sm:text-lg md:text-xl text-[#1a1a2e]/80 leading-relaxed font-headline font-medium">{t('contact.address')}</p>
                     </div>
                   </div>
                 </Reveal>
 
                 <Reveal delay={100}>
-                  <div className="group flex gap-4 md:gap-8 items-start">
-                    <div className="w-16 h-16 bg-[#f8f9fa] text-[#ff7e54] rounded-[1.5rem] flex justify-center items-center shrink-0 border border-[#1a1a2e]/5 group-hover:bg-[#ff7e54] group-hover:text-white transition-all duration-500">
-                      <Mail size={28} />
+                  <div className="group flex gap-4 md:gap-6 items-start">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#f8f9fa] text-[#ff7e54] rounded-2xl sm:rounded-[1.5rem] flex justify-center items-center shrink-0 border border-[#1a1a2e]/5 group-hover:bg-[#ff7e54] group-hover:text-white transition-all duration-500">
+                      <Mail size={24} className="sm:w-7 sm:h-7" />
                     </div>
-                    <div className="space-y-2">
-                      <h4 className="text-[10px] font-black text-[#ff7e54] uppercase tracking-[0.4em]">{t('contact.email_title')}</h4>
-                      <p className="text-xl text-[#1a1a2e]/80 leading-relaxed font-headline font-medium group-hover:text-[#ff7e54] transition-colors cursor-pointer">
+                    <div className="space-y-1 sm:space-y-2 min-w-0 flex-1">
+                      <h4 className="text-[10px] font-black text-[#ff7e54] uppercase tracking-[0.3em] sm:tracking-[0.4em]">{t('contact.email_title')}</h4>
+                      <p className="text-base sm:text-lg md:text-xl text-[#1a1a2e]/80 leading-relaxed font-headline font-medium group-hover:text-[#ff7e54] transition-colors cursor-pointer break-all">
                         office@sanjeevsingh.in
                       </p>
                     </div>
@@ -75,13 +75,13 @@ const ContactUs = () => {
                 </Reveal>
 
                 <Reveal delay={150}>
-                  <div className="group flex gap-4 md:gap-8 items-start">
-                    <div className="w-16 h-16 bg-[#f8f9fa] text-[#ff7e54] rounded-[1.5rem] flex justify-center items-center shrink-0 border border-[#1a1a2e]/5 group-hover:bg-[#ff7e54] group-hover:text-white transition-all duration-500">
-                      <Phone size={28} />
+                  <div className="group flex gap-4 md:gap-6 items-start">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#f8f9fa] text-[#ff7e54] rounded-2xl sm:rounded-[1.5rem] flex justify-center items-center shrink-0 border border-[#1a1a2e]/5 group-hover:bg-[#ff7e54] group-hover:text-white transition-all duration-500">
+                      <Phone size={24} className="sm:w-7 sm:h-7" />
                     </div>
-                    <div className="space-y-2">
-                      <h4 className="text-[10px] font-black text-[#ff7e54] uppercase tracking-[0.4em]">{t('contact.phone_title')}</h4>
-                      <a href="tel:+919431125166" className="text-2xl text-[#1a1a2e] leading-relaxed font-headline font-black group-hover:text-[#ff7e54] transition-colors">
+                    <div className="space-y-1 sm:space-y-2 min-w-0 flex-1">
+                      <h4 className="text-[10px] font-black text-[#ff7e54] uppercase tracking-[0.3em] sm:tracking-[0.4em]">{t('contact.phone_title')}</h4>
+                      <a href="tel:+919431125166" className="text-xl sm:text-2xl text-[#1a1a2e] leading-relaxed font-headline font-black group-hover:text-[#ff7e54] transition-colors break-words">
                         +91 94311 25166
                       </a>
                     </div>
@@ -91,12 +91,12 @@ const ContactUs = () => {
 
               {/* Visual Map Integration */}
               <Reveal delay={200}>
-                <div className="space-y-8 pt-8">
+                <div className="space-y-6 sm:space-y-8 pt-4 sm:pt-8">
                   <div className="flex items-center gap-4">
                     <div className="h-px flex-grow bg-[#1a1a2e]/5" />
                     <span className="text-[10px] font-black text-[#1a1a2e]/40 uppercase tracking-[0.4em]">{t('contact.map')}</span>
                   </div>
-                  <div className="h-[350px] rounded-[2.5rem] overflow-hidden editorial-shadow border border-[#1a1a2e]/5 relative group">
+                  <div className="h-[280px] sm:h-[350px] rounded-2xl sm:rounded-[2.5rem] overflow-hidden editorial-shadow border border-[#1a1a2e]/5 relative group">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.06994270119!2d86.46153931139891!3d23.81611177853649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f6bd007e446ce9%3A0x42fd6c53a777a6cf!2sSINGH%20MANSION!5e0!3m2!1sen!2sin!4v1775368729592!5m2!1sen!2sin"
                       width="100%" height="100%"
@@ -104,7 +104,7 @@ const ContactUs = () => {
                       allowFullScreen={true} loading="lazy"
                       title="Location Map"
                     />
-                    <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/5 rounded-[2.5rem]" />
+                    <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/5 rounded-2xl sm:rounded-[2.5rem]" />
                   </div>
                 </div>
               </Reveal>
@@ -113,11 +113,11 @@ const ContactUs = () => {
             {/* Right Column: Premium Form */}
             <div className="lg:col-span-8">
               <Reveal delay={100}>
-                <div className="bg-[#f8f9fa] p-6 md:p-20 rounded-3xl md:rounded-[3rem] editorial-shadow border border-[#1a1a2e]/5 relative overflow-hidden group">
+                <div className="bg-[#f8f9fa] p-5 sm:p-8 md:p-20 rounded-2xl sm:rounded-3xl md:rounded-[3rem] editorial-shadow border border-[#1a1a2e]/5 relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-64 h-64 saffron-gradient rounded-full opacity-[0.03] blur-3xl -translate-y-32 translate-x-32" />
                   
-                  <div className="space-y-4 mb-16 relative z-10">
-                    <h2 className="text-4xl font-headline font-black text-[#1a1a2e] uppercase tracking-tight">{t('contact.form_title')}</h2>
+                  <div className="space-y-4 mb-8 sm:mb-16 relative z-10">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-headline font-black text-[#1a1a2e] uppercase tracking-tight">{t('contact.form_title')}</h2>
                     <div className="h-1 w-20 bg-[#ff7e54]" />
                   </div>
 
