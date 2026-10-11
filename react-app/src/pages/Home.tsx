@@ -1,11 +1,39 @@
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Reveal from '../components/Reveal';
 import HeroCarousel from '../components/HeroCarousel';
 import { useLanguage } from '../context/LanguageContext';
 
 const Home = () => {
   const { t } = useLanguage();
+
+  const fbContainerRef = useRef<HTMLDivElement>(null);
+  const [fbWidth, setFbWidth] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      const w = window.innerWidth;
+      // On mobile viewports (<640px), account for page & card padding (~48px total padding)
+      const calculated = w < 640 ? Math.floor(w - 48) : 340;
+      return Math.min(500, Math.max(180, calculated));
+    }
+    return 340;
+  });
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (fbContainerRef.current) {
+        const clientWidth = Math.floor(fbContainerRef.current.clientWidth);
+        if (clientWidth > 0) {
+          // Facebook plugin requires width between 180 and 500
+          const clamped = Math.min(500, Math.max(180, clientWidth));
+          setFbWidth(clamped);
+        }
+      }
+    };
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
 
   // Load RSS.app ticker script
   useEffect(() => {
@@ -229,42 +257,49 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 w-full max-w-full min-w-0">
             {/* Facebook Wall */}
-            <Reveal delay={50}>
-              <div className="bg-white p-2 rounded-[2rem] flex flex-col group h-full border border-gray-100 shadow-2xl hover:shadow-[#1877F2]/20 transition-all duration-500">
-                <div className="p-6 pb-4 flex justify-between items-center">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#1877F2] to-[#0d5ac7] rounded-xl flex items-center justify-center text-white shadow-lg shadow-[#1877F2]/30 group-hover:scale-110 transition-transform duration-500 shrink-0">
-                      <svg fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" /></svg>
+            <Reveal delay={50} className="w-full max-w-full min-w-0">
+              <div className="bg-white p-2 sm:p-3 rounded-[2rem] flex flex-col group h-full border border-gray-100 shadow-2xl hover:shadow-[#1877F2]/20 transition-all duration-500 overflow-hidden w-full max-w-full min-w-0">
+                <div className="p-4 sm:p-6 pb-4 flex justify-between items-center">
+                  <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#1877F2] to-[#0d5ac7] rounded-xl flex items-center justify-center text-white shadow-lg shadow-[#1877F2]/30 group-hover:scale-110 transition-transform duration-500 shrink-0">
+                      <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5 sm:w-6 sm:h-6"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" /></svg>
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-headline font-black text-[#1a1a2e] uppercase tracking-wider break-words">{t('home.social.fb_name')}</h4>
-                      <p className="text-[10px] font-black text-[#1877F2] uppercase tracking-widest break-all">{t('home.social.fb_sub')}</p>
+                      <h4 className="font-headline font-black text-sm sm:text-base text-[#1a1a2e] uppercase tracking-wider truncate">{t('home.social.fb_name')}</h4>
+                      <p className="text-[9px] sm:text-[10px] font-black text-[#1877F2] uppercase tracking-wider truncate">{t('home.social.fb_sub')}</p>
                     </div>
                   </div>
                 </div>
-                <div className="flex-grow rounded-[1.5rem] overflow-hidden bg-[#f0f2f5] mx-2 mb-2 relative ring-1 ring-inset ring-black/5 flex justify-center h-[650px] sm:h-[700px] md:h-[750px]">
+                <div 
+                  ref={fbContainerRef}
+                  className="flex-grow rounded-[1.5rem] overflow-hidden bg-[#f0f2f5] mx-1 sm:mx-2 mb-2 relative ring-1 ring-inset ring-black/5 flex justify-center items-center h-[550px] sm:h-[650px] md:h-[720px] w-full max-w-full min-w-0"
+                >
                   <iframe
-                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069661650642&tabs=timeline&width=340&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                    width="100%" height="100%"
-                    style={{ border: 'none', maxWidth: '340px' }}
-                    scrolling="yes" frameBorder="0" allowFullScreen={true}
+                    key={fbWidth}
+                    src={`https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069661650642&tabs=timeline&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&width=${fbWidth}&appId`}
+                    width={fbWidth}
+                    height="100%"
+                    style={{ border: 'none', width: '100%', maxWidth: `${fbWidth}px`, minWidth: '0' }}
+                    scrolling="yes" 
+                    frameBorder="0" 
+                    allowFullScreen={true}
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                     title="Facebook Feed"
-                    className="w-full h-full mix-blend-multiply"
+                    className="w-full h-full mix-blend-multiply block"
                   />
                 </div>
-                <div className="p-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-semibold px-4">
-                  <span className="flex items-center gap-1.5 text-[#1877F2]">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    Live Facebook Feed
+                <div className="p-3 border-t border-gray-100 flex items-center justify-between gap-2 text-xs text-gray-500 font-semibold px-3 sm:px-4 shrink-0">
+                  <span className="flex items-center gap-1.5 text-[#1877F2] text-[11px] sm:text-xs shrink-0 whitespace-nowrap">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse shrink-0" />
+                    Live Feed
                   </span>
                   <a
                     href="https://www.facebook.com/profile.php?id=100069661650642"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#1877F2] hover:underline flex items-center gap-1 text-xs"
+                    className="text-[#1877F2] hover:underline flex items-center gap-1 text-[11px] sm:text-xs shrink-0 whitespace-nowrap"
                   >
                     Open Page <span className="material-symbols-outlined text-sm">open_in_new</span>
                   </a>
@@ -273,7 +308,7 @@ const Home = () => {
             </Reveal>
 
             {/* X Card */}
-            <Reveal delay={100}>
+            <Reveal delay={100} className="w-full max-w-full min-w-0">
               <div className="bg-black p-6 md:p-10 rounded-[2rem] flex flex-col justify-between group h-full border border-white/5 shadow-2xl">
                 <div className="space-y-8">
                   <div className="flex items-center gap-4">
@@ -301,7 +336,7 @@ const Home = () => {
             </Reveal>
 
             {/* Instagram Card */}
-            <Reveal delay={150}>
+            <Reveal delay={150} className="w-full max-w-full min-w-0">
               <div className="bg-[#f8f9fa] rounded-[2rem] overflow-hidden flex flex-col group h-full border border-transparent hover:border-[#ff7e54]/10 transition-all">
                 <div className="relative aspect-square overflow-hidden">
                   <img 

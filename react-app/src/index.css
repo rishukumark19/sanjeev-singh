@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  html, body {
     @apply bg-[#f8f9fa] font-body text-[#1a1a2e] selection:bg-[#ff7e54]/20 selection:text-[#1a1a2e];
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100%;
   }
   
   h1, h2, h3, h4, h5, h6 {
