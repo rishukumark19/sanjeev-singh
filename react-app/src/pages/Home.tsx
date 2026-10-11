@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
+import { Award, Users, Megaphone, CheckCircle2 } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import HeroCarousel from '../components/HeroCarousel';
 import { useLanguage } from '../context/LanguageContext';
@@ -133,29 +134,58 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats - Bespoke Grid */}
-      <section className="bg-[#f1f3f5] py-16 md:py-24 relative">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/5 to-transparent" />
+      {/* Stats - Executive Metrics Grid */}
+      <section className="bg-[#f1f3f5] py-10 sm:py-16 md:py-20 relative">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/10 to-transparent" />
         <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 md:gap-8 lg:gap-24">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8 items-stretch">
             {[
-              { val: 'home.stats.years', label: 'home.stats.years_label' },
-              { val: 'home.stats.lives', label: 'home.stats.lives_label' },
-              { val: 'home.stats.voice', label: 'home.stats.voice_label' },
-              { val: 'home.stats.initiatives', label: 'home.stats.initiatives_label' }
-            ].map((stat, i) => (
-              <Reveal key={i} delay={i * 100}>
-                <div className="space-y-1.5 sm:space-y-2 group">
-                  <h3 className="text-2xl sm:text-4xl md:text-5xl font-headline font-black text-[#ff7e54] transition-colors">
-                    {t(stat.val)}
-                  </h3>
-                  <div className="h-[2px] w-8 bg-[#ff7e54]/30 group-hover:w-full transition-all duration-700" />
-                  <p className="text-[9px] sm:text-[10px] font-black text-gray-500 uppercase tracking-wider sm:tracking-[0.3em]">
-                    {t(stat.label)}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+              { val: 'home.stats.years', label: 'home.stats.years_label', icon: Award, num: '01', isText: false },
+              { val: 'home.stats.lives', label: 'home.stats.lives_label', icon: Users, num: '02', isText: false },
+              { val: 'home.stats.voice', label: 'home.stats.voice_label', icon: Megaphone, num: '03', isText: true },
+              { val: 'home.stats.initiatives', label: 'home.stats.initiatives_label', icon: CheckCircle2, num: '04', isText: false }
+            ].map((stat, i) => {
+              const Icon = stat.icon;
+              return (
+                <Reveal key={i} delay={i * 80}>
+                  <div className="h-full bg-white rounded-2xl p-4 sm:p-6 border border-gray-200/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-lg hover:border-[#ff7e54]/50 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                    {/* Top indicator & icon */}
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-orange-50 text-[#ff7e54] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </div>
+                      <span className="text-[10px] sm:text-xs font-mono font-bold text-gray-300 group-hover:text-[#ff7e54]/60 transition-colors">
+                        {stat.num}
+                      </span>
+                    </div>
+
+                    {/* Metric Value with fixed vertical container for uniform row alignment */}
+                    <div className="min-h-[46px] sm:min-h-[58px] flex items-center my-1 sm:my-2">
+                      <h3
+                        className={`font-headline font-black text-[#ff7e54] tracking-tight transition-colors ${
+                          stat.isText
+                            ? 'text-base sm:text-2xl lg:text-3xl leading-tight'
+                            : 'text-2xl sm:text-4xl lg:text-5xl leading-none'
+                        }`}
+                      >
+                        {t(stat.val)}
+                      </h3>
+                    </div>
+
+                    {/* Progress / Accent Divider */}
+                    <div className="h-[2px] w-6 sm:w-8 bg-[#ff7e54]/25 group-hover:w-full transition-all duration-500 my-2 sm:my-2.5" />
+
+                    {/* Metric Label with fixed min-height for uniform baseline */}
+                    <p className="min-h-[28px] sm:min-h-[34px] flex items-start text-[10px] sm:text-xs font-black text-gray-500 uppercase tracking-wider sm:tracking-[0.18em] leading-snug">
+                      {t(stat.label)}
+                    </p>
+
+                    {/* Subtle corner hover accent glow */}
+                    <div className="absolute -bottom-6 -right-6 w-14 h-14 bg-[#ff7e54]/5 rounded-full blur-xl group-hover:bg-[#ff7e54]/15 transition-all pointer-events-none" />
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
