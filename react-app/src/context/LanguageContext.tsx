@@ -45,8 +45,8 @@ const translations: Record<Language, Record<string, string>> = {
     'home.slide5.sub': 'Continuing a generational commitment to the people of Jharia.',
 
     'home.about.tag': 'About',
-    'home.about.title1': 'About ',
-    'home.about.title2': 'Sanjeev Singh',
+    'home.about.title1': 'Sanjeev ',
+    'home.about.title2': 'Singh',
     'home.about.p1': 'Sanjeev Singh is a dedicated leader and social worker from Dhanbad, Jharkhand. Coming from the prestigious "Singh Mansion," his family has a deep-rooted history of serving the public for generations.',
     'home.about.p2': 'As a former MLA of Jharia, Sanjeev Singh has been instrumental in spearheading infrastructure development, labor welfare, and community engagement. His vision is defined by transparency and direct service to every citizen of the region.',
     'home.about.cta': 'Learn More',
@@ -221,8 +221,8 @@ const translations: Record<Language, Record<string, string>> = {
     'home.slide5.sub': 'झरिया के लोगों के प्रति पीढ़ियों की प्रतिबद्धता को जारी रखना।',
 
     'home.about.tag': 'परिचय',
-    'home.about.title1': '',
-    'home.about.title2': 'संजीव सिंह',
+    'home.about.title1': 'संजीव ',
+    'home.about.title2': 'सिंह',
     'home.about.p1': 'संजीव सिंह धनबाद, झारखंड के एक समर्पित नेता और समाजसेवी हैं। प्रतिष्ठित "सिंह मेंशन" से आने वाले उनके परिवार का पीढ़ियों से जनसेवा का गहरा इतिहास रहा है।',
     'home.about.p2': 'झरिया के पूर्व विधायक के रूप में, संजीव सिंह ने बुनियादी ढांचा विकास, श्रम कल्याण और सामुदायिक जुड़ाव में महत्वपूर्ण भूमिका निभाई है। उनकी दृष्टि पारदर्शिता और क्षेत्र के प्रत्येक नागरिक की सीधी सेवा से परिभाषित है।',
     'home.about.cta': 'और जानें',

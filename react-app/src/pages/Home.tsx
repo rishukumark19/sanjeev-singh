@@ -99,8 +99,7 @@ const Home = () => {
                     </span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-headline font-black text-[#1a1a2e] leading-[1.15]">
-                    {t('home.about.title1')}<br className="hidden sm:block" />
-                    <span className="text-[#ff7e54]">{t('home.about.title2')}</span>
+                    {t('home.about.title1')}<span className="text-[#ff7e54]">{t('home.about.title2')}</span>
                   </h2>
                 </div>
               </Reveal>
