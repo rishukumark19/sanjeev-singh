@@ -6,8 +6,8 @@ const Footer = () => {
   
   return (
     <footer className="bg-slate-950 text-white w-full pt-16 pb-8 font-body">
-      <div className="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-        <div className="md:col-span-4 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-8 md:mb-16">
+        <div className="lg:col-span-4 space-y-6">
           <h2 className="text-3xl font-headline font-extrabold text-white">{t('footer.name')}</h2>
           <p className="text-slate-400 text-sm leading-relaxed">
             {t('footer.desc')}
@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="md:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-6">
           <h4 className="text-sm font-bold uppercase tracking-widest text-primary-container">{t('footer.quick_links')}</h4>
           <ul className="space-y-3">
             <li><Link className="text-slate-400 hover:text-white transition-colors text-sm" to="/about">{t('footer.bio')}</Link></li>
@@ -33,7 +33,7 @@ const Footer = () => {
           </ul>
         </div>
         
-        <div className="md:col-span-6 bg-white/5 p-8 rounded-3xl border border-white/10">
+        <div className="md:col-span-2 lg:col-span-6 bg-white/5 p-6 md:p-8 rounded-3xl border border-white/10">
           <h4 className="text-xl font-headline font-bold mb-6">{t('footer.connect')}</h4>
           <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-white/10 pt-8 text-slate-400 text-sm">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 border-t border-white/10 pt-8 text-slate-400 text-sm">
         <div className="flex flex-col items-center md:items-start gap-1">
           <p className="text-slate-500 font-medium">{t('footer.dev_by')}</p>
           <p>© {new Date().getFullYear()} CrossTech. {t('footer.rights')}</p>

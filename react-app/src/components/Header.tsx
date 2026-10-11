@@ -40,17 +40,22 @@ const Header = () => {
           }`}>
 
             {/* Brand */}
-            <NavLink to="/" className="flex items-center group relative z-10">
-              <div className="flex flex-col">
-                <span className={`font-headline font-black tracking-[0.2em] transition-all duration-500 leading-tight uppercase text-white text-[26px]`}>
+            <NavLink to="/" className="flex items-center group relative z-10 py-1">
+              <div className="flex flex-col justify-center">
+                <span className={`font-headline font-black tracking-[0.2em] transition-all duration-500 uppercase text-white ${
+                  scrolled ? 'text-lg md:text-xl leading-normal' : 'text-xl md:text-[26px] leading-normal'
+                }`}>
                   {lang === 'hi' ? 'संजीव सिंह' : 'SANJEEV SINGH'}
                 </span>
-                <div className="flex items-center gap-2 mt-1">
-                  <div className="h-[1px] transition-all duration-500 w-6 bg-white/40" />
-                  <span className="text-[10px] font-black tracking-[0.4em] uppercase transition-all duration-500 shrink-0 text-white/80">
+                <div className="flex items-center gap-2 mt-0.5 md:mt-1">
+                  <span className={`font-black uppercase transition-all duration-500 shrink-0 text-white/80 ${
+                    scrolled ? 'text-[8px] tracking-[0.2em]' : 'text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.4em]'
+                  }`}>
                     {t('nav.subtitle')}
                   </span>
-                  <div className="h-[1px] transition-all duration-500 w-6 bg-white/40" />
+                  <div className={`h-[1px] transition-all duration-500 bg-gradient-to-r from-white/40 to-transparent ${
+                    scrolled ? 'w-4' : 'w-8'
+                  }`} />
                 </div>
               </div>
             </NavLink>
@@ -106,23 +111,23 @@ const Header = () => {
             <div className="flex items-center gap-2 lg:hidden relative z-10">
               <button
                 onClick={toggleLang}
-                className="px-2.5 py-1.5 text-[10px] font-bold tracking-wider uppercase rounded-md border transition-all duration-300 border-white/20 text-white/60"
+                className="px-4 py-2 text-[11px] font-bold tracking-wider uppercase rounded-md border transition-all duration-300 border-white/20 text-white/60 min-w-[44px] min-h-[44px] flex items-center justify-center"
               >
                 {lang === 'en' ? 'हिं' : 'EN'}
               </button>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-lg transition-colors duration-300 text-white"
+                className="w-11 h-11 flex flex-col items-center justify-center gap-[6px] rounded-lg transition-colors duration-300 text-white"
                 aria-label="Toggle navigation"
               >
-                <span className={`block w-5 h-[1.5px] rounded-full transition-all duration-400 origin-center ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-[6.5px] bg-white' : 'bg-white'
+                <span className={`block w-6 h-[2px] rounded-full transition-all duration-400 origin-center ${
+                  isMobileMenuOpen ? 'rotate-45 translate-y-[8px] bg-white' : 'bg-white'
                 }`} />
-                <span className={`block w-4 h-[1.5px] rounded-full transition-all duration-300 ml-auto ${
+                <span className={`block w-4 h-[2px] rounded-full transition-all duration-300 ml-auto ${
                   isMobileMenuOpen ? 'opacity-0 scale-0' : 'bg-white'
                 }`} />
-                <span className={`block w-5 h-[1.5px] rounded-full transition-all duration-400 origin-center ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-[6.5px] bg-white' : 'bg-white'
+                <span className={`block w-6 h-[2px] rounded-full transition-all duration-400 origin-center ${
+                  isMobileMenuOpen ? '-rotate-45 -translate-y-[8px] bg-white' : 'bg-white'
                 }`} />
               </button>
             </div>
@@ -148,7 +153,7 @@ const Header = () => {
             <span className="font-headline font-extrabold text-[15px] text-[#1a1a2e] tracking-tight">{t('nav.menu')}</span>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors"
+              className="w-11 h-11 flex items-center justify-center rounded-lg hover:bg-gray-50 transition-colors"
               aria-label="Close"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">

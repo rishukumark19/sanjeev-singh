@@ -3,7 +3,34 @@ import { useLanguage } from '../context/LanguageContext';
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const { t } = useLanguage();
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }
+    if (isRightSwipe) {
+      setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    }
+  };
 
   const slides = [
     { image: `${import.meta.env.BASE_URL}images/carousel_1.jpg`, titleKey: 'home.slide1.title', subKey: 'home.slide1.sub' },
@@ -21,7 +48,12 @@ const HeroCarousel = () => {
   }, [slides.length]);
 
   return (
-    <section className="relative w-full h-[600px] md:h-[750px] lg:h-[850px] overflow-hidden bg-[#0a0e1a]">
+    <section 
+      className="relative w-full h-[600px] md:h-[750px] lg:h-[850px] overflow-hidden bg-[#0a0e1a]"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       <div className="absolute inset-0 flex transition-transform duration-[1000ms] ease-in-out" style={{ transform: `translateX(-${(currentSlide * 100) / slides.length}%)`, width: `${slides.length * 100}%` }}>
         {slides.map((slide, index) => (
           <div
@@ -63,7 +95,7 @@ const HeroCarousel = () => {
 
       {/* Carousel UI */}
       <div className="absolute bottom-12 left-0 w-full z-20">
-        <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-end">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-end">
           <div className="flex gap-4">
             {slides.map((_, index) => (
               <button
@@ -73,11 +105,13 @@ const HeroCarousel = () => {
                   e.stopPropagation();
                   setCurrentSlide(index);
                 }}
-                className={`w-3.5 h-3.5 rounded-full transition-all duration-300 cursor-pointer relative z-30 ${
-                  index === currentSlide ? 'bg-[#ff7e54] scale-125' : 'bg-white/30 hover:bg-white/60'
-                }`}
+                className="p-2 cursor-pointer relative z-30 group"
                 aria-label={`Go to slide ${index + 1}`}
-              />
+              >
+                <div className={`w-3.5 h-3.5 rounded-full transition-all duration-300 ${
+                  index === currentSlide ? 'bg-[#ff7e54] scale-125' : 'bg-white/30 group-hover:bg-white/60'
+                }`} />
+              </button>
             ))}
           </div>
         </div>

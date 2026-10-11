@@ -8,7 +8,7 @@ const PressReleases = () => {
   return (
     <div className="bg-white min-h-screen pt-[72px]">
       {/* Editorial Header */}
-      <section className="bg-[#1a1a2e] py-32 px-8 relative overflow-hidden">
+      <section className="bg-[#1a1a2e] py-16 md:py-32 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#ff7e54]/5 -skew-x-12 translate-x-32" />
         <div className="max-w-[1400px] mx-auto relative z-10 text-center">
           <Reveal>
@@ -19,7 +19,7 @@ const PressReleases = () => {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <h1 className="text-5xl md:text-8xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
+            <h1 className="text-4xl md:text-8xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
               {t('press.title1')} <br />
               <span className="text-[#ff7e54]">{t('press.title2')}</span>
             </h1>
@@ -33,12 +33,12 @@ const PressReleases = () => {
       </section>
 
       {/* News Feed - Digital Archive Layout */}
-      <section className="py-32 px-8">
+      <section className="py-16 md:py-32 px-4 md:px-8">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
-            <div className="bg-[#f8f9fa] rounded-[3rem] p-12 md:p-20 editorial-shadow relative overflow-hidden">
-              <div className="flex flex-col md:flex-row items-center justify-between mb-16 pb-12 border-b border-[#1a1a2e]/5 gap-12">
-                <div className="flex items-center gap-8">
+            <div className="bg-[#f8f9fa] rounded-3xl md:rounded-[3rem] p-6 md:p-20 editorial-shadow relative overflow-hidden">
+              <div className="flex flex-col md:flex-row items-center justify-between mb-8 md:mb-16 pb-8 md:pb-12 border-b border-[#1a1a2e]/5 gap-8 md:gap-12">
+                <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-4 md:gap-8">
                   <div className="w-20 h-20 bg-[#1877F2] rounded-[1.5rem] flex items-center justify-center text-white shadow-2xl shadow-blue-500/20 transform -rotate-6">
                     <svg fill="currentColor" viewBox="0 0 24 24" className="w-10 h-10"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" /></svg>
                   </div>
@@ -53,7 +53,7 @@ const PressReleases = () => {
                 </div>
               </div>
 
-              <div className="rounded-[2.5rem] overflow-hidden bg-white min-h-[900px] w-full border border-[#1a1a2e]/5 shadow-inner relative group">
+              <div className="rounded-3xl md:rounded-[2.5rem] overflow-hidden bg-white min-h-[900px] w-full border border-[#1a1a2e]/5 shadow-inner relative group">
                 <iframe
                   src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069661650642&tabs=timeline&width=800&height=1000&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                   width="100%" height="1000"
@@ -63,20 +63,20 @@ const PressReleases = () => {
                   title="Official FB Feed"
                   className="w-full h-[1000px] grayscale brightness-105 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000"
                 />
-                <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/5 rounded-[2.5rem]" />
+                <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/5 rounded-3xl md:rounded-[2.5rem]" />
               </div>
 
               <Reveal delay={100}>
-                <div className="mt-20 text-center">
+                <div className="mt-12 md:mt-20 text-center">
                   <a
                     href="https://www.facebook.com/profile.php?id=100069661650642"
                     target="_blank" rel="noreferrer"
-                    className="inline-flex items-center gap-8 group"
+                    className="inline-flex flex-col sm:flex-row items-center gap-4 md:gap-8 group"
                   >
                     <div className="w-20 h-20 rounded-full bg-[#1a1a2e] flex items-center justify-center text-white group-hover:bg-[#ff7e54] transition-colors shadow-2xl">
                       <span className="material-symbols-outlined text-3xl">open_in_new</span>
                     </div>
-                    <div className="text-left space-y-1">
+                    <div className="text-center sm:text-left space-y-1">
                       <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#ff7e54]">Visit Digital Hub</span>
                       <p className="text-xl font-headline font-black text-[#1a1a2e] uppercase tracking-wider">{t('press.archive')}</p>
                     </div>

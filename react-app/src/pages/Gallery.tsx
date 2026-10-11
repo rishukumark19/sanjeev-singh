@@ -18,7 +18,7 @@ const Gallery = () => {
 
   return (
     <div className="bg-white min-h-screen pt-[72px]">
-      <section className="bg-[#1a1a2e] py-32 px-8 relative overflow-hidden">
+      <section className="bg-[#1a1a2e] py-16 md:py-32 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#ff7e54]/5 -skew-x-12 translate-x-32" />
         <div className="max-w-[1400px] mx-auto relative z-10 text-center">
           <Reveal>
@@ -29,7 +29,7 @@ const Gallery = () => {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <h1 className="text-5xl md:text-8xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
+            <h1 className="text-4xl md:text-8xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
               {t('photos.title1')} <br />
               <span className="text-[#ff7e54]">{t('photos.title2')}</span>
             </h1>
@@ -37,7 +37,7 @@ const Gallery = () => {
         </div>
       </section>
 
-      <section className="py-32 px-8 max-w-[1600px] mx-auto">
+      <section className="py-16 md:py-32 px-4 md:px-8 max-w-[1600px] mx-auto">
         <Reveal>
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-20 pb-12 border-b border-[#1a1a2e]/5">
             <div className="space-y-2">
@@ -49,7 +49,7 @@ const Gallery = () => {
 
         <div className="max-w-[1400px] mx-auto w-full">
           <Reveal delay={200}>
-            <div className="bg-[#f8f9fa] rounded-[2.5rem] editorial-shadow p-8 border border-transparent hover:border-[#ff7e54]/10 transition-all duration-700 w-full min-h-[600px] flex flex-col justify-center overflow-hidden">
+            <div className="bg-[#f8f9fa] rounded-3xl md:rounded-[2.5rem] editorial-shadow p-4 md:p-8 border border-transparent hover:border-[#ff7e54]/10 transition-all duration-700 w-full min-h-[600px] flex flex-col justify-center overflow-hidden">
               <div dangerouslySetInnerHTML={{ __html: '<rssapp-imageboard id="rgfWKAD7q2Ap8Gei"></rssapp-imageboard>' }} />
             </div>
           </Reveal>

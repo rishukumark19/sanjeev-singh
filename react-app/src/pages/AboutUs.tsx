@@ -7,17 +7,17 @@ const AboutUs = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div className="bg-white min-h-screen pt-24 pb-20 flex flex-col justify-center relative overflow-hidden">
+    <div className="bg-white min-h-screen pt-24 pb-28 flex flex-col justify-center relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-[#ff7e54]/5 -skew-x-12 translate-x-32 -z-10" />
       
-      <div className="max-w-[1400px] mx-auto px-8 w-full z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8 w-full z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-center">
           
           {/* Left Text Column */}
           <div className="lg:col-span-7 space-y-8">
             <Reveal>
-              <h1 className="text-4xl md:text-5xl font-headline font-black text-[#ff7e54] leading-tight">
+              <h1 className="text-3xl md:text-5xl font-headline font-black text-[#ff7e54] leading-tight">
                 {lang === 'hi' ? 'संजीव सिंह : एक परिचय' : 'Sanjeev Singh : An Introduction'}
               </h1>
             </Reveal>
@@ -53,7 +53,7 @@ const AboutUs = () => {
           {/* Right Column: Circular Portrait & Socials */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center space-y-8">
             <Reveal delay={150}>
-              <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl relative z-10">
+              <div className="relative w-64 h-64 sm:w-96 sm:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl relative z-10">
                 <img 
                   alt="Sanjeev Singh Portrait" 
                   className="w-full h-full object-cover" 
@@ -93,7 +93,7 @@ const AboutUs = () => {
 
         {/* Minimal Dropdown Content Area */}
         <div className={`transition-all duration-700 ease-in-out overflow-hidden max-w-4xl ${
-          showMore ? 'max-h-[1000px] opacity-100 mt-16 pt-8 border-t border-gray-100' : 'max-h-0 opacity-0 pointer-events-none'
+          showMore ? 'max-h-[2000px] opacity-100 mt-16 pt-8 border-t border-gray-100' : 'max-h-0 opacity-0 pointer-events-none'
         }`}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-700 font-body text-base leading-relaxed">
             <div className="space-y-6">
@@ -121,7 +121,7 @@ const AboutUs = () => {
       </div>
 
       {/* Vertical Navigation Tab (Listen, Act, Share style) */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 flex flex-col z-50">
+      <div className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 flex-col z-50">
         <div className="flex flex-col bg-[#ff7e54] text-white rounded-l-xl overflow-hidden shadow-lg border-y border-l border-white/20">
           <button className="py-5 px-3 flex flex-col items-center hover:bg-[#e56233] transition-colors border-b border-white/10 group">
             <span className="text-[10px] font-black uppercase tracking-widest [writing-mode:vertical-lr] rotate-180 mb-2">LISTEN</span>
@@ -136,6 +136,22 @@ const AboutUs = () => {
             <span className="material-symbols-outlined text-sm group-hover:scale-110 transition-transform">share</span>
           </button>
         </div>
+      </div>
+
+      {/* Mobile Navigation Tab (Listen, Act, Share) */}
+      <div className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#ff7e54] text-white flex justify-around items-center shadow-[0_-4px_10px_rgba(0,0,0,0.1)] border-t border-white/20 pb-safe">
+        <button className="flex-1 py-3 flex flex-col items-center justify-center hover:bg-[#e56233] transition-colors border-r border-white/10 group">
+          <span className="material-symbols-outlined text-lg mb-1 group-hover:scale-110 transition-transform">volume_up</span>
+          <span className="text-[10px] font-black uppercase tracking-widest">LISTEN</span>
+        </button>
+        <button className="flex-1 py-3 flex flex-col items-center justify-center hover:bg-[#e56233] transition-colors border-r border-white/10 group">
+          <span className="material-symbols-outlined text-lg mb-1 group-hover:scale-110 transition-transform">touch_app</span>
+          <span className="text-[10px] font-black uppercase tracking-widest">ACT</span>
+        </button>
+        <button className="flex-1 py-3 flex flex-col items-center justify-center hover:bg-[#e56233] transition-colors group">
+          <span className="material-symbols-outlined text-lg mb-1 group-hover:scale-110 transition-transform">share</span>
+          <span className="text-[10px] font-black uppercase tracking-widest">SHARE</span>
+        </button>
       </div>
     </div>
   );

@@ -53,7 +53,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     'home.stats.years': '10+',
     'home.stats.years_label': 'Years of Service',
-    'home.stats.lives': 'Thousands',
+    'home.stats.lives': '1000+',
     'home.stats.lives_label': 'Lives Impacted',
     'home.stats.voice': 'Voice of Jharia',
     'home.stats.voice_label': 'Unwavering Support',
@@ -215,7 +215,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     'home.stats.years': '१०+',
     'home.stats.years_label': 'सेवा के वर्ष',
-    'home.stats.lives': 'हज़ारों',
+    'home.stats.lives': '१०००+',
     'home.stats.lives_label': 'प्रभावित जीवन',
     'home.stats.voice': 'झरिया की आवाज़',
     'home.stats.voice_label': 'अटूट समर्थन',

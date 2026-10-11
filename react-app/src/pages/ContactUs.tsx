@@ -7,9 +7,9 @@ const ContactUs = () => {
 
   return (
     <div className="bg-white min-h-screen pt-[72px]">
-      <div className="max-w-[1400px] mx-auto px-8">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8">
         {/* Executive Header */}
-        <section className="bg-[#1a1a2e] py-32 px-8 relative overflow-hidden rounded-[2.5rem] mt-8">
+        <section className="bg-[#1a1a2e] py-16 md:py-32 px-6 md:px-8 relative overflow-hidden rounded-[2.5rem] mt-4 md:mt-8">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-[#ff7e54]/5 -skew-x-12 translate-x-32" />
           <div className="relative z-10 text-center">
             <Reveal>
@@ -20,7 +20,7 @@ const ContactUs = () => {
               </div>
             </Reveal>
             <Reveal delay={100}>
-              <h1 className="text-5xl md:text-8xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
+              <h1 className="text-4xl md:text-8xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
                 {t('contact.title')}
               </h1>
             </Reveal>
@@ -33,8 +33,8 @@ const ContactUs = () => {
         </section>
 
         {/* Content Section - Asymmetric Layout */}
-        <section className="py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+        <section className="py-16 md:py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
             {/* Left Column: Direct Channels */}
             <div className="lg:col-span-4 space-y-16 max-w-md">
               <Reveal>
@@ -49,7 +49,7 @@ const ContactUs = () => {
 
               <div className="space-y-12">
                 <Reveal delay={50}>
-                  <div className="group flex gap-8 items-start">
+                  <div className="group flex gap-4 md:gap-8 items-start">
                     <div className="w-16 h-16 bg-[#f8f9fa] text-[#ff7e54] rounded-[1.5rem] flex justify-center items-center shrink-0 border border-[#1a1a2e]/5 group-hover:bg-[#ff7e54] group-hover:text-white transition-all duration-500">
                       <MapPin size={28} />
                     </div>
@@ -61,7 +61,7 @@ const ContactUs = () => {
                 </Reveal>
 
                 <Reveal delay={100}>
-                  <div className="group flex gap-8 items-start">
+                  <div className="group flex gap-4 md:gap-8 items-start">
                     <div className="w-16 h-16 bg-[#f8f9fa] text-[#ff7e54] rounded-[1.5rem] flex justify-center items-center shrink-0 border border-[#1a1a2e]/5 group-hover:bg-[#ff7e54] group-hover:text-white transition-all duration-500">
                       <Mail size={28} />
                     </div>
@@ -75,7 +75,7 @@ const ContactUs = () => {
                 </Reveal>
 
                 <Reveal delay={150}>
-                  <div className="group flex gap-8 items-start">
+                  <div className="group flex gap-4 md:gap-8 items-start">
                     <div className="w-16 h-16 bg-[#f8f9fa] text-[#ff7e54] rounded-[1.5rem] flex justify-center items-center shrink-0 border border-[#1a1a2e]/5 group-hover:bg-[#ff7e54] group-hover:text-white transition-all duration-500">
                       <Phone size={28} />
                     </div>
@@ -113,7 +113,7 @@ const ContactUs = () => {
             {/* Right Column: Premium Form */}
             <div className="lg:col-span-8">
               <Reveal delay={100}>
-                <div className="bg-[#f8f9fa] p-12 md:p-20 rounded-[3rem] editorial-shadow border border-[#1a1a2e]/5 relative overflow-hidden group">
+                <div className="bg-[#f8f9fa] p-6 md:p-20 rounded-3xl md:rounded-[3rem] editorial-shadow border border-[#1a1a2e]/5 relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-64 h-64 saffron-gradient rounded-full opacity-[0.03] blur-3xl -translate-y-32 translate-x-32" />
                   
                   <div className="space-y-4 mb-16 relative z-10">
@@ -122,7 +122,7 @@ const ContactUs = () => {
                   </div>
 
                   <form className="space-y-10 relative z-10" onSubmit={(e) => e.preventDefault()}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                       <div className="space-y-4">
                         <label className="text-[10px] font-black text-[#ff7e54] uppercase tracking-[0.4em] ml-2">{t('contact.name')}</label>
                         <input className="w-full bg-white px-8 py-5 rounded-[1.25rem] border border-[#1a1a2e]/5 focus:border-[#ff7e54] focus:ring-4 focus:ring-[#ff7e54]/5 outline-none transition-all font-body text-lg" placeholder={t('contact.name_ph')} type="text" />

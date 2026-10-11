@@ -45,6 +45,15 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .mobile-ticker-zoom {
+    zoom: 0.8;
+  }
+  @media (min-width: 768px) {
+    .mobile-ticker-zoom {
+      zoom: 1;
+    }
+  }
 }
 
 /* ─── Navigation Refinements ─── */
