@@ -218,22 +218,15 @@ const AboutUs = () => {
               </Reveal>
             </div>
 
-            {/* Action CTAs */}
+            {/* Action CTA */}
             <Reveal delay={150}>
-              <div className="pt-6 border-t border-gray-200 flex flex-wrap items-center gap-4">
+              <div className="pt-6 border-t border-gray-200">
                 <Link 
-                  to="/videos"
+                  to="/gallery"
                   className="px-8 py-3.5 bg-[#ff7e54] hover:bg-[#e56233] text-white rounded-full font-headline font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-orange-500/20 hover:scale-105 inline-flex items-center gap-2"
                 >
                   <span>{t('about.cta')}</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                </Link>
-
-                <Link 
-                  to="/gallery"
-                  className="px-8 py-3.5 border-2 border-[#1a1a2e] hover:bg-[#1a1a2e] hover:text-white text-[#1a1a2e] rounded-full font-headline font-bold text-sm tracking-wider uppercase transition-all duration-300"
-                >
-                  <span>{t('gallery.feed')}</span>
                 </Link>
               </div>
             </Reveal>

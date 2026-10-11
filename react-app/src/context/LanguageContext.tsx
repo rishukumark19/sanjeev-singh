@@ -114,7 +114,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.legacy.title': 'Continuing the Legacy at Singh Mansion',
     'about.legacy.p1': 'Today, he continues his public service from the iconic Singh Mansion in Dhanbad, the historic epicenter of the region\'s labor solidarity and civic movements. Day after day, hundreds of workers, families, and constituents visit to seek guidance, resolve grievances, and voice their needs.',
     'about.legacy.p2': 'Through persistent community engagement, charitable outreach, and uncompromising union representation, Sanjeev Singh remains dedicated to the socio-economic empowerment of the working class and the comprehensive progress of Dhanbad.',
-    'about.cta': 'Explore Media & Video Highlights',
+    'about.cta': 'Explore Photo Gallery',
 
     // Press
     'press.tag': 'Official Social Newsroom',
@@ -290,7 +290,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.legacy.title': 'सिंह मेंशन से लोकसेवा की अविरल धारा',
     'about.legacy.p1': 'आज भी, वे धनबाद स्थित ऐतिहासिक सिंह मेंशन से निरंतर जनसेवा और संगठनात्मक कार्य का संचालन करते हैं, जो दशकों से कोयलांचल के श्रम और सामाजिक आंदोलन का मुख्य केंद्र रहा है। प्रतिदिन सैकड़ों खनिक, ग्रामीण और क्षेत्रवासी अपनी समस्याओं और समाधान के लिए यहां पहुंचते हैं।',
     'about.legacy.p2': 'लगातार सामुदायिक संवाद, सामाजिक कल्याण कार्य और श्रमिकों के हितों की रक्षा के माध्यम से संजीव सिंह धनबाद और झरिया के समग्र विकास व श्रमिक सम्मान के लिए समर्पित हैं।',
-    'about.cta': 'मीडिया एवं वीडियो हाइलाइट्स देखें',
+    'about.cta': 'फोटो गैलरी देखें',
 
     // Press
     'press.tag': 'आधिकारिक सोशल न्यूज़रूम',
