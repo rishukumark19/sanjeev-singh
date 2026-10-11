@@ -63,14 +63,14 @@ const Home = () => {
 
             <div className="lg:col-span-7 space-y-8 lg:space-y-10 order-1 lg:order-2">
               <Reveal delay={50}>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="h-px w-12 bg-[#ff7e54]" />
-                    <span className="text-[11px] font-black text-[#ff7e54] uppercase tracking-[0.5em]">
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="h-px w-8 sm:w-12 bg-[#ff7e54]" />
+                    <span className="text-[10px] sm:text-[11px] font-black text-[#ff7e54] uppercase tracking-[0.3em] sm:tracking-[0.5em]">
                       {t('home.about.tag')}
                     </span>
                   </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-headline font-black text-[#1a1a2e] leading-[1.1]">
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-headline font-black text-[#1a1a2e] leading-[1.15]">
                     {t('home.about.title1')}<br className="hidden sm:block" />
                     <span className="text-[#ff7e54]">{t('home.about.title2')}</span>
                   </h2>
@@ -78,24 +78,27 @@ const Home = () => {
               </Reveal>
 
               <Reveal delay={150}>
-                <div className="space-y-6 lg:space-y-8">
-                  <p className="text-lg md:text-2xl text-[#1a1a2e]/90 font-medium leading-relaxed font-headline">
+                <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+                  <p className="text-base sm:text-lg md:text-2xl text-[#1a1a2e]/90 font-medium leading-relaxed font-headline">
                     {t('home.about.p1')}
                   </p>
-                  <p className="text-base md:text-lg text-gray-500 leading-relaxed max-w-2xl font-body">
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl font-body">
                     {t('home.about.p2')}
                   </p>
                 </div>
               </Reveal>
 
               <Reveal delay={300}>
-                <Link to="/about" className="inline-flex items-center gap-6 group">
-                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-full saffron-gradient flex items-center justify-center text-white shadow-xl shadow-orange-500/20 group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined">east</span>
-                  </div>
-                  <span className="text-sm font-black uppercase tracking-[0.2em] text-[#1a1a2e]">
+                <Link 
+                  to="/about" 
+                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#ff7e54] to-[#e56233] text-white shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 group"
+                >
+                  <span className="text-xs sm:text-sm font-headline font-bold uppercase tracking-wider">
                     {t('home.about.cta')}
                   </span>
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                    <span className="material-symbols-outlined text-sm">east</span>
+                  </div>
                 </Link>
               </Reveal>
             </div>
@@ -133,28 +136,33 @@ const Home = () => {
       {/* Legacy - High Contrast Section */}
       <section className="py-16 md:py-32 bg-[#f8f9fa] relative overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <div className="order-2 lg:order-1 space-y-10">
+          <div className="order-2 lg:order-1 space-y-6 sm:space-y-8 md:space-y-10">
             <Reveal delay={50}>
-              <div className="space-y-4">
-                <span className="text-[11px] font-black text-[#ff7e54] uppercase tracking-[0.4em]">
+              <div className="space-y-3 sm:space-y-4">
+                <span className="text-[10px] sm:text-[11px] font-black text-[#ff7e54] uppercase tracking-[0.3em] sm:tracking-[0.4em]">
                   {t('home.legacy.tag')}
                 </span>
-                <h2 className="text-4xl md:text-5xl font-headline font-black text-[#1a1a2e]">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-headline font-black text-[#1a1a2e] leading-tight">
                   {t('home.legacy.title')}
                 </h2>
               </div>
             </Reveal>
             <Reveal delay={150}>
-              <p className="text-xl text-[#1a1a2e]/70 leading-relaxed font-body">
+              <p className="text-sm sm:text-base md:text-xl text-[#1a1a2e]/80 leading-relaxed font-body">
                 {t('home.legacy.p')}
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <Link to="/about" className="inline-flex items-center gap-4 text-[#1a1a2e] font-black group">
-                <span className="text-sm uppercase tracking-[0.2em] border-b-2 border-[#ff7e54]">
+              <Link 
+                to="/about" 
+                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full border-2 border-[#1a1a2e] text-[#1a1a2e] hover:bg-[#1a1a2e] hover:text-white transition-all duration-300 group shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <span className="text-xs sm:text-sm font-headline font-bold uppercase tracking-wider">
                   {t('home.legacy.cta')}
                 </span>
-                <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform">trending_flat</span>
+                <span className="material-symbols-outlined text-base group-hover:translate-x-1.5 transition-transform text-[#ff7e54]">
+                  east
+                </span>
               </Link>
             </Reveal>
           </div>
@@ -236,19 +244,30 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <div className="flex-grow rounded-[1.5rem] overflow-hidden bg-[#f0f2f5] mx-2 mb-2 relative ring-1 ring-inset ring-black/5 flex justify-center">
-                  {/* Subtle Top & Bottom Fade Overlays to make the iframe blend in */}
-                  <div className="absolute top-0 left-0 w-full h-6 bg-gradient-to-b from-[#f0f2f5] to-transparent z-10 pointer-events-none opacity-50" />
+                <div className="flex-grow rounded-[1.5rem] overflow-hidden bg-[#f0f2f5] mx-2 mb-2 relative ring-1 ring-inset ring-black/5 flex justify-center h-[650px] sm:h-[700px] md:h-[750px]">
                   <iframe
-                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069661650642&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
-                    width="100%" height="500"
-                    style={{ border: 'none', overflow: 'hidden', maxWidth: '340px' }}
-                    scrolling="no" frameBorder="0" allowFullScreen={true}
+                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D100069661650642&tabs=timeline&width=340&height=800&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                    width="100%" height="100%"
+                    style={{ border: 'none', maxWidth: '340px' }}
+                    scrolling="yes" frameBorder="0" allowFullScreen={true}
                     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                     title="Facebook Feed"
                     className="w-full h-full mix-blend-multiply"
                   />
-                  <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#f0f2f5] to-transparent z-10 pointer-events-none" />
+                </div>
+                <div className="p-3 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500 font-semibold px-4">
+                  <span className="flex items-center gap-1.5 text-[#1877F2]">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    Live Facebook Feed
+                  </span>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100069661650642"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#1877F2] hover:underline flex items-center gap-1 text-xs"
+                  >
+                    Open Page <span className="material-symbols-outlined text-sm">open_in_new</span>
+                  </a>
                 </div>
               </div>
             </Reveal>
