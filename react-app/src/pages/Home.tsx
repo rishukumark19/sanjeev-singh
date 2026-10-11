@@ -175,8 +175,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Latest Updates - Carousel Section */}
-      <section className="py-16 md:py-24 bg-[#f8f9fa] relative overflow-hidden border-t border-black/5">
+      {/* Latest Updates - Carousel Section (Hidden on Mobile) */}
+      <section className="hidden md:block py-16 md:py-24 bg-[#f8f9fa] relative overflow-hidden border-t border-black/5">
         <div className="max-w-[1600px] mx-auto px-4 md:px-8">
           <div className="mb-12 text-center space-y-4">
             <Reveal>
