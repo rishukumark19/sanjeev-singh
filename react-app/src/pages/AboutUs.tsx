@@ -3,7 +3,8 @@ import Reveal from '../components/Reveal';
 import { useLanguage } from '../context/LanguageContext';
 
 const AboutUs = () => {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
+  const isHi = lang === 'hi';
 
   return (
     <div className="bg-white min-h-screen pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden">
@@ -47,7 +48,8 @@ const AboutUs = () => {
                   <img 
                     alt="Sanjeev Singh Official Portrait" 
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                    src={`${import.meta.env.BASE_URL}images/sanjeev-portrait.jpg`} 
+                    style={{ objectPosition: '42% 20%' }}
+                    src={`${import.meta.env.BASE_URL}images/real/fb_4.jpg`} 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e]/60 via-transparent to-transparent opacity-60" />
                   <div className="absolute bottom-6 left-6 right-6 text-white">
@@ -146,6 +148,25 @@ const AboutUs = () => {
                   </p>
                 </div>
               </Reveal>
+
+              <Reveal delay={150}>
+                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200/80 my-4 group">
+                  <div className="aspect-[16/9] overflow-hidden relative">
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/real/fb_9.jpg`}
+                      alt="Public outreach and trade union solidarity"
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      style={{ objectPosition: 'center 20%' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4 text-white">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#ff9933] bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
+                        {isHi ? 'जनसम्पर्क एवं श्रमिक एकता' : 'Public Outreach & Labor Solidarity'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
             </div>
 
             {/* Inspirational Quote Card */}
@@ -190,6 +211,25 @@ const AboutUs = () => {
                   </p>
                 </div>
               </Reveal>
+
+              <Reveal delay={150}>
+                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200/80 my-4 group">
+                  <div className="aspect-[16/9] overflow-hidden relative">
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/real/fb_7.jpg`}
+                      alt="Governance and development review at Dhanbad Collectorate"
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      style={{ objectPosition: 'center 35%' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4 text-white">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#ff9933] bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
+                        {isHi ? 'दिशा (DISHA) समीक्षा बैठक · धनबाद समाहरणालय' : 'DISHA Review Meeting · District Governance'}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
             </div>
 
             {/* Section 03: Continuing the Legacy */}
@@ -214,6 +254,25 @@ const AboutUs = () => {
                   <p>
                     {t('about.legacy.p2')}
                   </p>
+                </div>
+              </Reveal>
+
+              <Reveal delay={150}>
+                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200/80 my-4 group">
+                  <div className="aspect-[16/9] overflow-hidden relative">
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/real/fb_6.jpg`}
+                      alt="Citizen grievance redressal at Singh Mansion"
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      style={{ objectPosition: '40% 25%' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-4 right-4 text-white">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#ff9933] bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
+                        {isHi ? 'सिंह मेंशन आवास पर जनसुनवाई व प्रतिनिधिमंडल संवाद' : 'Singh Mansion Public Hearings & Dialogue'}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             </div>

@@ -80,9 +80,10 @@ const Home = () => {
                   <div className="absolute -inset-4 border-2 border-[#ff7e54]/10 rounded-2xl -z-10 translate-x-8 translate-y-8" />
                   <div className="rounded-2xl overflow-hidden editorial-shadow">
                     <img 
-                      src={`${import.meta.env.BASE_URL}images/sanjeev-portrait.jpg`} 
-                      alt="Sanjeev Singh" 
+                      src={`${import.meta.env.BASE_URL}images/real/fb_4.jpg`} 
+                      alt="Sanjeev Singh at Singh Mansion" 
                       className="w-full aspect-[4/5] object-cover" 
+                      style={{ objectPosition: '42% 20%' }}
                     />
                   </div>
                   <div className="absolute bottom-8 -right-8 w-48 h-48 saffron-gradient rounded-2xl -z-10 opacity-20 blur-2xl" />
@@ -228,9 +229,10 @@ const Home = () => {
               <div className="relative group">
                 <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl relative">
                   <img 
-                    alt="Legacy" 
-                    className="w-full h-full object-cover transform scale-110 group-hover:scale-100 transition-transform duration-1000" 
-                    src={`${import.meta.env.BASE_URL}images/singh-mansion.jpg`} 
+                    alt="Sanjeev Singh engaging with citizens at Singh Mansion" 
+                    className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000" 
+                    style={{ objectPosition: '40% 25%' }}
+                    src={`${import.meta.env.BASE_URL}images/real/fb_6.jpg`} 
                   />
                   <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-[2rem]" />
                 </div>
@@ -369,9 +371,10 @@ const Home = () => {
               <div className="bg-[#f8f9fa] rounded-[2rem] overflow-hidden flex flex-col group h-full border border-transparent hover:border-[#ff7e54]/10 transition-all">
                 <div className="relative aspect-square overflow-hidden">
                   <img 
-                    src={`${import.meta.env.BASE_URL}images/location_3.jpg`} 
-                    alt="Social feed" 
+                    src={`${import.meta.env.BASE_URL}images/real/fb_10.jpg`} 
+                    alt="Social feed - Sanjeev Singh" 
                     className="w-full h-full object-cover transform scale-105 group-hover:scale-100 transition-transform duration-1000" 
+                    style={{ objectPosition: 'center 20%' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#ff7e54]/80 via-transparent to-transparent opacity-100 lg:opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-8">
                     <p className="text-white font-body text-sm font-semibold tracking-wide translate-y-0 lg:translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

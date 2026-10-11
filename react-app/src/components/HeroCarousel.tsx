@@ -33,11 +33,11 @@ const HeroCarousel = () => {
   };
 
   const slides = [
-    { image: `${import.meta.env.BASE_URL}images/carousel_1.jpg`, titleKey: 'home.slide1.title', subKey: 'home.slide1.sub' },
-    { image: `${import.meta.env.BASE_URL}images/carousel_2.jpg`, titleKey: 'home.slide2.title', subKey: 'home.slide2.sub' },
-    { image: `${import.meta.env.BASE_URL}images/carousel_3.jpg`, titleKey: 'home.slide3.title', subKey: 'home.slide3.sub' },
-    { image: `${import.meta.env.BASE_URL}images/location_3.jpg`, titleKey: 'home.slide4.title', subKey: 'home.slide4.sub' },
-    { image: `${import.meta.env.BASE_URL}images/singh-mansion.jpg`, titleKey: 'home.slide5.title', subKey: 'home.slide5.sub' },
+    { image: `${import.meta.env.BASE_URL}images/real/fb_9.jpg`, titleKey: 'home.slide1.title', subKey: 'home.slide1.sub', pos: 'center 20%' },
+    { image: `${import.meta.env.BASE_URL}images/real/fb_7.jpg`, titleKey: 'home.slide2.title', subKey: 'home.slide2.sub', pos: 'center 35%' },
+    { image: `${import.meta.env.BASE_URL}images/real/fb_10.jpg`, titleKey: 'home.slide3.title', subKey: 'home.slide3.sub', pos: 'center 25%' },
+    { image: `${import.meta.env.BASE_URL}images/real/fb_4.jpg`, titleKey: 'home.slide4.title', subKey: 'home.slide4.sub', pos: 'center 20%' },
+    { image: `${import.meta.env.BASE_URL}images/real/fb_8.jpg`, titleKey: 'home.slide5.title', subKey: 'home.slide5.sub', pos: 'center 25%' },
   ];
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const HeroCarousel = () => {
             <img 
               alt={t(slide.titleKey)} 
               className="w-full h-full object-cover" 
-              style={{ objectPosition: index === 1 || index === 2 ? 'center 15%' : 'center' }}
+              style={{ objectPosition: slide.pos || 'center' }}
               src={slide.image} 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a] via-transparent to-[#0a0e1a]/20 z-[2]" />
