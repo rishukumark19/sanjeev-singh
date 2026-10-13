@@ -311,22 +311,6 @@ const AboutUs = () => {
           </button>
         </div>
       </div>
-
-      {/* Mobile Navigation Tab (Listen, Act, Share) */}
-      <div className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#ff7e54] text-white flex justify-around items-center shadow-[0_-4px_10px_rgba(0,0,0,0.1)] border-t border-white/20 pb-safe">
-        <button className="flex-1 py-3 flex flex-col items-center justify-center hover:bg-[#e56233] transition-colors border-r border-white/10 group">
-          <span className="material-symbols-outlined text-lg mb-1 group-hover:scale-110 transition-transform">volume_up</span>
-          <span className="text-[10px] font-black uppercase tracking-widest">LISTEN</span>
-        </button>
-        <button className="flex-1 py-3 flex flex-col items-center justify-center hover:bg-[#e56233] transition-colors border-r border-white/10 group">
-          <span className="material-symbols-outlined text-lg mb-1 group-hover:scale-110 transition-transform">touch_app</span>
-          <span className="text-[10px] font-black uppercase tracking-widest">ACT</span>
-        </button>
-        <button className="flex-1 py-3 flex flex-col items-center justify-center hover:bg-[#e56233] transition-colors group">
-          <span className="material-symbols-outlined text-lg mb-1 group-hover:scale-110 transition-transform">share</span>
-          <span className="text-[10px] font-black uppercase tracking-widest">SHARE</span>
-        </button>
-      </div>
     </div>
   );
 };
