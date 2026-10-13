@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Phone, Home, User, Image, Mail, Globe, X } from 'lucide-react';
+import { Phone, Home, User, Image, Mail, Globe, X, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Header = () => {
@@ -127,33 +127,37 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Overlay (< md) */}
+      {/* Mobile Mega Menu Drawer (< md) */}
       <div className={`fixed inset-0 z-[100] md:hidden transition-all duration-500 ${
         isMobileMenuOpen ? 'visible' : 'invisible pointer-events-none'
       }`}>
+        {/* Backdrop */}
         <div
           onClick={() => setIsMobileMenuOpen(false)}
           className={`absolute inset-0 bg-[#0a0e1a]/60 backdrop-blur-md transition-opacity duration-500 ${
             isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}
         />
-        <div className={`absolute top-0 right-0 w-full max-w-[290px] sm:max-w-[320px] h-full bg-white flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] border-l-4 border-[#ff7e54] shadow-2xl ${
+        {/* Drawer Content */}
+        <div className={`absolute top-0 right-0 w-[86vw] max-w-[350px] sm:max-w-[380px] h-full bg-white flex flex-col transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] border-l-4 border-[#ff7e54] shadow-2xl ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
-          {/* Mobile header */}
-          <div className="flex items-center justify-between px-5 h-[56px] border-b border-gray-100 shrink-0">
-            <span className="font-headline font-bold text-[11px] uppercase tracking-widest text-gray-400">{t('nav.menu')}</span>
+          {/* Mobile Header */}
+          <div className="flex items-center justify-between px-6 h-[64px] border-b border-gray-100 shrink-0 bg-gray-50/50">
+            <span className="font-headline font-black text-xs uppercase tracking-[0.2em] text-[#ff7e54]">
+              {t('nav.menu')}
+            </span>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-gray-100 text-gray-500 transition-colors"
+              className="w-9 h-9 flex items-center justify-center rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
               aria-label="Close"
             >
-              <X size={16} />
+              <X size={18} />
             </button>
           </div>
 
-          {/* Links */}
-          <nav className="flex-1 overflow-y-auto py-2">
+          {/* Links - Larger Typography & Touch-Friendly Rows */}
+          <nav className="flex-1 overflow-y-auto py-3 divide-y divide-gray-100/70">
             {links.map((link) => {
               const Icon = link.icon;
               return (
@@ -163,37 +167,54 @@ const Header = () => {
                   end={link.to === '/'}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-5 h-[48px] text-[13px] font-semibold tracking-wide transition-all duration-200 border-l-[3px] ${
+                    `flex items-center justify-between px-6 py-4 transition-all duration-200 border-l-4 ${
                       isActive
-                        ? 'text-[#ff7e54] bg-orange-50/70 border-l-[#ff7e54] font-bold'
-                        : 'text-gray-600 hover:text-[#1a1a2e] hover:bg-gray-50 border-l-transparent'
+                        ? 'text-[#ff7e54] bg-orange-50/80 border-l-[#ff7e54] font-bold'
+                        : 'text-gray-700 hover:text-[#1a1a2e] hover:bg-gray-50 border-l-transparent font-medium'
                     }`
                   }
                 >
-                  <Icon size={16} className="opacity-80 shrink-0" />
-                  <span>{link.label}</span>
+                  {({ isActive }) => (
+                    <>
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-transform ${
+                          isActive 
+                            ? 'bg-gradient-to-br from-[#ff7e54] to-[#e56233] text-white shadow-md shadow-orange-500/25 scale-105' 
+                            : 'bg-gray-100 text-gray-500'
+                        }`}>
+                          <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
+                        </div>
+                        <span className="text-[17px] sm:text-[18px] font-headline tracking-wide truncate">
+                          {link.label}
+                        </span>
+                      </div>
+                      <ChevronRight size={18} className={`shrink-0 transition-transform ${
+                        isActive ? 'text-[#ff7e54] translate-x-0.5' : 'text-gray-300'
+                      }`} />
+                    </>
+                  )}
                 </NavLink>
               );
             })}
           </nav>
 
-          {/* Mobile bottom */}
-          <div className="px-5 py-4 border-t border-gray-100 shrink-0 space-y-2.5 bg-gray-50/50">
+          {/* Mobile Bottom Section with Generous Actions */}
+          <div className="px-6 py-5 border-t border-gray-100 shrink-0 space-y-3 bg-gray-50/70">
             <button
               onClick={toggleLang}
-              className="flex items-center justify-center gap-2 w-full py-2.5 border border-gray-200 bg-white text-gray-700 font-bold text-[11.5px] tracking-wide rounded-lg hover:border-[#ff7e54] hover:text-[#ff7e54] transition-all shadow-sm"
+              className="flex items-center justify-center gap-2.5 w-full py-3.5 border-2 border-gray-200/90 bg-white text-gray-800 font-bold text-[13px] tracking-wide rounded-xl hover:border-[#ff7e54] hover:text-[#ff7e54] transition-all shadow-sm active:scale-[0.99]"
             >
-              <Globe size={14} className="text-[#ff7e54]" />
-              <span>{lang === 'en' ? 'हिन्दी में देखें' : 'View in English'}</span>
+              <Globe size={16} className="text-[#ff7e54]" />
+              <span>{lang === 'en' ? 'हिन्दी में देखें (Switch to Hindi)' : 'View in English'}</span>
             </button>
             <a
               href="tel:+919431125166"
-              className="flex items-center justify-center gap-2 w-full py-2.5 bg-gradient-to-r from-[#ff7e54] to-[#e56233] text-white font-bold text-[11.5px] tracking-wide rounded-lg shadow-md shadow-orange-500/20"
+              className="flex items-center justify-center gap-2.5 w-full py-3.5 bg-gradient-to-r from-[#ff7e54] to-[#e56233] text-white font-bold text-[14px] tracking-wide rounded-xl shadow-lg shadow-orange-500/25 active:scale-[0.99] transition-all"
             >
-              <Phone size={13} strokeWidth={2.5} />
-              +91 94311 25166
+              <Phone size={16} strokeWidth={2.5} />
+              <span>+91 94311 25166</span>
             </a>
-            <p className="text-center text-[9px] text-gray-400 pt-1 tracking-widest uppercase font-medium">
+            <p className="text-center text-[10px] text-gray-400 pt-0.5 tracking-widest uppercase font-semibold">
               {t('nav.location')}
             </p>
           </div>
