@@ -7,13 +7,13 @@ const AboutUs = () => {
   const isHi = lang === 'hi';
 
   return (
-    <div className="bg-white min-h-screen pt-24 md:pt-32 pb-24 md:pb-32 relative overflow-hidden">
+    <div className="bg-white min-h-screen pt-20 md:pt-24 lg:pt-28 pb-16 md:pb-20 lg:pb-28 relative overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-0 right-0 w-1/3 h-[600px] bg-[#ff7e54]/5 -skew-x-12 translate-x-32 -z-10" />
       <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#ff7e54]/5 rounded-full blur-3xl -z-10" />
 
       {/* Hero Header Section */}
-      <section className="max-w-[1400px] mx-auto px-4 md:px-8 mb-12 md:mb-16">
+      <section className="max-w-[1400px] mx-auto px-4 md:px-8 mb-10 md:mb-14">
         <Reveal>
           <div className="flex items-center gap-4 mb-4">
             <div className="h-px w-10 bg-[#ff7e54]" />
@@ -24,7 +24,7 @@ const AboutUs = () => {
         </Reveal>
 
         <Reveal delay={100}>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-black text-[#1a1a2e] tracking-tight leading-tight mb-4">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-headline font-black text-[#1a1a2e] tracking-tight leading-tight mb-4">
             {t('about.heading')}
           </h1>
         </Reveal>

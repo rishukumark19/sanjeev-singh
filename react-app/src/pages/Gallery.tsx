@@ -252,7 +252,7 @@ const Gallery = () => {
               </div>
             </Reveal>
             <Reveal delay={50}>
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-headline font-black leading-[1.1] uppercase tracking-tight text-white">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-headline font-black leading-[1.1] uppercase tracking-tight text-white">
                 {t('photos.title1')}{' '}
                 <span className="text-[#ff7e54]">{t('photos.title2')}</span>
               </h1>

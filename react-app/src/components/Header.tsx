@@ -40,28 +40,14 @@ const Header = () => {
           }`}>
 
             {/* Brand */}
-            <NavLink to="/" className="flex items-center group relative z-10 py-1 shrink-0">
-              <div className="flex flex-col justify-center">
-                <span className={`font-headline font-black tracking-wide sm:tracking-wider md:tracking-[0.14em] lg:tracking-[0.16em] transition-all duration-300 uppercase text-white whitespace-nowrap ${
-                  scrolled 
-                    ? 'text-[13px] sm:text-base md:text-lg lg:text-xl' 
-                    : 'text-[14px] sm:text-lg md:text-xl lg:text-[24px]'
-                }`}>
-                  {lang === 'hi' ? 'संजीव सिंह' : 'SANJEEV SINGH'}
-                </span>
-                <div className="flex items-center gap-1.5 md:gap-2 mt-0.5">
-                  <span className={`font-bold uppercase transition-all duration-300 shrink-0 text-white/80 whitespace-nowrap ${
-                    scrolled 
-                      ? 'text-[7.5px] sm:text-[8px] md:text-[8.5px] lg:text-[9px] tracking-wider' 
-                      : 'text-[8px] sm:text-[8.5px] md:text-[9px] lg:text-[9.5px] tracking-wider md:tracking-[0.2em] lg:tracking-[0.25em]'
-                  }`}>
-                    {t('nav.subtitle')}
-                  </span>
-                  <div className={`h-[1px] transition-all duration-500 bg-gradient-to-r from-white/40 to-transparent ${
-                    scrolled ? 'w-3 md:w-4' : 'w-4 md:w-6'
-                  }`} />
-                </div>
-              </div>
+            <NavLink to="/" className="flex items-center group relative z-10 py-1 sm:py-2 shrink-0">
+              <span className={`font-headline font-black tracking-wider sm:tracking-[0.14em] md:tracking-[0.18em] lg:tracking-[0.2em] transition-all duration-300 uppercase text-white whitespace-nowrap ${
+                scrolled 
+                  ? 'text-[15px] sm:text-lg md:text-xl lg:text-2xl' 
+                  : 'text-base sm:text-xl md:text-2xl lg:text-[26px]'
+              }`}>
+                {lang === 'hi' ? 'संजीव सिंह' : 'SANJEEV SINGH'}
+              </span>
             </NavLink>
 
             {/* Tablet & Desktop Nav (md: 768px and up) */}

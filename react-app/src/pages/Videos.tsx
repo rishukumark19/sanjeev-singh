@@ -14,7 +14,7 @@ const Videos = () => {
   return (
     <div className="bg-white min-h-screen pt-[72px]">
       {/* Cinematic Header */}
-      <section className="bg-[#1a1a2e] py-16 md:py-32 px-4 md:px-8 relative overflow-hidden">
+      <section className="bg-[#1a1a2e] py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-[#ff7e54]/5 -skew-x-12 translate-x-32" />
         <div className="max-w-[1400px] mx-auto relative z-10 text-center">
           <Reveal>
@@ -25,7 +25,7 @@ const Videos = () => {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <h1 className="text-4xl md:text-8xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-headline font-black text-white max-w-5xl mx-auto leading-[1.1] tracking-tight uppercase">
               {t('videos.title')}
             </h1>
           </Reveal>
@@ -38,7 +38,7 @@ const Videos = () => {
       </section>
 
       {/* Video Gallery - Cinematic Archive */}
-      <section className="py-16 md:py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
+      <section className="py-12 md:py-16 lg:py-20 xl:py-24 px-4 md:px-8 max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16">
           {videos.map((vid, i) => (
             <Reveal key={i} delay={i * 100}>
