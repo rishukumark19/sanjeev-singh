@@ -1,27 +1,47 @@
+/* [Hallmark: Indian Statesman Editorial (Sanjeev Singh Official)] */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-primary: #ff7e54;
+    --color-primary-dark: #e56233;
+    --color-gold: #ff9933;
+    --color-bg-paper: #fdfbf7;
+  }
+
   html, body {
-    @apply bg-[#f8f9fa] font-body text-[#1a1a2e] selection:bg-[#ff7e54]/20 selection:text-[#1a1a2e];
+    @apply bg-[#fdfbf7] font-body text-[#0f172a] selection:bg-[#ff7e54]/20 selection:text-[#0f172a];
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100%;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline tracking-tight;
+    overflow-wrap: break-word;
+  }
+
+  /* Hallmark Rule #6: Focus-visible appearing clearly on interactive elements */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
 }
 
-/* ─── Compact Laptop & High-DPI Scaling Optimization (Industry Standard) ─── */
-/* 
-  Addresses small laptops (13"-15" screens) where Windows display scaling is set to 125% or 150%,
-  giving effective viewports of 1024px–1440px width or vertical heights <= 860px.
-  Scaling root rem smoothly scales all fonts, paddings, gaps, and card sizes without breaking layouts.
-*/
+/* Hallmark Rule #7: Fallback for users preferring reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Compact Laptop & High-DPI Scaling Optimization ─── */
 @media screen and (min-width: 1024px) and (max-width: 1440px),
        screen and (min-width: 1024px) and (max-height: 860px) {
   html {
@@ -29,56 +49,35 @@
   }
 }
 
-/* Ultra-compact viewports (1366x768 native or 1280x720 / 150% scaling, or height <= 768px) */
 @media screen and (min-width: 1024px) and (max-height: 768px) {
   html {
     font-size: 13.25px;
   }
 }
 
-/* ─── Short Viewport Height Padding Optimization (Guarantees every section fits on screen) ─── */
-@media screen and (min-width: 1024px) and (max-height: 850px) {
-  /* Tame excessive section vertical paddings on short laptop screens */
-  .py-32, .md\:py-32, .lg\:py-32, .xl\:py-32 {
-    padding-top: 3.5rem !important;
-    padding-bottom: 3.5rem !important;
-  }
-  .py-28, .md\:py-28, .lg\:py-28, .xl\:py-28 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-  }
-  .py-24, .md\:py-24, .lg\:py-24, .xl\:py-24 {
-    padding-top: 2.75rem !important;
-    padding-bottom: 2.75rem !important;
-  }
-  .py-20, .md\:py-20, .lg\:py-20, .xl\:py-20 {
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
-  }
-}
-
 @layer utilities {
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  /* Indian Statesman Tricolor / Saffron Badges & Gradients (Narendra Modi / Amit Shah Style) */
+  .tricolor-stripe {
+    background: linear-gradient(90deg, #ff7e54 0%, #FF9933 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #138808 66.6%, #138808 100%);
   }
-  
+
+  .saffron-gold-gradient {
+    background: linear-gradient(135deg, #ff7e54 0%, #FF8F00 50%, #FFA000 100%);
+  }
+
+  .statesman-navy {
+    background: linear-gradient(180deg, #091322 0%, #030811 100%);
+  }
+
   .editorial-shadow {
-    box-shadow: 0 30px 60px -12px rgba(2, 25, 67, 0.1), 
-                0 18px 36px -18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.12), 
+                0 8px 20px -8px rgba(255, 111, 0, 0.08);
   }
 
-  .saffron-gradient {
-    background: linear-gradient(135deg, #ff7e54 0%, #e56233 100%);
-  }
-
-  .navy-depth {
-    background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1d 100%);
-  }
-
-  .glass-card {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  .statesman-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   }
 
   .no-scrollbar::-webkit-scrollbar {
@@ -88,30 +87,43 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
 
-  .mobile-ticker-zoom {
-    zoom: 1;
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
   }
-  @media (min-width: 1440px) and (min-height: 850px) {
-    .mobile-ticker-zoom {
-      zoom: 1.1;
-    }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-/* ─── Navigation Refinements ─── */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Official #ff7e54 Saffron Navigation Header ─── */
 .nav-top {
-  background: #ff7e54;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ff7e54 0%, #f46b3f 100%);
+  box-shadow: 0 4px 25px rgba(244, 107, 63, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .nav-scrolled {
-  background: #ff7e54;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 126, 84, 0.98);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 /* ─── Hindi Font Refinement ─── */
 [lang="hi"] {
-  font-family: 'Noto Sans Devanagari', 'Outfit', sans-serif;
+  font-family: 'Noto Sans Devanagari', 'Be Vietnam Pro', sans-serif;
   line-height: 1.6;
 }

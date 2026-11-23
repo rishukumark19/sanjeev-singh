@@ -1,13 +1,54 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
-  const { t } = useLanguage();
+  const [isPaused, setIsPaused] = useState(false);
+  const { lang, t } = useLanguage();
 
   const minSwipeDistance = 50;
+
+  const slides = [
+    { 
+      image: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`, 
+      titleKey: 'home.slide1.title', 
+      subKey: 'home.slide1.sub', 
+      tag: lang === 'hi' ? 'श्रम शक्ति व सम्मान' : 'Labor Dignity & Rights',
+      pos: 'center 25%' 
+    },
+    { 
+      image: `${import.meta.env.BASE_URL}images/real/fb_katras.jpg`, 
+      titleKey: 'home.slide2.title', 
+      subKey: 'home.slide2.sub', 
+      tag: lang === 'hi' ? 'जनता की अटूट आवाज़' : 'Voice of Dhanbad',
+      pos: 'center 20%' 
+    },
+    { 
+      image: `${import.meta.env.BASE_URL}images/real/fb_10.jpg`, 
+      titleKey: 'home.slide3.title', 
+      subKey: 'home.slide3.sub', 
+      tag: lang === 'hi' ? 'स्वच्छता योद्धा सम्मान' : 'Civic Dedication',
+      pos: 'center 25%' 
+    },
+    { 
+      image: `${import.meta.env.BASE_URL}images/real/fb_4.jpg`, 
+      titleKey: 'home.slide4.title', 
+      subKey: 'home.slide4.sub', 
+      tag: lang === 'hi' ? 'जनसेवा एवं जनसमर्पण' : 'Dedicated Public Service',
+      pos: 'center 20%' 
+    },
+    { 
+      image: `${import.meta.env.BASE_URL}images/real/fb_8.jpg`, 
+      titleKey: 'home.slide5.title', 
+      subKey: 'home.slide5.sub', 
+      tag: lang === 'hi' ? 'सामुदायिक सौहार्द' : 'Community Solidarity',
+      pos: 'center 25%' 
+    },
+  ];
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
@@ -21,118 +62,145 @@ const HeroCarousel = () => {
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe) {
+    if (distance > minSwipeDistance) {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }
-    if (isRightSwipe) {
+    } else if (distance < -minSwipeDistance) {
       setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
     }
   };
 
-  const slides = [
-    { image: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`, titleKey: 'home.slide1.title', subKey: 'home.slide1.sub', pos: 'center 25%' },
-    { image: `${import.meta.env.BASE_URL}images/real/fb_katras.jpg`, titleKey: 'home.slide2.title', subKey: 'home.slide2.sub', pos: 'center 20%' },
-    { image: `${import.meta.env.BASE_URL}images/real/fb_10.jpg`, titleKey: 'home.slide3.title', subKey: 'home.slide3.sub', pos: 'center 25%' },
-    { image: `${import.meta.env.BASE_URL}images/real/fb_4.jpg`, titleKey: 'home.slide4.title', subKey: 'home.slide4.sub', pos: 'center 20%' },
-    { image: `${import.meta.env.BASE_URL}images/real/fb_8.jpg`, titleKey: 'home.slide5.title', subKey: 'home.slide5.sub', pos: 'center 25%' },
-  ];
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 5000);
+    if (isPaused) return;
+    const timer = setInterval(nextSlide, 6000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [slides.length, isPaused]);
 
   return (
     <section 
-      className="relative w-full h-[100dvh] md:h-[calc(100dvh-74px)] lg:h-[calc(100dvh-82px)] min-h-[480px] overflow-hidden bg-[#0a0e1a]"
+      className="relative w-full h-[88vh] min-h-[560px] max-h-[860px] overflow-hidden bg-[#fff7ed] select-none"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Left Edge Light Soft Blur */}
-      <div 
-        className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-20 md:w-36 lg:w-52 z-[3] backdrop-blur-[6px] bg-gradient-to-r from-white/15 via-white/5 to-transparent"
-        style={{
-          WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
-          maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)'
-        }}
-      />
-
-      {/* Right Edge Light Soft Blur */}
-      <div 
-        className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-20 md:w-36 lg:w-52 z-[3] backdrop-blur-[6px] bg-gradient-to-l from-white/15 via-white/5 to-transparent"
-        style={{
-          WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
-          maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)'
-        }}
-      />
-
-      <div className="absolute inset-0 flex transition-transform duration-[1000ms] ease-in-out" style={{ transform: `translateX(-${(currentSlide * 100) / slides.length}%)`, width: `${slides.length * 100}%` }}>
-        {slides.map((slide, index) => (
+      {/* Background Slides with Crossfade */}
+      {slides.map((slide, index) => {
+        const isActive = index === currentSlide;
+        return (
           <div
             key={index}
-            className="relative h-full w-full flex-shrink-0"
-            style={{ width: `${100 / slides.length}%` }}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+            }`}
           >
-            <div className="absolute inset-0 bg-[#0a0e1a]/40 z-[1]" />
+            {/* Image with subtle slow zoom when active - Bright natural photos */}
             <img 
               alt={t(slide.titleKey)} 
-              className="w-full h-full object-cover" 
-              style={{ objectPosition: slide.pos || 'center 25%' }}
+              className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-out brightness-105 contrast-[1.02] ${
+                isActive ? 'scale-105' : 'scale-100'
+              }`}
+              style={{ objectPosition: slide.pos }}
               src={slide.image} 
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a] via-transparent to-[#0a0e1a]/20 z-[2]" />
-            
-            <div className="absolute inset-0 flex items-end pb-12 sm:pb-14 md:pb-16 lg:pb-16 xl:pb-20 z-[4]">
-              <div className="max-w-[1400px] mx-auto px-4 md:px-8 w-full">
-                <div className="max-w-5xl text-left">
-                  <div className={`h-[2px] bg-[#ff7e54] mb-3 md:mb-4 transition-all duration-1000 delay-300 ${
-                    index === currentSlide ? 'w-16 md:w-20 opacity-100' : 'w-0 opacity-0'
-                  }`} />
-                  <h3 className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-headline font-black text-white leading-[1.1] mb-2 sm:mb-3 md:mb-4 drop-shadow-2xl transform transition-all duration-1000 delay-500 ease-out tracking-tight ${
-                    index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+
+            {/* Warm Saffron & Soft Light Vignette (NO dark dimming) */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+
+            {/* Slide Content */}
+            <div className="absolute inset-0 flex items-end pb-16 sm:pb-20 md:pb-24 z-20">
+              <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 w-full">
+                <div className="max-w-3xl text-left">
+                  {/* Badge */}
+                  <div className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff7e54] text-white shadow-md mb-3 sm:mb-4 transition-all duration-700 ${
+                    isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}>
+                    <ShieldCheck size={14} className="text-white" />
+                    <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider">
+                      {slide.tag}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h1 className={`text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-black text-white leading-[1.12] mb-3 sm:mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] tracking-tight transition-all duration-700 delay-150 ${
+                    isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                   }`}>
                     {t(slide.titleKey)}
-                  </h3>
-                  <p className={`text-sm sm:text-base md:text-lg text-white/85 font-body font-normal max-w-3xl transform transition-all duration-1000 delay-700 ease-out tracking-wide leading-relaxed line-clamp-2 sm:line-clamp-none ${
-                    index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                  </h1>
+
+                  {/* Subtitle */}
+                  <p className={`text-sm sm:text-base md:text-lg text-white font-body font-medium max-w-2xl leading-relaxed mb-6 sm:mb-8 drop-shadow-[0_1px_5px_rgba(0,0,0,0.6)] transition-all duration-700 delay-300 ${
+                    isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                   }`}>
                     {t(slide.subKey)}
                   </p>
+
+                  {/* Action CTAs */}
+                  <div className={`flex flex-wrap items-center gap-3 sm:gap-4 transition-all duration-700 delay-500 ${
+                    isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                  }`}>
+                    <Link
+                      to="/about"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-gradient-to-r from-[#ff7e54] to-[#e65100] hover:from-[#ff9933] hover:to-[#ff7e54] text-white font-headline font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/30 hover:scale-105 active:scale-95 transition-all"
+                    >
+                      <span>{lang === 'hi' ? 'जीवनी व परिचय' : 'View Biography'}</span>
+                      <ArrowRight size={16} />
+                    </Link>
+                    <Link
+                      to="/gallery"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-white/90 hover:bg-white text-slate-900 font-headline font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all hover:scale-105"
+                    >
+                      <span>{lang === 'hi' ? 'फोटो गैलरी' : 'Photo Gallery'}</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        ))}
+        );
+      })}
+
+      {/* Prev / Next Navigation Arrows (Hidden on small mobile, visible on tablet & desktop) */}
+      <div className="hidden sm:flex absolute right-6 md:right-10 bottom-8 z-30 items-center gap-2">
+        <button
+          onClick={prevSlide}
+          className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center backdrop-blur-md transition-all hover:scale-105 active:scale-95"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft size={20} />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center backdrop-blur-md transition-all hover:scale-105 active:scale-95"
+          aria-label="Next slide"
+        >
+          <ChevronRight size={20} />
+        </button>
       </div>
 
-      {/* Carousel UI */}
-      <div className="absolute bottom-6 md:bottom-8 left-0 w-full z-20">
-        <div className="max-w-[1400px] mx-auto px-4 md:px-8 flex items-center justify-end">
-          <div className="flex gap-2.5 sm:gap-3">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setCurrentSlide(index);
-                }}
-                className="p-1.5 cursor-pointer relative z-30 group"
-                aria-label={`Go to slide ${index + 1}`}
-              >
-                <div className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'bg-[#ff7e54] scale-125' : 'bg-white/40 group-hover:bg-white/70'
-                }`} />
-              </button>
-            ))}
-          </div>
-        </div>
+      {/* Slide Indicators / Dots */}
+      <div className="absolute bottom-6 sm:bottom-8 left-4 sm:left-6 md:left-8 z-30 flex items-center gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`transition-all duration-300 rounded-full ${
+              index === currentSlide 
+                ? 'w-7 sm:w-9 h-2 bg-gradient-to-r from-amber-400 to-[#ff7e54]' 
+                : 'w-2 h-2 bg-white/40 hover:bg-white/70'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
     </section>
   );

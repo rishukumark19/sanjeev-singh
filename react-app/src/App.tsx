@@ -1,11 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Gallery from './pages/Gallery';
-import ContactUs from './pages/ContactUs';
+import PressReleases from './pages/PressReleases';
+import Videos from './pages/Videos';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 
@@ -19,7 +20,13 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<AboutUs />} />
             <Route path="gallery" element={<Gallery />} />
-            <Route path="contact" element={<ContactUs />} />
+            <Route path="press" element={<PressReleases />} />
+            <Route path="updates" element={<PressReleases />} />
+            <Route path="news" element={<PressReleases />} />
+            <Route path="videos" element={<Videos />} />
+            {/* Any legacy contact URLs gracefully redirect to Home */}
+            <Route path="contact" element={<Navigate to="/" replace />} />
+            <Route path="contact-us" element={<Navigate to="/" replace />} />
             <Route path="privacy" element={<PrivacyPolicy />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
             <Route path="terms" element={<TermsConditions />} />

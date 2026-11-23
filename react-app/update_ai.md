@@ -26,3 +26,23 @@ Clone the arunsinghbjp.in website using React, TailwindCSS, and TypeScript. Set 
 - Overhauled the `Home.tsx` Hero Carousel, migrating away from basic CSS snap-scrolling to a highly premium `React` Auto-Fading Carousel using `useState` and `useEffect`, complete with 5-second interval timers, 1000ms cross-fading transitons, and interactive dot pagination.
 - Connected the Social media hubs in `src/pages/Home.tsx` connecting direct endpoints for Instagram and replacing the placeholder Facebook block with a native, live-rendering Facebook Page Component (iframe) targeting Profile #100069661650642.
 - Ran successful verification check (`npm run build`). Passed with 0 errors via tsc and vite!
+
+- **[2026-11-23]**: Complete website redesign and clean-up for Sanjeev Singh:
+  - Removed all third-party external Facebook iframes, SDK scripts (`connect.facebook.net`), and RSS widgets.
+  - Built official vector emblem (`Logo.tsx` and `public/logo.svg`) with collision-resistant `useId()` dynamic gradient IDs.
+  - Integrated lotus emblem across Header, Mobile Drawer, Footer, Home, and About pages.
+  - Added full navigation support for Videos (`/videos`) across Header and Footer.
+  - Added all 17 authentic local Facebook activity photos (`fb_*.jpg` including `fb_profile.jpg`) to native Gallery, Press, and Video archives with bilingual lightbox inspection.
+  - Implemented performant native continuous bulletin marquee ticker (`.animate-marquee`).
+  - Successfully verified production build with 0 TypeScript/Vite errors.
+
+- **[2026-11-23 Theme Overhaul & Contact Removal]**:
+  - Completely removed the contact form, contact page (`ContactUs.tsx`), and phone call CTAs.
+  - Retained and elevated **Singh Mansion, Dhanbad** as the primary historic epicenter of public solidarity and labor movement throughout the Header, Hero, Editorial About section, Home map, and Footer.
+  - Upgraded design theme to the official **Narendra Modi / Amit Shah political statesman style**:
+    - National tricolor accent ribbon (`.tricolor-stripe`) on top of Header and Footer.
+    - Deep statesman navy backgrounds (`#070d19` / `#091322`) with saffron-gold gradients (`#ff6f00`, `#ff9933`).
+    - Lotus flower crest emblem with official BJP badge indicator.
+    - Official bulletin ticker with star highlights and smooth marquee animations.
+    - Clean typography pairing (`Plus Jakarta Sans`, `Noto Sans Devanagari`, `Be Vietnam Pro`).
+  - Verified `npm run build` succeeds with 0 errors, 0 warnings.

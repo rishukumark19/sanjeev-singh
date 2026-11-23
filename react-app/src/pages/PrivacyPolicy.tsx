@@ -112,12 +112,12 @@ const PrivacyPolicy = () => {
 
                   <div className="p-4 bg-[#f8f9fa] rounded-xl border border-gray-100">
                     <h3 className="font-headline font-bold text-[#1a1a2e] mb-1">
-                      {isHi ? 'ग. सोशल मीडिया व बाहरी प्लगइन्स' : 'C. Embedded Social Media Plugins'}
+                      {isHi ? 'ग. बाहरी लिंक व मानचित्र सेवाएं' : 'C. External Links & Maps'}
                     </h3>
                     <p className="leading-relaxed">
                       {isHi
-                        ? 'फेसबुक पेज टाइमलाइन, एक्स (ट्विटर), और गूगल मैप्स जैसे प्लगइन संबंधित कंपनियों की अपनी नीतियों के तहत संचालित होते हैं।'
-                        : 'Third-party social widgets (such as the Facebook Page plugin, X embeds, and Google Maps) operate directly under their respective platform privacy terms.'}
+                        ? 'आधिकारिक सोशल मीडिया हैंडल्स एवं गूगल मैप्स जैसे लिंक संबंधित कंपनियों की अपनी गोपनीयता नीतियों के तहत संचालित होते हैं।'
+                        : 'External links to official social profiles and interactive map services operate directly under their respective platform privacy terms.'}
                     </p>
                   </div>
                 </div>
@@ -230,7 +230,7 @@ const PrivacyPolicy = () => {
                     <MapPin size={18} className="text-[#ff7e54] shrink-0 mt-0.5" />
                     <div>
                       <p className="font-semibold text-white">{isHi ? 'पता' : 'Address'}</p>
-                      <p className="text-white/70 mt-0.5">Singh Mansion, Dhanbad, Jharkhand - 826001, India</p>
+                      <p className="text-white/70 mt-0.5">Dhanbad, Jharkhand - 826001, India</p>
                     </div>
                   </div>
 

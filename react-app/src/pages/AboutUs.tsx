@@ -1,314 +1,340 @@
 import { Link } from 'react-router-dom';
+import { 
+  ShieldCheck, 
+  ArrowRight,
+  Landmark,
+  Compass
+} from 'lucide-react';
 import Reveal from '../components/Reveal';
+import Logo from '../components/Logo';
 import { useLanguage } from '../context/LanguageContext';
 
 const AboutUs = () => {
   const { lang, t } = useLanguage();
   const isHi = lang === 'hi';
 
+  const milestones = [
+    {
+      year: '1986',
+      title: isHi ? 'जन्म एवं पारिवारिक पृष्ठभूमि' : 'Birth & Family Heritage',
+      desc: isHi 
+        ? '5 फरवरी 1986 को सिंदरी (धनबाद) में महान मजदूर नेता, पूर्व विधायक स्व. सूर्यदेव सिंह जी एवं पूर्व विधायक श्रीमती कुंती सिंह जी के परिवार में जन्म।'
+        : 'Born on 5 February 1986 in Sindri, Dhanbad into the distinguished family of legendary trade union leader Late Suryadeo Singh and Smt. Kunti Singh (former MLA).'
+    },
+    {
+      year: '2000 - 2005',
+      title: isHi ? 'शिक्षा एवं जमीनी जनसेवा की दीक्षा' : 'Education & Grassroots Solidarity',
+      desc: isHi 
+        ? 'जमालपुर बलिया से माध्यमिक एवं देहरादून पब्लिक स्कूल से उच्चतर माध्यमिक शिक्षा प्राप्त कर बचपन से ही कोयलांचल के कामगारों की समस्याओं को निकटता से समझा।'
+        : 'Completed secondary schooling at Jamalpur Ballia and higher secondary from Dehradun Public School, gaining firsthand understanding of mining labor.'
+    },
+    {
+      year: '2008 - 2013',
+      title: isHi ? 'जनता मजदूर संघ का नेतृत्व' : 'Janta Mazdoor Sangh Leadership',
+      desc: isHi 
+        ? 'भारत कोकिंग कोल लिमिटेड (BCCL) के कामगारों के अधिकारों, सुरक्षित कार्यदशाओं व वेतन समानता हेतु जनता मजदूर संघ के माध्यम से सशक्त आंदोलन।'
+        : 'Leading Janta Mazdoor Sangh across BCCL collieries, securing fair wage pacts, safety compliances, and medical entitlements for thousands of miners.'
+    },
+    {
+      year: '2014',
+      title: isHi ? 'झरिया से ऐतिहासिक विधानसभा विजय' : 'Landmark Victory in Jharkhand Assembly',
+      desc: isHi 
+        ? 'झरिया विधानसभा सीट से 33,692 मतों के ऐतिहासिक अंतर से प्रचंड विजय हासिल कर जनता की सशक्त आवाज बने।'
+        : 'Elected to the Jharkhand Legislative Assembly from the Jharia constituency with a resounding historic margin of 33,692 votes.'
+    },
+    {
+      year: '2014 - 2019',
+      title: isHi ? 'सड़क, जल व नागरिक अधोसंरचना क्रांति' : 'Legislative Tenacity & Infrastructure',
+      desc: isHi 
+        ? 'झरिया के सुदूर ग्रामीण अंचलों तक पक्की सड़कों का संजाल, स्वच्छ पेयजल पाइपलाइन का विस्तार और स्कूलों व स्वास्थ्य केंद्रों का आधुनिकीकरण।'
+        : 'Transforming Jharia through concrete rural connectivity, municipal water pipeline upgrades, and civic modernization during his legislative tenure.'
+    },
+    {
+      year: 'वर्तमान',
+      title: isHi ? 'अविरल जनसेवा व सीधा जनसंवाद' : 'Continuous Public Service & Redressal',
+      desc: isHi 
+        ? 'धनबाद में प्रतिदिन सैकड़ों आम नागरिकों, कामगारों व युवाओं की समस्याओं का सीधा समाधान और कोयलांचल के अधिकारों की सतत रक्षा।'
+        : 'Steadfast open-door grievance redressal, resolving citizen challenges, and defending coal belt prosperity across Dhanbad.'
+    }
+  ];
+
   return (
-    <div className="bg-white min-h-screen pt-20 md:pt-24 lg:pt-28 pb-16 md:pb-20 lg:pb-28 relative overflow-hidden">
-      {/* Background accents */}
-      <div className="absolute top-0 right-0 w-1/3 h-[600px] bg-[#ff7e54]/5 -skew-x-12 translate-x-32 -z-10" />
-      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-[#ff7e54]/5 rounded-full blur-3xl -z-10" />
+    <div className="bg-[#fdfbf7] min-h-screen pt-[74px] md:pt-[82px] pb-16 sm:pb-24">
+      {/* Hero Header Section (Warm #ff7e54 Saffron & White) */}
+      <section className="bg-gradient-to-r from-[#ff7e54] via-[#f46b3f] to-[#ff7e54] text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 relative overflow-hidden shadow-md">
+        <div className="max-w-[1440px] mx-auto text-center relative z-10 space-y-4">
+          <Reveal>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 border border-white text-white backdrop-blur-md">
+              <Logo size="sm" showBadge />
+              <span className="text-[11px] font-black uppercase tracking-widest">
+                {isHi ? 'व्यक्तित्व एवं जनसेवा का सफर' : 'Leadership, Roots & Dedicated Public Service'}
+              </span>
+            </div>
+          </Reveal>
 
-      {/* Hero Header Section */}
-      <section className="max-w-[1400px] mx-auto px-4 md:px-8 mb-10 md:mb-14">
-        <Reveal>
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px w-10 bg-[#ff7e54]" />
-            <span className="text-[11px] font-black text-[#ff7e54] uppercase tracking-[0.4em]">
-              {t('about.tag')}
-            </span>
-          </div>
-        </Reveal>
+          <Reveal delay={100}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-black text-white tracking-tight leading-tight drop-shadow-sm">
+              {isHi ? 'संजीव सिंह : एक परिचय' : 'Sanjeev Singh : An Introduction'}
+            </h1>
+          </Reveal>
 
-        <Reveal delay={100}>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-headline font-black text-[#1a1a2e] tracking-tight leading-tight mb-4">
-            {t('about.heading')}
-          </h1>
-        </Reveal>
-
-        <Reveal delay={150}>
-          <p className="text-base sm:text-lg md:text-xl text-[#ff7e54] font-headline font-semibold max-w-3xl leading-relaxed">
-            {t('about.heading_sub')}
-          </p>
-        </Reveal>
+          <Reveal delay={150}>
+            <p className="text-sm sm:text-base md:text-lg text-amber-100 font-bold max-w-3xl mx-auto leading-relaxed flex items-center justify-center gap-2 flex-wrap drop-shadow-sm">
+              <span>{isHi ? 'पूर्व विधायक · झरिया विधानसभा' : 'Former MLA · Jharia Constituency'}</span>
+              <span>•</span>
+              <span>{isHi ? 'केंद्रीय नेता · जनता मजदूर संघ' : 'Trade Union Leader · Janta Mazdoor Sangh'}</span>
+              <span>•</span>
+              <span className="text-white font-black flex items-center gap-1">
+                <Landmark size={14} className="text-white" />
+                <span>{isHi ? 'झरिया · धनबाद' : 'Jharia · Dhanbad'}</span>
+              </span>
+            </p>
+          </Reveal>
+        </div>
       </section>
 
-      {/* Main Grid: Sticky Profile & Full Story */}
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+      {/* Main Content Grid */}
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 mt-10 sm:mt-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* Left Column: Portrait & Quick Facts (Sticky on Desktop) */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-8">
+          {/* Left Column: Portrait & Quick Profile Card (Sticky on Desktop) */}
+          <div className="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
             <Reveal delay={100}>
               <div className="relative group max-w-md mx-auto lg:max-w-none">
-                <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10 border-4 border-white bg-slate-100">
+                <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10 border-4 border-white bg-[#091322]">
                   <img 
                     alt="Sanjeev Singh Official Portrait" 
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                    style={{ objectPosition: '42% 20%' }}
+                    style={{ objectPosition: '42% 18%' }}
                     src={`${import.meta.env.BASE_URL}images/real/fb_4.jpg`} 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e]/60 via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#060c18] via-transparent to-transparent opacity-85" />
                   <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#ff9933]">{t('about.tag')}</p>
-                    <h3 className="text-2xl font-headline font-black">Sanjeev Singh</h3>
-                    <p className="text-xs text-white/80">Former MLA · Jharia | Trade Union Leader</p>
+                    <div className="flex items-center gap-2 mb-1">
+                      <Logo size="sm" showBadge />
+                      <span className="text-xs font-bold uppercase tracking-widest text-amber-300 flex items-center gap-1">
+                        <Landmark size={12} className="text-amber-400" />
+                        <span>{isHi ? 'झरिया, धनबाद' : 'Jharia, Dhanbad'}</span>
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-headline font-black">
+                      {isHi ? 'संजीव सिंह' : 'Sanjeev Singh'}
+                    </h3>
+                    <p className="text-xs text-slate-300 font-medium">
+                      {isHi ? 'पूर्व विधायक · झरिया | मजदूर नेता' : 'Former MLA · Jharia | Trade Union Leader'}
+                    </p>
                   </div>
                 </div>
-                <div className="absolute -inset-4 border-2 border-[#ff7e54]/15 rounded-[2rem] -z-10 translate-x-3 translate-y-3" />
-                <div className="absolute -bottom-8 -right-8 w-48 h-48 saffron-gradient rounded-full -z-10 opacity-15 blur-2xl" />
+
+                <div className="absolute -inset-3 border-2 border-amber-400/40 rounded-[2rem] -z-10 translate-x-3 translate-y-3" />
               </div>
             </Reveal>
 
             {/* Quick Facts Card */}
             <Reveal delay={200}>
-              <div className="bg-[#f8f9fa] border border-gray-200/80 rounded-2xl p-6 md:p-8 space-y-5 shadow-sm max-w-md mx-auto lg:max-w-none">
-                <h4 className="text-base font-headline font-black text-[#1a1a2e] uppercase tracking-wider border-b border-gray-200 pb-3 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[#ff7e54] text-xl">badge</span>
-                  {t('about.profile_title')}
+              <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 space-y-4 shadow-sm max-w-md mx-auto lg:max-w-none">
+                <h4 className="text-sm font-headline font-black text-slate-900 uppercase tracking-wider border-b border-slate-200 pb-3 flex items-center gap-2">
+                  <ShieldCheck size={18} className="text-[#ff7e54]" />
+                  <span>{isHi ? 'संक्षिप्त परिचय व विवरण' : 'Profile & Quick Facts'}</span>
                 </h4>
                 
-                <div className="space-y-4 text-sm font-body">
-                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-gray-200/50 pb-3">
-                    <span className="text-gray-500 font-semibold">{t('about.dob_label')}</span>
-                    <span className="text-[#1a1a2e] font-bold sm:text-right">{t('about.dob_val')}</span>
+                <div className="space-y-3 text-xs sm:text-sm font-body">
+                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-slate-100 pb-2.5">
+                    <span className="text-slate-500 font-semibold">{t('about.dob_label')}</span>
+                    <span className="text-slate-900 font-bold sm:text-right">{t('about.dob_val')}</span>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-gray-200/50 pb-3">
-                    <span className="text-gray-500 font-semibold">{t('about.parents_label')}</span>
-                    <span className="text-[#1a1a2e] font-bold sm:text-right">{t('about.parents_val')}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-slate-100 pb-2.5">
+                    <span className="text-slate-500 font-semibold">{t('about.parents_label')}</span>
+                    <span className="text-slate-900 font-bold sm:text-right">{t('about.parents_val')}</span>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-gray-200/50 pb-3">
-                    <span className="text-gray-500 font-semibold">{t('about.residence_label')}</span>
-                    <span className="text-[#1a1a2e] font-bold sm:text-right">{t('about.residence_val')}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-slate-100 pb-2.5">
+                    <span className="text-slate-500 font-semibold">{t('about.residence_label')}</span>
+                    <span className="text-slate-900 font-bold sm:text-right flex items-center gap-1 sm:justify-end">
+                      <Landmark size={12} className="text-[#ff7e54]" />
+                      <span>{t('about.residence_val')}</span>
+                    </span>
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-gray-200/50 pb-3">
-                    <span className="text-gray-500 font-semibold">{t('about.constituency_label')}</span>
-                    <span className="text-[#1a1a2e] font-bold sm:text-right">{t('about.constituency_val')}</span>
+                  <div className="flex flex-col sm:flex-row sm:justify-between gap-1 border-b border-slate-100 pb-2.5">
+                    <span className="text-slate-500 font-semibold">{t('about.constituency_label')}</span>
+                    <span className="text-slate-900 font-bold sm:text-right">{t('about.constituency_val')}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
-                    <span className="text-gray-500 font-semibold">{t('about.union_label')}</span>
+                    <span className="text-slate-500 font-semibold">{t('about.union_label')}</span>
                     <span className="text-[#ff7e54] font-bold sm:text-right">{t('about.union_val')}</span>
                   </div>
                 </div>
 
-                {/* Social Connect Icons */}
-                <div className="pt-4 border-t border-gray-200 flex items-center justify-center gap-5 text-[#ff7e54]">
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white rounded-full shadow-sm hover:bg-[#ff7e54] hover:text-white transition-all hover:scale-110" aria-label="Facebook">
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                      <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
-                    </svg>
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white rounded-full shadow-sm hover:bg-[#ff7e54] hover:text-white transition-all hover:scale-110" aria-label="Twitter">
-                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                  </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white rounded-full shadow-sm hover:bg-[#ff7e54] hover:text-white transition-all hover:scale-110" aria-label="Instagram">
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                    </svg>
-                  </a>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white rounded-full shadow-sm hover:bg-[#ff7e54] hover:text-white transition-all hover:scale-110" aria-label="YouTube">
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                      <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.525 3.545 12 3.545 12 3.545s-7.525 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.027 0 12 0 12s0 3.973.502 5.837a3.003 3.003 0 002.11 2.11C4.475 20.455 12 20.455 12 20.455s7.525 0 9.388-.508a3.003 3.003 0 002.11-2.11C24 15.973 24 12 24 12s0-3.973-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                  </a>
+                <div className="pt-3 border-t border-slate-100">
+                  <div className="p-3 bg-amber-50 rounded-xl border border-amber-200/80 text-center">
+                    <p className="text-[11px] font-bold text-amber-900 uppercase tracking-wider">
+                      {isHi ? 'जनता मजदूर संघ — जनसेवा व श्रमिक सम्मान' : 'Janta Mazdoor Sangh — Labor Rights & Trust'}
+                    </p>
+                    <p className="text-[10px] text-amber-700 mt-0.5">
+                      {isHi ? 'धनबाद, झारखंड · झरिया विधानसभा' : 'Dhanbad, Jharkhand · Jharia Constituency'}
+                    </p>
+                  </div>
                 </div>
               </div>
             </Reveal>
           </div>
 
-          {/* Right Column: Full Narrative Biography */}
-          <div className="lg:col-span-7 space-y-12 md:space-y-16">
+          {/* Right Column: Full Narrative Biography & Timeline */}
+          <div className="lg:col-span-7 space-y-12">
             
             {/* Section 01: Origins and Early Life */}
-            <div className="space-y-6">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/90 shadow-sm space-y-5">
               <Reveal>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-black text-white bg-[#ff7e54] px-2.5 py-0.5 rounded-full">01</span>
-                    <h2 className="text-2xl sm:text-3xl font-headline font-black text-[#1a1a2e] uppercase tracking-wide">
+                    <span className="text-xs font-black text-white bg-gradient-to-r from-[#ff7e54] to-[#e65100] px-3 py-1 rounded-full">01</span>
+                    <h2 className="text-2xl sm:text-3xl font-headline font-black text-slate-900 uppercase tracking-wide">
                       {t('about.origins.title')}
                     </h2>
                   </div>
-                  <div className="h-[2px] w-20 bg-[#ff7e54]" />
+                  <div className="h-1 w-20 bg-[#ff7e54] rounded-full" />
                 </div>
               </Reveal>
 
               <Reveal delay={100}>
-                <div className="space-y-5 text-gray-700 font-body text-base sm:text-lg leading-relaxed">
-                  <p>
-                    {t('about.origins.p1')}
-                  </p>
-                  <p>
-                    {t('about.origins.p2')}
-                  </p>
-                </div>
-              </Reveal>
-
-              <Reveal delay={150}>
-                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200/80 my-4 group">
-                  <div className="aspect-[16/9] overflow-hidden relative">
-                    <img
-                      src={`${import.meta.env.BASE_URL}images/real/fb_9.jpg`}
-                      alt="Public outreach and trade union solidarity"
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                      style={{ objectPosition: 'center 20%' }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-4 right-4 text-white">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[#ff9933] bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
-                        {isHi ? 'जनसम्पर्क एवं श्रमिक एकता' : 'Public Outreach & Labor Solidarity'}
-                      </span>
-                    </div>
-                  </div>
+                <div className="space-y-4 text-slate-700 font-body text-sm sm:text-base leading-relaxed">
+                  <p>{t('about.origins.p1')}</p>
+                  <p>{t('about.origins.p2')}</p>
                 </div>
               </Reveal>
             </div>
 
-            {/* Inspirational Quote Card */}
+            {/* Quote Callout */}
             <Reveal delay={150}>
-              <div className="relative overflow-hidden bg-gradient-to-br from-[#1a1a2e] to-[#252542] rounded-3xl p-8 md:p-10 text-white shadow-xl">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#ff7e54]/10 rounded-full blur-2xl" />
-                <span className="material-symbols-outlined text-5xl md:text-6xl text-[#ff7e54] opacity-80 mb-4 block">format_quote</span>
-                <blockquote className="text-lg sm:text-xl md:text-2xl font-headline font-medium leading-relaxed italic text-white/95 mb-4">
+              <div className="rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-[#070d19] to-[#0d1728] text-white border-l-4 border-[#ff7e54] shadow-xl">
+                <p className="text-base sm:text-lg md:text-xl font-headline font-semibold italic leading-relaxed text-amber-200">
                   {t('about.quote')}
-                </blockquote>
-                <div className="flex items-center gap-3 pt-4 border-t border-white/10">
-                  <div className="h-0.5 w-8 bg-[#ff7e54]" />
-                  <p className="text-xs font-headline font-bold uppercase tracking-widest text-[#ff7e54]">Sanjeev Singh · Jharia</p>
-                </div>
+                </p>
+                <p className="text-xs text-slate-300 font-bold uppercase tracking-wider mt-3 flex items-center gap-2">
+                  <span>— Sanjeev Singh, Former MLA (Jharia)</span>
+                  <span>•</span>
+                  <span className="text-amber-400">Jharia, Dhanbad</span>
+                </p>
               </div>
             </Reveal>
 
             {/* Section 02: Political Career & Union Leadership */}
-            <div className="space-y-6">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/90 shadow-sm space-y-5">
               <Reveal>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-black text-white bg-[#ff7e54] px-2.5 py-0.5 rounded-full">02</span>
-                    <h2 className="text-2xl sm:text-3xl font-headline font-black text-[#1a1a2e] uppercase tracking-wide">
+                    <span className="text-xs font-black text-white bg-gradient-to-r from-[#ff7e54] to-[#e65100] px-3 py-1 rounded-full">02</span>
+                    <h2 className="text-2xl sm:text-3xl font-headline font-black text-slate-900 uppercase tracking-wide">
                       {t('about.career.title')}
                     </h2>
                   </div>
-                  <div className="h-[2px] w-20 bg-[#ff7e54]" />
+                  <div className="h-1 w-20 bg-[#ff7e54] rounded-full" />
                 </div>
               </Reveal>
 
               <Reveal delay={100}>
-                <div className="space-y-5 text-gray-700 font-body text-base sm:text-lg leading-relaxed">
-                  <p>
-                    {t('about.career.p1')}
-                  </p>
-                  <p>
-                    {t('about.career.p2')}
-                  </p>
-                  <p>
-                    {t('about.career.p3')}
-                  </p>
+                <div className="space-y-4 text-slate-700 font-body text-sm sm:text-base leading-relaxed">
+                  <p>{t('about.career.p1')}</p>
+                  <p>{t('about.career.p2')}</p>
+                  <p>{t('about.career.p3')}</p>
                 </div>
               </Reveal>
 
-              <Reveal delay={150}>
-                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200/80 my-4 group">
-                  <div className="aspect-[16/9] overflow-hidden relative">
-                    <img
-                      src={`${import.meta.env.BASE_URL}images/real/fb_7.jpg`}
-                      alt="Governance and development review at Dhanbad Collectorate"
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                      style={{ objectPosition: 'center 35%' }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-4 right-4 text-white">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[#ff9933] bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
-                        {isHi ? 'दिशा (DISHA) समीक्षा बैठक · धनबाद समाहरणालय' : 'DISHA Review Meeting · District Governance'}
-                      </span>
-                    </div>
-                  </div>
+              {/* Photo Showcase from Facebook */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                <div className="rounded-xl overflow-hidden aspect-video border border-slate-200 shadow-sm">
+                  <img 
+                    src={`${import.meta.env.BASE_URL}images/real/fb_townhall.jpg`} 
+                    alt="Workers Convention" 
+                    className="w-full h-full object-cover" 
+                  />
                 </div>
-              </Reveal>
+                <div className="rounded-xl overflow-hidden aspect-video border border-slate-200 shadow-sm">
+                  <img 
+                    src={`${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`} 
+                    alt="Civic Project Inauguration" 
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* Section 03: Continuing the Legacy */}
-            <div className="space-y-6">
+            {/* Section 03: Interactive Timeline */}
+            <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/90 shadow-sm space-y-6">
               <Reveal>
-                <div className="space-y-3">
+                <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-black text-white bg-[#ff7e54] px-2.5 py-0.5 rounded-full">03</span>
-                    <h2 className="text-2xl sm:text-3xl font-headline font-black text-[#1a1a2e] uppercase tracking-wide">
+                    <span className="text-xs font-black text-white bg-gradient-to-r from-[#ff7e54] to-[#e65100] px-3 py-1 rounded-full">03</span>
+                    <h2 className="text-2xl sm:text-3xl font-headline font-black text-slate-900 uppercase tracking-wide">
+                      {isHi ? 'महत्वपूर्ण पड़ाव एवं यात्रा' : 'Key Milestones & Journey'}
+                    </h2>
+                  </div>
+                  <div className="h-1 w-20 bg-[#ff7e54] rounded-full" />
+                </div>
+              </Reveal>
+
+              <div className="space-y-6 pt-2 border-l-2 border-amber-400/50 ml-3 sm:ml-4 pl-4 sm:pl-6">
+                {milestones.map((m, idx) => (
+                  <Reveal key={idx} delay={idx * 60}>
+                    <div className="relative group">
+                      {/* Timeline dot */}
+                      <span className="absolute -left-[25px] sm:-left-[33px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#ff7e54] group-hover:scale-125 transition-transform" />
+                      
+                      <div className="space-y-1">
+                        <span className="text-xs font-black text-[#ff7e54] tracking-wider uppercase bg-orange-50 px-2.5 py-0.5 rounded border border-orange-200 inline-block">
+                          {m.year}
+                        </span>
+                        <h4 className="text-base sm:text-lg font-headline font-bold text-slate-900 leading-snug">
+                          {m.title}
+                        </h4>
+                        <p className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
+                          {m.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+
+            {/* Section 04: Continuing the Legacy of Public Service */}
+            <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/90 shadow-sm space-y-5">
+              <Reveal>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-black text-white bg-gradient-to-r from-[#ff7e54] to-[#e65100] px-3 py-1 rounded-full">04</span>
+                    <h2 className="text-2xl sm:text-3xl font-headline font-black text-slate-900 uppercase tracking-wide">
                       {t('about.legacy.title')}
                     </h2>
                   </div>
-                  <div className="h-[2px] w-20 bg-[#ff7e54]" />
+                  <div className="h-1 w-20 bg-[#ff7e54] rounded-full" />
                 </div>
               </Reveal>
 
               <Reveal delay={100}>
-                <div className="space-y-5 text-gray-700 font-body text-base sm:text-lg leading-relaxed">
-                  <p>
-                    {t('about.legacy.p1')}
-                  </p>
-                  <p>
-                    {t('about.legacy.p2')}
-                  </p>
+                <div className="space-y-4 text-slate-700 font-body text-sm sm:text-base leading-relaxed">
+                  <p>{t('about.legacy.p1')}</p>
+                  <p>{t('about.legacy.p2')}</p>
                 </div>
               </Reveal>
 
-              <Reveal delay={150}>
-                <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200/80 my-4 group">
-                  <div className="aspect-[16/9] overflow-hidden relative">
-                    <img
-                      src={`${import.meta.env.BASE_URL}images/real/fb_6.jpg`}
-                      alt="Citizen grievance redressal at Singh Mansion"
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                      style={{ objectPosition: '40% 25%' }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-3 left-4 right-4 text-white">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[#ff9933] bg-black/40 px-2 py-0.5 rounded backdrop-blur-sm">
-                        {isHi ? 'सिंह मेंशन आवास पर जनसुनवाई व प्रतिनिधिमंडल संवाद' : 'Singh Mansion Public Hearings & Dialogue'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-
-            {/* Action CTA */}
-            <Reveal delay={150}>
-              <div className="pt-6 border-t border-gray-200">
-                <Link 
+              <div className="pt-4 flex flex-wrap gap-4">
+                <Link
                   to="/gallery"
-                  className="px-8 py-3.5 bg-[#ff7e54] hover:bg-[#e56233] text-white rounded-full font-headline font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-orange-500/20 hover:scale-105 inline-flex items-center gap-2"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#ff7e54] to-[#e65100] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow hover:scale-105 transition-all"
                 >
-                  <span>{t('about.cta')}</span>
-                  <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                  <span>{isHi ? 'फोटो गैलरी देखें' : 'Explore Photo Gallery'}</span>
+                  <ArrowRight size={14} />
+                </Link>
+                <Link
+                  to="/press"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-slate-300 hover:border-slate-800 text-slate-900 font-bold text-xs sm:text-sm uppercase tracking-wider transition-all"
+                >
+                  <Compass size={14} className="text-[#ff7e54]" />
+                  <span>{isHi ? 'समाचार व विज्ञप्तियां' : 'Press & Newsroom'}</span>
                 </Link>
               </div>
-            </Reveal>
-
+            </div>
           </div>
-        </div>
-      </div>
-
-      {/* Vertical Navigation Tab (Listen, Act, Share style) */}
-      <div className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 flex-col z-50">
-        <div className="flex flex-col bg-[#ff7e54] text-white rounded-l-xl overflow-hidden shadow-lg border-y border-l border-white/20">
-          <button className="py-5 px-3 flex flex-col items-center hover:bg-[#e56233] transition-colors border-b border-white/10 group" aria-label="Listen">
-            <span className="text-[10px] font-black uppercase tracking-widest [writing-mode:vertical-lr] rotate-180 mb-2">LISTEN</span>
-            <span className="material-symbols-outlined text-sm group-hover:scale-110 transition-transform">volume_up</span>
-          </button>
-          <button className="py-5 px-3 flex flex-col items-center hover:bg-[#e56233] transition-colors border-b border-white/10 group" aria-label="Act">
-            <span className="text-[10px] font-black uppercase tracking-widest [writing-mode:vertical-lr] rotate-180 mb-2">ACT</span>
-            <span className="material-symbols-outlined text-sm group-hover:scale-110 transition-transform">touch_app</span>
-          </button>
-          <button className="py-5 px-3 flex flex-col items-center hover:bg-[#e56233] transition-colors group" aria-label="Share">
-            <span className="text-[10px] font-black uppercase tracking-widest [writing-mode:vertical-lr] rotate-180 mb-2">SHARE</span>
-            <span className="material-symbols-outlined text-sm group-hover:scale-110 transition-transform">share</span>
-          </button>
         </div>
       </div>
     </div>

@@ -26,11 +26,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.about': 'About',
     'nav.videos': 'Videos',
     'nav.gallery': 'Gallery',
-    'nav.contact': 'Contact',
     'nav.subtitle': 'Former MLA · Jharia',
-    'nav.call': 'Call',
     'nav.menu': 'Menu',
-    'nav.location': 'Dhanbad · Jharkhand',
+    'nav.location': 'Jharia · Dhanbad',
 
     // Home
     'home.slide1.title': 'Upholding Labor Dignity',
@@ -47,7 +45,7 @@ const translations: Record<Language, Record<string, string>> = {
     'home.about.tag': 'About',
     'home.about.title1': 'Sanjeev ',
     'home.about.title2': 'Singh',
-    'home.about.p1': 'Sanjeev Singh is a dedicated leader and social worker from Dhanbad, Jharkhand. Coming from the prestigious "Singh Mansion," his family has a deep-rooted history of serving the public for generations.',
+    'home.about.p1': 'Sanjeev Singh is a dedicated leader and social worker from Dhanbad, Jharkhand. Coming from an illustrious political family, he carries forward a deep-rooted generational commitment to public service.',
     'home.about.p2': 'As a former MLA of Jharia, Sanjeev Singh has been instrumental in spearheading infrastructure development, labor welfare, and community engagement. His vision is defined by transparency and direct service to every citizen of the region.',
     'home.about.cta': 'Learn More',
 
@@ -85,7 +83,7 @@ const translations: Record<Language, Record<string, string>> = {
     'home.map.tag': 'Our Landmark',
     'home.map.title1': 'Visit Our ',
     'home.map.title2': 'Office',
-    'home.map.address': 'Singh Mansion, Dhanbad, Jharkhand',
+    'home.map.address': 'Constituency Office, Dhanbad, Jharkhand',
 
     // About
     'about.tag': 'Leadership & Legacy',
@@ -98,7 +96,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.parents_label': 'Parents',
     'about.parents_val': 'Late Suryadeo Singh & Smt. Kunti Singh',
     'about.residence_label': 'Residence',
-    'about.residence_val': 'Singh Mansion, Dhanbad, Jharkhand',
+    'about.residence_val': 'Dhanbad, Jharkhand',
     'about.constituency_label': 'Constituency',
     'about.constituency_val': 'Jharia, Jharkhand (MLA 2014 – 2019)',
     'about.union_label': 'Labor Union',
@@ -109,23 +107,23 @@ const translations: Record<Language, Record<string, string>> = {
     'about.quote': '"The strength of Dhanbad lies not just in its coal, but in the unyielding resilience of its workers. Our mandate is to protect that resilience and ensure justice for every family."',
     'about.career.title': 'Political Career & Union Leadership',
     'about.career.p1': 'A prominent leader of the Janta Mazdoor Sangh, Sanjeev Singh has been a staunch advocate for the rights and welfare of workers across Bharat Coking Coal Limited (BCCL). His union leadership centers on securing equitable wages, occupational health safety, and guaranteed medical and social welfare benefits for thousands of miners who risk their lives daily.',
-    'about.career.p2': 'His grassroots commitment propelled him to the forefront of regional state politics. Contesting the 2014 Jharkhand Legislative Assembly elections from the Jharia constituency as a nominee of the Bharatiya Janata Party (BJP), Sanjeev Singh secured a resounding victory with a decisive margin of 33,692 votes.',
+    'about.career.p2': 'His grassroots commitment propelled him to the forefront of regional state politics. Contesting the 2014 Jharkhand Legislative Assembly elections from the Jharia constituency, Sanjeev Singh secured a resounding victory with a decisive margin of 33,692 votes.',
     'about.career.p3': 'During his legislative tenure, he spearheaded essential development initiatives throughout Jharia—ranging from connecting remote rural habitations with concrete roadways, expanding clean drinking water pipelines, and establishing upgraded educational and civic facilities.',
-    'about.legacy.title': 'Continuing the Legacy at Singh Mansion',
-    'about.legacy.p1': 'Today, he continues his public service from the iconic Singh Mansion in Dhanbad, the historic epicenter of the region\'s labor solidarity and civic movements. Day after day, hundreds of workers, families, and constituents visit to seek guidance, resolve grievances, and voice their needs.',
+    'about.legacy.title': 'Continuing the Generational Mission of Public Service',
+    'about.legacy.p1': 'Today, he continues his public service from Dhanbad, anchoring the region\'s labor solidarity and civic movements. Day after day, hundreds of workers, families, and constituents visit to seek guidance, resolve grievances, and voice their needs.',
     'about.legacy.p2': 'Through persistent community engagement, charitable outreach, and uncompromising union representation, Sanjeev Singh remains dedicated to the socio-economic empowerment of the working class and the comprehensive progress of Dhanbad.',
     'about.cta': 'Explore Photo Gallery',
 
     // Press
-    'press.tag': 'Official Social Newsroom',
-    'press.title1': 'LIVE',
-    'press.title2': 'UPDATES',
-    'press.sub': 'A real-time broadcast of initiatives, events, and announcements, synced directly from Sanjeev Singh\'s official Facebook desk. No manual updates required.',
+    'press.tag': 'Official Press & Newsroom',
+    'press.title1': 'PRESS',
+    'press.title2': 'RELEASES',
+    'press.sub': 'Verified statements, development reports, and official announcements issued from the secretariat of Sanjeev Singh.',
     'press.timeline': 'Official Timeline',
-    'press.powered': 'Powered by Facebook Live Connect',
-    'press.stream': 'Direct Stream Active',
-    'press.archive': 'OPEN FACEBOOK ARCHIVE',
-    'press.back': 'Return to Dashboard',
+    'press.powered': 'Official Media & Press Cell',
+    'press.stream': 'Official Bulletin Active',
+    'press.archive': 'VIEW FULL ARCHIVE',
+    'press.back': 'Return to Home',
 
     // Videos
     'videos.tag': 'Media highlights',
@@ -140,12 +138,12 @@ const translations: Record<Language, Record<string, string>> = {
     'videos.back': 'Return to Home',
 
     // Gallery
-    'gallery.tag': 'Social Feed',
-    'gallery.title1': 'Latest',
-    'gallery.title2': 'Updates',
-    'gallery.sub': 'Latest updates and announcements directly from our official Facebook feed.',
-    'gallery.feed': 'Latest Photo Feed',
-    'gallery.stream': 'Direct Stream',
+    'gallery.tag': 'Media Archive',
+    'gallery.title1': 'Field',
+    'gallery.title2': 'Chronicles',
+    'gallery.sub': 'High-resolution photo archive of field visits, community programs, and labor union dialogues.',
+    'gallery.feed': 'Photo Archive',
+    'gallery.stream': 'Official Media Archive',
     'gallery.home': 'HOME DASHBOARD',
     
     // Photos
@@ -161,7 +159,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.direct': 'Direct',
     'contact.chambers': 'Official Chambers',
     'contact.office': 'Main Office',
-    'contact.address': 'Singh Mansion, Janta Mazdoor Sangh Office, Dhanbad, Jharkhand, India',
+    'contact.address': 'Janta Mazdoor Sangh Office, Dhanbad, Jharkhand, India',
     'contact.email_title': 'Email Inquiries',
     'contact.phone_title': 'Public Helpline',
     'contact.map': 'Location Map',
@@ -203,11 +201,9 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.about': 'परिचय',
     'nav.videos': 'वीडियो',
     'nav.gallery': 'गैलरी',
-    'nav.contact': 'संपर्क',
     'nav.subtitle': 'पूर्व विधायक · झरिया',
-    'nav.call': 'कॉल',
     'nav.menu': 'मेनू',
-    'nav.location': 'धनबाद · झारखंड',
+    'nav.location': 'झरिया · धनबाद',
 
     // Home
     'home.slide1.title': 'श्रम की गरिमा को बनाए रखना',
@@ -224,7 +220,7 @@ const translations: Record<Language, Record<string, string>> = {
     'home.about.tag': 'परिचय',
     'home.about.title1': 'संजीव ',
     'home.about.title2': 'सिंह',
-    'home.about.p1': 'संजीव सिंह धनबाद, झारखंड के एक समर्पित नेता और समाजसेवी हैं। प्रतिष्ठित "सिंह मेंशन" से आने वाले उनके परिवार का पीढ़ियों से जनसेवा का गहरा इतिहास रहा है।',
+    'home.about.p1': 'संजीव सिंह धनबाद, झारखंड के एक समर्पित नेता और समाजसेवी हैं। जनसेवा को समर्पित परिवार से आने वाले संजीव सिंह का कोयलांचल की जनता के साथ अटूट और पीढ़ियों का नाता रहा है।',
     'home.about.p2': 'झरिया के पूर्व विधायक के रूप में, संजीव सिंह ने बुनियादी ढांचा विकास, श्रम कल्याण और सामुदायिक जुड़ाव में महत्वपूर्ण भूमिका निभाई है। उनकी दृष्टि पारदर्शिता और क्षेत्र के प्रत्येक नागरिक की सीधी सेवा से परिभाषित है।',
     'home.about.cta': 'और जानें',
 
@@ -262,7 +258,7 @@ const translations: Record<Language, Record<string, string>> = {
     'home.map.tag': 'हमारा स्थान',
     'home.map.title1': 'हमारा ',
     'home.map.title2': 'कार्यालय',
-    'home.map.address': 'सिंह मेंशन, धनबाद, झारखंड',
+    'home.map.address': 'केंद्रीय जनसेवा कार्यालय, धनबाद, झारखंड',
 
     // About
     'about.tag': 'नेतृत्व और विरासत',
@@ -275,7 +271,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.parents_label': 'माता-पिता',
     'about.parents_val': 'स्व. सूर्यदेव सिंह एवं श्रीमती कुंती सिंह',
     'about.residence_label': 'निवास स्थान',
-    'about.residence_val': 'सिंह मेंशन, धनबाद, झारखंड',
+    'about.residence_val': 'धनबाद, झारखंड',
     'about.constituency_label': 'विधानसभा क्षेत्र',
     'about.constituency_val': 'झरिया, झारखंड (विधायक 2014 – 2019)',
     'about.union_label': 'मजदूर संगठन',
@@ -286,23 +282,23 @@ const translations: Record<Language, Record<string, string>> = {
     'about.quote': '"धनबाद की ताकत सिर्फ उसके कोयले में नहीं, बल्कि उसके श्रमिकों के अडिग साहस में निहित है। हमारा कर्तव्य उस साहस की रक्षा करना और हर परिवार को न्याय दिलाना है।"',
     'about.career.title': 'राजनीतिक करियर और यूनियन नेतृत्व',
     'about.career.p1': 'जनता मजदूर संघ के एक प्रमुख नेता के रूप में, संजीव सिंह भारत कोकिंग कोल लिमिटेड (BCCL) के श्रमिकों के अधिकारों और हितों के कट्टर संरक्षक रहे हैं। उनका यूनियन कार्य उचित पारिश्रमिक, कार्यस्थल सुरक्षा, और अपनी जान जोखिम में डालने वाले हजारों कोयला खनिकों के लिए व्यापक स्वास्थ्य और सामाजिक सुरक्षा लाभ सुनिश्चित करने पर केंद्रित रहा है।',
-    'about.career.p2': 'उनकी जमीनी सक्रियता और लोकप्रियता ने उन्हें राज्य की राजनीति के केंद्र में ला खड़ा किया। 2014 के झारखंड विधानसभा चुनाव में उन्होंने भारतीय जनता पार्टी (BJP) के उम्मीदवार के रूप में झरिया विधानसभा सीट से चुनाव लड़ा और 33,692 मतों के ऐतिहासिक अंतर से प्रचंड जीत हासिल की।',
+    'about.career.p2': 'उनकी जमीनी सक्रियता और लोकप्रियता ने उन्हें राज्य की राजनीति के केंद्र में ला खड़ा किया। 2014 के झारखंड विधानसभा चुनाव में उन्होंने झरिया विधानसभा सीट से चुनाव लड़ा और 33,692 मतों के ऐतिहासिक अंतर से प्रचंड जीत हासिल की।',
     'about.career.p3': 'विधायक के रूप में अपने कार्यकाल के दौरान, उन्होंने झरिया क्षेत्र में बुनियादी ढांचे के विकास, दूरदराज के क्षेत्रों तक पक्की सड़कों के निर्माण, शुद्ध पेयजल आपूर्ति और आधुनिक शैक्षणिक व नागरिक सुविधाओं के विस्तार के लिए कई युगांतरकारी योजनाएं शुरू कीं।',
-    'about.legacy.title': 'सिंह मेंशन से लोकसेवा की अविरल धारा',
-    'about.legacy.p1': 'आज भी, वे धनबाद स्थित ऐतिहासिक सिंह मेंशन से निरंतर जनसेवा और संगठनात्मक कार्य का संचालन करते हैं, जो दशकों से कोयलांचल के श्रम और सामाजिक आंदोलन का मुख्य केंद्र रहा है। प्रतिदिन सैकड़ों खनिक, ग्रामीण और क्षेत्रवासी अपनी समस्याओं और समाधान के लिए यहां पहुंचते हैं।',
+    'about.legacy.title': 'कोयलांचल में लोकसेवा की अविरल धारा',
+    'about.legacy.p1': 'आज भी, वे धनबाद से निरंतर जनसेवा और संगठनात्मक कार्य का संचालन करते हैं, जो दशकों से कोयलांचल के श्रम और सामाजिक आंदोलन का मुख्य केंद्र रहा है। प्रतिदिन सैकड़ों खनिक, ग्रामीण और क्षेत्रवासी अपनी समस्याओं और समाधान के लिए पहुंचते हैं।',
     'about.legacy.p2': 'लगातार सामुदायिक संवाद, सामाजिक कल्याण कार्य और श्रमिकों के हितों की रक्षा के माध्यम से संजीव सिंह धनबाद और झरिया के समग्र विकास व श्रमिक सम्मान के लिए समर्पित हैं।',
     'about.cta': 'फोटो गैलरी देखें',
 
     // Press
-    'press.tag': 'आधिकारिक सोशल न्यूज़रूम',
-    'press.title1': 'लाइव',
-    'press.title2': 'अपडेट',
-    'press.sub': 'पहल, कार्यक्रमों और घोषणाओं का रियल-टाइम प्रसारण, सीधे संजीव सिंह के आधिकारिक फेसबुक से।',
+    'press.tag': 'आधिकारिक प्रेस कक्ष व समाचार',
+    'press.title1': 'प्रेस',
+    'press.title2': 'विज्ञप्तियां',
+    'press.sub': 'संजीव सिंह के आधिकारिक बयान, विकासात्मक पहलों की रिपोर्ट एवं जनहित घोषणाओं का प्रामाणिक स्रोत।',
     'press.timeline': 'आधिकारिक टाइमलाइन',
-    'press.powered': 'फेसबुक लाइव कनेक्ट द्वारा संचालित',
-    'press.stream': 'डायरेक्ट स्ट्रीम सक्रिय',
-    'press.archive': 'फेसबुक आर्काइव खोलें',
-    'press.back': 'डैशबोर्ड पर वापस',
+    'press.powered': 'आधिकारिक प्रेस एवं मीडिया सेल',
+    'press.stream': 'आधिकारिक बुलेटिन सक्रिय',
+    'press.archive': 'पूर्ण संग्रह देखें',
+    'press.back': 'होम पर वापस',
 
     // Videos
     'videos.tag': 'मीडिया हाइलाइट्स',
@@ -317,12 +313,12 @@ const translations: Record<Language, Record<string, string>> = {
     'videos.back': 'होम पर वापस',
 
     // Gallery
-    'gallery.tag': 'नवीनतम फ़ीड',
-    'gallery.title1': 'नवीनतम',
-    'gallery.title2': 'अपडेट्स',
-    'gallery.sub': 'हमारे आधिकारिक फेसबुक फ़ीड से सीधे नवीनतम अपडेट और घोषणाएं।',
-    'gallery.feed': 'नवीनतम फ़ोटो फ़ीड',
-    'gallery.stream': 'डायरेक्ट स्ट्रीम',
+    'gallery.tag': 'मीडिया संग्रह',
+    'gallery.title1': 'दृश्य',
+    'gallery.title2': 'यात्रा',
+    'gallery.sub': 'क्षेत्र भ्रमण, सामुदायिक कार्यक्रमों और मजदूर संवाद का उच्च गुणवत्ता वाला आधिकारिक फोटो संग्रह।',
+    'gallery.feed': 'आधिकारिक फोटो संग्रह',
+    'gallery.stream': 'आधिकारिक मीडिया आर्काइव',
     'gallery.home': 'होम डैशबोर्ड',
 
     // Photos

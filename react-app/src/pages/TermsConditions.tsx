@@ -220,7 +220,7 @@ const TermsConditions = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-white">{isHi ? 'स्थान' : 'Secretariat Location'}</p>
-                    <p className="text-white/70 mt-0.5">Singh Mansion, Dhanbad, Jharkhand - 826001</p>
+                    <p className="text-white/70 mt-0.5">Dhanbad, Jharkhand - 826001, India</p>
                   </div>
                 </div>
 
