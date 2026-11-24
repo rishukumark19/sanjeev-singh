@@ -556,7 +556,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 9. Central Public Office & Civic Presence Showcase */}
+      {/* 9. Singh Mansion Landmark & Residence Location */}
       <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -565,16 +565,16 @@ const Home = () => {
                 <div className="flex items-center gap-3">
                   <div className="h-1 w-10 bg-[#ff7e54] rounded-full" />
                   <span className="text-xs font-black text-[#ff7e54] uppercase tracking-[0.25em]">
-                    {isHi ? 'जनसंपर्क व कार्यालय' : 'Secretariat & Office'}
+                    {isHi ? 'ऐतिहासिक स्थल व निवास' : 'Historic Landmark & Residence'}
                   </span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-headline font-black text-slate-950 mt-2">
-                  {isHi ? 'केंद्रीय जनसेवा कार्यालय, धनबाद' : 'Central Public Office, Dhanbad'}
+                  {isHi ? 'सिंह मैंशन, धनबाद' : 'Singh Mansion, Dhanbad'}
                 </h2>
                 <p className="text-sm text-slate-600 leading-relaxed font-body">
                   {isHi
-                    ? 'कोयलांचल का वह ऐतिहासिक परिसर जो दशकों से मजदूर आंदोलन, जनसुनवाई और सामाजिक न्याय का मुख्य केंद्र रहा है। स्व. सूर्यदेव सिंह जी के आदर्शों पर चलकर यह स्थल आज भी जनसेवा के लिए सदैव तत्पर है।'
-                    : 'The central hub of labor solidarity, civic representation, and public welfare in Jharkhand for generations, continuing a proud legacy.'}
+                    ? 'स्व. सूर्यदेव सिंह जी के समय से लेकर आज तक, सिंह मैंशन कोयलांचल में मजदूर आंदोलन, जनसंवाद और सामाजिक न्याय का मुख्य केंद्र रहा है। क्षेत्र के नागरिक व कामगार अपनी समस्याओं के समाधान हेतु यहां निरंतर पहुंचते हैं।'
+                    : 'The historic family residence and public center of labor solidarity, civic representation, and grassroots welfare in Dhanbad for generations.'}
                 </p>
               </Reveal>
 
@@ -582,7 +582,7 @@ const Home = () => {
                 <div className="p-5 rounded-2xl bg-[#fdfbf7] border border-amber-300/60 space-y-3 text-sm text-slate-800">
                   <div className="flex items-center gap-2 text-amber-700 font-bold text-xs uppercase tracking-wider">
                     <ShieldCheck size={16} className="text-[#ff7e54]" />
-                    <span>{isHi ? 'जनता मजदूर संघ व झरिया जनसेवा' : 'Janta Mazdoor Sangh & Public Service'}</span>
+                    <span>{isHi ? 'सिंह मैंशन · जनता मजदूर संघ' : 'Singh Mansion · Janta Mazdoor Sangh'}</span>
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed">
                     {isHi
@@ -607,8 +607,8 @@ const Home = () => {
               <Reveal delay={100}>
                 <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200 h-[320px] sm:h-[400px] w-full relative">
                   <iframe
-                    title="Central Public Office Dhanbad Map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116845.8906371755!2d86.35338875!3d23.7957388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f6bc9a87d00f13%3A0xb3551532057be035!2sDhanbad%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    title="Singh Mansion Dhanbad Map"
+                    src="https://maps.google.com/maps?q=Singh%20Mansion%2C%20Dhanbad%2C%20Jharkhand&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -618,7 +618,7 @@ const Home = () => {
                   />
                   <div className="absolute top-3 left-3 bg-[#070d19]/90 text-white px-3 py-1.5 rounded-lg border border-amber-400/40 text-xs font-bold flex items-center gap-1.5 shadow">
                     <Landmark size={14} className="text-amber-400" />
-                    <span>Dhanbad, Jharkhand</span>
+                    <span>{isHi ? 'सिंह मैंशन, धनबाद' : 'Singh Mansion, Dhanbad'}</span>
                   </div>
                 </div>
               </Reveal>

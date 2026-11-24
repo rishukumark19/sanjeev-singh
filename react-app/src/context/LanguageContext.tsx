@@ -83,7 +83,7 @@ const translations: Record<Language, Record<string, string>> = {
     'home.map.tag': 'Our Landmark',
     'home.map.title1': 'Visit Our ',
     'home.map.title2': 'Office',
-    'home.map.address': 'Constituency Office, Dhanbad, Jharkhand',
+    'home.map.address': 'Singh Mansion, Dhanbad, Jharkhand',
 
     // About
     'about.tag': 'Leadership & Legacy',
@@ -258,7 +258,7 @@ const translations: Record<Language, Record<string, string>> = {
     'home.map.tag': 'हमारा स्थान',
     'home.map.title1': 'हमारा ',
     'home.map.title2': 'कार्यालय',
-    'home.map.address': 'केंद्रीय जनसेवा कार्यालय, धनबाद, झारखंड',
+    'home.map.address': 'सिंह मैंशन, धनबाद, झारखंड',
 
     // About
     'about.tag': 'नेतृत्व और विरासत',
