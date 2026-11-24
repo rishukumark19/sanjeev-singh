@@ -41,27 +41,6 @@ const HeroCarousel = () => {
       tag: lang === 'hi' ? 'नागरिक सेवा व जनसंवाद' : 'Civic Dedication & Service',
       pos: 'center 25%' 
     },
-    { 
-      image: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`, 
-      titleKey: 'home.slide1.title', 
-      subKey: 'home.slide1.sub', 
-      tag: lang === 'hi' ? 'श्रम शक्ति व सम्मान' : 'Labor Dignity & Rights',
-      pos: 'center 25%' 
-    },
-    { 
-      image: `${import.meta.env.BASE_URL}images/real/fb_katras.jpg`, 
-      titleKey: 'home.slide4.title', 
-      subKey: 'home.slide4.sub', 
-      tag: lang === 'hi' ? 'जनता की अटूट आवाज़' : 'Voice of Dhanbad',
-      pos: 'center 20%' 
-    },
-    { 
-      image: `${import.meta.env.BASE_URL}images/real/fb_10.jpg`, 
-      titleKey: 'home.slide5.title', 
-      subKey: 'home.slide5.sub', 
-      tag: lang === 'hi' ? 'स्वच्छता योद्धा सम्मान' : 'Civic Dedication',
-      pos: 'center 25%' 
-    },
   ];
 
   const onTouchStart = (e: React.TouchEvent) => {
