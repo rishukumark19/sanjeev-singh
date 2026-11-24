@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Award, 
@@ -10,7 +11,9 @@ import {
   Sparkles,
   ExternalLink,
   Landmark,
-  Compass
+  Compass,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import HeroCarousel from '../components/HeroCarousel';
@@ -66,7 +69,7 @@ const Home = () => {
     }
   ];
 
-  // Key Photo Highlights from Facebook
+  // Key Photo Highlights from Facebook (3-4 core official highlights)
   const photoHighlights = [
     {
       img: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_council_meeting.jpg`,
@@ -99,37 +102,38 @@ const Home = () => {
       tag: isHi ? 'नागरिक संवाद' : 'Civic Engagement',
       date: 'Oct 2026',
       pos: 'center 25%'
-    },
-    {
-      img: `${import.meta.env.BASE_URL}images/real/fb_diwali_greeting_crop.jpg`,
-      title: isHi ? 'दीपावली महापर्व पर दीप प्रज्वलन व शुभकामनाएं' : 'Diwali Celebration with Smt. Ragini Singh',
-      subtitle: isHi ? 'झरिया व सम्पूर्ण धनबाद वासियों के सुख-समृद्धि की मंगलकामना' : 'Lighting festive deepam and extending warm greetings to all families',
-      tag: isHi ? 'पारिवारिक पर्व' : 'Festival Greeting',
-      date: 'Nov 2026',
-      pos: 'center 10%'
-    },
-    {
-      img: `${import.meta.env.BASE_URL}images/real/fb_7.jpg`,
-      title: isHi ? 'धनबाद समाहरणालय में दिशा (DISHA) समीक्षा बैठक' : 'District DISHA Infrastructure Review Meeting',
-      subtitle: isHi ? 'केंद्रीय विकास योजनाओं व जनकल्याणकारी कार्यों की समीक्षा' : 'Reviewing district welfare and central infrastructure schemes',
-      tag: isHi ? 'प्रशासनिक कार्य' : 'Governance',
-      date: 'Oct 2026'
-    },
-    {
-      img: `${import.meta.env.BASE_URL}images/real/fb_10.jpg`,
-      title: isHi ? 'सफाई कर्मियों के बीच वस्त्र वितरण व सम्मान' : 'Sanitation Workers Felicitation & Welfare',
-      subtitle: isHi ? 'धनबाद नगर निगम के स्वच्छता योद्धाओं का अभिनंदन' : 'Honoring the frontline municipal sanitation warriors of Dhanbad',
-      tag: isHi ? 'जनसेवा' : 'Social Service',
-      date: 'Oct 2026'
-    },
-    {
-      img: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`,
-      title: isHi ? 'रेल कोच नागरिक परियोजना का उद्घाटन' : 'Rail Coach Civic Landmark Inauguration',
-      subtitle: isHi ? 'धनबाद के सौंदर्य व जनसुविधाओं के संवर्धन हेतु सौगात' : 'Dhanbad Junction modern civic landmark and citizen amenity',
-      tag: isHi ? 'नागरिक विकास' : 'Infrastructure',
-      date: 'Sep 2026'
     }
   ];
+
+  // Mobile horizontal slider controls for Visual Highlights
+  const highlightsScrollRef = useRef<HTMLDivElement>(null);
+  const [activeHighlight, setActiveHighlight] = useState(0);
+
+  const scrollHighlights = (direction: 'left' | 'right') => {
+    if (!highlightsScrollRef.current) return;
+    const cardWidth = highlightsScrollRef.current.clientWidth * 0.85;
+    highlightsScrollRef.current.scrollBy({
+      left: direction === 'left' ? -cardWidth : cardWidth,
+      behavior: 'smooth'
+    });
+  };
+
+  const handleHighlightsScroll = () => {
+    if (!highlightsScrollRef.current) return;
+    const { scrollLeft, clientWidth } = highlightsScrollRef.current;
+    const index = Math.round(scrollLeft / (clientWidth * 0.85));
+    setActiveHighlight(Math.min(Math.max(index, 0), photoHighlights.length - 1));
+  };
+
+  const scrollToHighlight = (index: number) => {
+    if (!highlightsScrollRef.current) return;
+    const cardWidth = highlightsScrollRef.current.clientWidth * 0.85;
+    highlightsScrollRef.current.scrollTo({
+      left: index * cardWidth,
+      behavior: 'smooth'
+    });
+    setActiveHighlight(index);
+  };
 
   return (
     <div className="animate-in fade-in duration-500 overflow-x-hidden bg-[#fdfbf7]">
@@ -369,9 +373,9 @@ const Home = () => {
       </section>
 
       {/* 6. Visual Highlights from Facebook */}
-      <section className="py-14 sm:py-18 md:py-20 bg-white relative overflow-hidden border-b border-slate-200">
+      <section className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden border-b border-slate-200">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 sm:mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-10">
             <div>
               <Reveal>
                 <div className="flex items-center gap-3 mb-2">
@@ -382,26 +386,54 @@ const Home = () => {
                 </div>
               </Reveal>
               <Reveal delay={100}>
-                <h2 className="text-3xl sm:text-4xl font-headline font-black text-slate-950">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-headline font-black text-slate-950">
                   {isHi ? 'क्षेत्र भ्रमण व जनसंवाद की झलकियां' : 'Field Initiatives & Public Moments'}
                 </h2>
               </Reveal>
             </div>
 
-            <Reveal delay={150}>
-              <Link 
-                to="/gallery" 
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#ff7e54] hover:text-[#e65100] uppercase tracking-wider"
-              >
-                <span>{isHi ? 'पूरी फोटो गैलरी देखें' : 'View Full Gallery'}</span>
-                <ArrowRight size={16} />
-              </Link>
-            </Reveal>
+            <div className="flex items-center justify-between sm:justify-end gap-3">
+              {/* Mobile Swipe Navigation Controls (Slide Left/Right) */}
+              <div className="flex sm:hidden items-center gap-2">
+                <button
+                  onClick={() => scrollHighlights('left')}
+                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#ff7e54] text-slate-700 hover:text-white flex items-center justify-center transition-colors border border-slate-200 shadow-sm active:scale-95"
+                  aria-label="Slide left"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+                <button
+                  onClick={() => scrollHighlights('right')}
+                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-[#ff7e54] text-slate-700 hover:text-white flex items-center justify-center transition-colors border border-slate-200 shadow-sm active:scale-95"
+                  aria-label="Slide right"
+                >
+                  <ChevronRight size={16} />
+                </button>
+              </div>
+
+              <Reveal delay={150}>
+                <Link 
+                  to="/gallery" 
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#ff7e54] hover:text-[#e65100] uppercase tracking-wider"
+                >
+                  <span>{isHi ? 'पूरी फोटो गैलरी देखें' : 'View Full Gallery'}</span>
+                  <ArrowRight size={16} />
+                </Link>
+              </Reveal>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Cards Container: Touch-Swipeable Horizontal Slider on Mobile (slides left to right), Grid on Tablet & Desktop */}
+          <div 
+            ref={highlightsScrollRef}
+            onScroll={handleHighlightsScroll}
+            className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 pb-3 sm:pb-0"
+          >
             {photoHighlights.map((item, idx) => (
-              <Reveal key={idx} delay={idx * 80}>
+              <div 
+                key={idx}
+                className="w-[82vw] max-w-[310px] sm:w-auto sm:max-w-none shrink-0 snap-center flex flex-col"
+              >
                 <div className="group bg-[#fdfbf7] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
                   <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
                     <img 
@@ -410,17 +442,17 @@ const Home = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       style={{ objectPosition: item.pos || 'center center' }}
                     />
-                    <div className="absolute top-3 left-3 bg-[#070d19]/85 backdrop-blur-md text-amber-300 font-bold text-[10px] px-2.5 py-0.5 rounded-md uppercase tracking-wider border border-white/10">
+                    <div className="absolute top-2.5 left-2.5 bg-[#070d19]/85 backdrop-blur-md text-amber-300 font-bold text-[10px] px-2 py-0.5 rounded-md uppercase tracking-wider border border-white/10">
                       {item.tag}
                     </div>
-                    <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-medium px-2 py-0.5 rounded-md">
+                    <div className="absolute top-2.5 right-2.5 bg-black/60 backdrop-blur-md text-white text-[10px] font-medium px-2 py-0.5 rounded-md">
                       {item.date}
                     </div>
                   </div>
 
-                  <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+                  <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-2">
                     <div>
-                      <h4 className="font-headline font-bold text-base text-slate-900 leading-snug group-hover:text-[#ff7e54] transition-colors">
+                      <h4 className="font-headline font-bold text-sm sm:text-base text-slate-900 leading-snug group-hover:text-[#ff7e54] transition-colors line-clamp-2">
                         {item.title}
                       </h4>
                       <p className="text-xs text-slate-600 line-clamp-2 mt-1 leading-relaxed">
@@ -437,7 +469,23 @@ const Home = () => {
                     </Link>
                   </div>
                 </div>
-              </Reveal>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Navigation Dots (Tap to slide) */}
+          <div className="flex sm:hidden items-center justify-center gap-2 mt-3">
+            {photoHighlights.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => scrollToHighlight(idx)}
+                className={`transition-all duration-300 rounded-full ${
+                  idx === activeHighlight 
+                    ? 'w-6 h-1.5 bg-[#ff7e54]' 
+                    : 'w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400'
+                }`}
+                aria-label={`Go to highlight ${idx + 1}`}
+              />
             ))}
           </div>
         </div>
