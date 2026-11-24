@@ -69,6 +69,27 @@ const Home = () => {
   // Key Photo Highlights from Facebook
   const photoHighlights = [
     {
+      img: `${import.meta.env.BASE_URL}images/real/fb_ram_mandir_darshan.jpg`,
+      title: isHi ? 'प्रभु श्री राम की पावन छवि भेंट व अभिनंदन' : 'Sacred Ram Mandir Portrait Presentation',
+      subtitle: isHi ? 'सिंह मेंशन में श्रद्धालुओं व नागरिकों द्वारा अंगवस्त्र व प्रभु राम की छवि भेंट' : 'Devotees and community members honoring Sanjeev Singh at Singh Mansion',
+      tag: isHi ? 'आस्था व सम्मान' : 'Faith & Honor',
+      date: 'Oct 2026'
+    },
+    {
+      img: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_office.jpg`,
+      title: isHi ? 'धनबाद नगर निगम कार्यालय में जनसंवाद' : 'Civic Dialogue at Dhanbad Municipal Corporation',
+      subtitle: isHi ? 'महापौर कक्ष में नागरिकों व जनसमूह का अभिवादन व समस्याओं पर चर्चा' : 'Welcoming citizens with folded hands and reviewing civic amenities',
+      tag: isHi ? 'नागरिक संवाद' : 'Civic Engagement',
+      date: 'Oct 2026'
+    },
+    {
+      img: `${import.meta.env.BASE_URL}images/real/fb_diwali_greeting_crop.jpg`,
+      title: isHi ? 'दीपावली महापर्व पर दीप प्रज्वलन व शुभकामनाएं' : 'Diwali Celebration with Smt. Ragini Singh',
+      subtitle: isHi ? 'झरिया व सम्पूर्ण धनबाद वासियों के सुख-समृद्धि की मंगलकामना' : 'Lighting festive deepam and extending warm greetings to all families',
+      tag: isHi ? 'पारिवारिक पर्व' : 'Festival Greeting',
+      date: 'Nov 2026'
+    },
+    {
       img: `${import.meta.env.BASE_URL}images/real/fb_7.jpg`,
       title: isHi ? 'धनबाद समाहरणालय में दिशा (DISHA) समीक्षा बैठक' : 'District DISHA Infrastructure Review Meeting',
       subtitle: isHi ? 'केंद्रीय विकास योजनाओं व जनकल्याणकारी कार्यों की समीक्षा' : 'Reviewing district welfare and central infrastructure schemes',
@@ -83,31 +104,10 @@ const Home = () => {
       date: 'Oct 2026'
     },
     {
-      img: `${import.meta.env.BASE_URL}images/real/fb_1.jpg`,
-      title: isHi ? 'माननीय मुख्यमंत्री श्री हेमंत सोरेन जी से भेंट' : 'State Homage & Meeting with CM Hemant Soren',
-      subtitle: isHi ? 'नेमरा में स्व. रूपी सोरेन जी के निधन पर श्रद्धांजलि' : 'Paying solemn homage and condolences at ancestral village Nemra',
-      tag: isHi ? 'श्रद्धांजलि' : 'Homage',
-      date: 'Oct 2026'
-    },
-    {
-      img: `${import.meta.env.BASE_URL}images/real/fb_foodadda.jpg`,
-      title: isHi ? 'युवा स्वरोजगार प्रतिष्ठान का उद्घाटन' : 'Inauguration of Youth Entrepreneurship Venture',
-      subtitle: isHi ? 'धनबाद के स्थानीय युवाओं के व्यावसायिक प्रयास को संबल' : 'Empowering and encouraging local youth business initiatives in Dhanbad',
-      tag: isHi ? 'युवा प्रेरणा' : 'Youth Support',
-      date: 'Sep 2026'
-    },
-    {
-      img: `${import.meta.env.BASE_URL}images/real/fb_9.jpg`,
-      title: isHi ? 'राष्ट्रीय अल्प बचत अभिकर्ता संघ सम्मेलन' : 'National Small Savings Agents Union Meet',
-      subtitle: isHi ? 'अभिकर्ताओं की समस्याओं को सुनकर समाधान का संकल्प' : 'Addressing commissions and organizational concerns of union members',
-      tag: isHi ? 'यूनियन संवाद' : 'Union Dialogue',
-      date: 'Oct 2026'
-    },
-    {
-      img: `${import.meta.env.BASE_URL}images/real/fb_katras.jpg`,
-      title: isHi ? 'कतरास व कोयलांचल जनसंपर्क यात्रा' : 'Coal Belt Mass Outreach & Interaction',
-      subtitle: isHi ? 'ग्रामीणों व कामगारों से सीधे मिलकर उनकी समस्याएं सुनीं' : 'Connecting directly with coal belt residents and mining families',
-      tag: isHi ? 'जनसंपर्क' : 'Field Visit',
+      img: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`,
+      title: isHi ? 'रेल कोच नागरिक परियोजना का उद्घाटन' : 'Rail Coach Civic Landmark Inauguration',
+      subtitle: isHi ? 'धनबाद के सौंदर्य व जनसुविधाओं के संवर्धन हेतु सौगात' : 'Dhanbad Junction modern civic landmark and citizen amenity',
+      tag: isHi ? 'नागरिक विकास' : 'Infrastructure',
       date: 'Sep 2026'
     }
   ];

@@ -14,6 +14,20 @@ const HeroCarousel = () => {
 
   const slides = [
     { 
+      image: `${import.meta.env.BASE_URL}images/real/fb_ram_mandir_darshan.jpg`, 
+      titleKey: 'home.slide2.title', 
+      subKey: 'home.slide2.sub', 
+      tag: lang === 'hi' ? 'जनता की अटूट आस्था व विश्वास' : 'Faith & Public Solidarity',
+      pos: 'center 20%' 
+    },
+    { 
+      image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_office.jpg`, 
+      titleKey: 'home.slide3.title', 
+      subKey: 'home.slide3.sub', 
+      tag: lang === 'hi' ? 'नागरिक सेवा व जनसंवाद' : 'Civic Dedication & Service',
+      pos: 'center 25%' 
+    },
+    { 
       image: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`, 
       titleKey: 'home.slide1.title', 
       subKey: 'home.slide1.sub', 
@@ -22,30 +36,16 @@ const HeroCarousel = () => {
     },
     { 
       image: `${import.meta.env.BASE_URL}images/real/fb_katras.jpg`, 
-      titleKey: 'home.slide2.title', 
-      subKey: 'home.slide2.sub', 
+      titleKey: 'home.slide4.title', 
+      subKey: 'home.slide4.sub', 
       tag: lang === 'hi' ? 'जनता की अटूट आवाज़' : 'Voice of Dhanbad',
       pos: 'center 20%' 
     },
     { 
       image: `${import.meta.env.BASE_URL}images/real/fb_10.jpg`, 
-      titleKey: 'home.slide3.title', 
-      subKey: 'home.slide3.sub', 
-      tag: lang === 'hi' ? 'स्वच्छता योद्धा सम्मान' : 'Civic Dedication',
-      pos: 'center 25%' 
-    },
-    { 
-      image: `${import.meta.env.BASE_URL}images/real/fb_4.jpg`, 
-      titleKey: 'home.slide4.title', 
-      subKey: 'home.slide4.sub', 
-      tag: lang === 'hi' ? 'जनसेवा एवं जनसमर्पण' : 'Dedicated Public Service',
-      pos: 'center 20%' 
-    },
-    { 
-      image: `${import.meta.env.BASE_URL}images/real/fb_8.jpg`, 
       titleKey: 'home.slide5.title', 
       subKey: 'home.slide5.sub', 
-      tag: lang === 'hi' ? 'सामुदायिक सौहार्द' : 'Community Solidarity',
+      tag: lang === 'hi' ? 'स्वच्छता योद्धा सम्मान' : 'Civic Dedication',
       pos: 'center 25%' 
     },
   ];

@@ -26,6 +26,42 @@ export interface PhotoArchiveItem {
 
 const officialPhotoArchive: PhotoArchiveItem[] = [
   {
+    id: 'photo-office-1',
+    image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_office.jpg`,
+    category: 'civic',
+    titleEn: 'Public Greeting & Civic Consultations at Municipal Corporation Office',
+    titleHi: 'धनबाद नगर निगम कार्यालय में जनसंवाद व अभिनंदन',
+    descEn: 'Sanjeev Singh greeting citizens, community delegations, and municipal representatives with folded hands at Dhanbad Municipal Corporation, discussing city civic amenities and welfare priorities.',
+    descHi: 'धनबाद नगर निगम कार्यालय परिसर में महापौर कक्ष में क्षेत्र के नागरिकों, समाजसेवियों एवं अधिकारियों से आत्मीय भेंट कर शहर की मूलभूत नागरिक सुविधाओं व जनसमस्याओं के निवारण पर विस्तृत विचार-विमर्श किया।',
+    date: 'Oct 2026',
+    locationEn: 'Mayor Office, Dhanbad Municipal Corporation',
+    locationHi: 'महापौर कार्यालय, धनबाद नगर निगम'
+  },
+  {
+    id: 'photo-ram-1',
+    image: `${import.meta.env.BASE_URL}images/real/fb_ram_mandir_darshan.jpg`,
+    category: 'community',
+    titleEn: 'Sacred Ram Mandir Portrait Presentation by Devotees & Supporters',
+    titleHi: 'श्रद्धालुओं व नागरिकों द्वारा प्रभु श्री राम की पावन छवि भेंट व सम्मान',
+    descEn: 'Constituents and community members warmly honoring Sanjeev Singh with an auspicious saffron angavastram and presenting a sacred framed portrait of Prabhu Shri Ram at Singh Mansion courtyard.',
+    descHi: 'सिंह मेंशन परिसर में क्षेत्र के प्रबुद्ध नागरिकों एवं रामभक्तों द्वारा पारंपरिक अंगवस्त्र पहनाकर तथा मर्यादा पुरुषोत्तम प्रभु श्री राम की पावन छवि भेंट कर आत्मीय सम्मान व्यक्त किया गया।',
+    date: 'Oct 2026',
+    locationEn: 'Singh Mansion, Dhanbad',
+    locationHi: 'सिंह मेंशन, धनबाद'
+  },
+  {
+    id: 'photo-diwali-1',
+    image: `${import.meta.env.BASE_URL}images/real/fb_diwali_greeting.jpg`,
+    category: 'community',
+    titleEn: 'Diwali Festivities & Auspicious Lamp Lighting with Smt. Ragini Singh',
+    titleHi: 'दीपावली महापर्व पर श्रीमती रागिनी सिंह जी के साथ दीप प्रज्वलन',
+    descEn: 'Sanjeev Singh and prominent leader Smt. Ragini Singh lighting the festive Deepam on the auspicious occasion of Diwali, extending warm wishes for prosperity, good health, and peace to all families of Dhanbad and Jharia.',
+    descHi: 'प्रकाश के पावन महापर्व दीपावली पर श्रीमती रागिनी सिंह जी के साथ पारंपरिक दीप प्रज्वलित कर कोयलांचल एवं सम्पूर्ण झरिया-धनबाद वासियों के सुख, शांति, उत्तम स्वास्थ्य और समृद्धि की मंगलकामना की।',
+    date: 'Nov 2026',
+    locationEn: 'Singh Mansion, Dhanbad',
+    locationHi: 'सिंह मेंशन, धनबाद'
+  },
+  {
     id: 'photo-1',
     image: `${import.meta.env.BASE_URL}images/real/fb_4.jpg`,
     category: 'field',
