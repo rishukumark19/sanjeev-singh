@@ -579,6 +579,27 @@ const Home = () => {
               </Reveal>
 
               <Reveal delay={100}>
+                {/* Official Singh Mansion Photograph */}
+                <div className="relative rounded-2xl overflow-hidden shadow-md border-2 border-orange-200/80 aspect-[16/9] group">
+                  <img 
+                    src={`${import.meta.env.BASE_URL}images/singh-mansion.jpg`} 
+                    alt="Singh Mansion, Dhanbad" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 text-white flex items-center justify-between">
+                    <p className="text-xs font-bold flex items-center gap-1.5">
+                      <Landmark size={14} className="text-amber-400" />
+                      <span>{isHi ? 'सिंह मैंशन — धनबाद' : 'Singh Mansion — Dhanbad'}</span>
+                    </p>
+                    <span className="text-[10px] uppercase font-bold tracking-wider bg-white/20 px-2 py-0.5 rounded backdrop-blur-sm">
+                      {isHi ? 'आधिकारिक परिसर' : 'Official Residence'}
+                    </span>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal delay={120}>
                 <div className="p-5 rounded-2xl bg-[#fdfbf7] border border-amber-300/60 space-y-3 text-sm text-slate-800">
                   <div className="flex items-center gap-2 text-amber-700 font-bold text-xs uppercase tracking-wider">
                     <ShieldCheck size={16} className="text-[#ff7e54]" />
@@ -605,18 +626,18 @@ const Home = () => {
 
             <div className="lg:col-span-7">
               <Reveal delay={100}>
-                <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200 h-[320px] sm:h-[400px] w-full relative">
+                <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-200 h-[380px] sm:h-[460px] w-full relative group">
                   <iframe
-                    title="Singh Mansion Dhanbad Map"
-                    src="https://maps.google.com/maps?q=Singh%20Mansion%2C%20Dhanbad%2C%20Jharkhand&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    title="Singh Mansion Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.06994270119!2d86.46153931139891!3d23.81611177853649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f6bd007e446ce9%3A0x42fd6c53a777a6cf!2sSINGH%20MANSION!5e0!3m2!1sen!2sin!4v1775368729592!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
-                    allowFullScreen={false}
+                    allowFullScreen={true}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   />
-                  <div className="absolute top-3 left-3 bg-[#070d19]/90 text-white px-3 py-1.5 rounded-lg border border-amber-400/40 text-xs font-bold flex items-center gap-1.5 shadow">
+                  <div className="absolute top-3 left-3 bg-[#070d19]/90 text-white px-3 py-1.5 rounded-lg border border-amber-400/40 text-xs font-bold flex items-center gap-1.5 shadow pointer-events-none">
                     <Landmark size={14} className="text-amber-400" />
                     <span>{isHi ? 'सिंह मैंशन, धनबाद' : 'Singh Mansion, Dhanbad'}</span>
                   </div>
