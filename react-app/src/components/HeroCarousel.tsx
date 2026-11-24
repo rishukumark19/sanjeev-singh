@@ -21,11 +21,11 @@ const HeroCarousel = () => {
       pos: 'center 25%' 
     },
     { 
-      image: `${import.meta.env.BASE_URL}images/real/fb_ram_mandir_darshan.jpg`, 
-      titleKey: 'home.slide2.title', 
-      subKey: 'home.slide2.sub', 
-      tag: lang === 'hi' ? 'जनता की अटूट आस्था व विश्वास' : 'Faith & Public Solidarity',
-      pos: 'center 8%' 
+      image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_office.jpg`, 
+      titleKey: 'home.slide3.title', 
+      subKey: 'home.slide3.sub', 
+      tag: lang === 'hi' ? 'नागरिक सेवा व जनसंवाद' : 'Civic Dedication & Service',
+      pos: 'center 25%' 
     },
     { 
       image: `${import.meta.env.BASE_URL}images/real/fb_hemant_soren_meeting.jpg`, 
@@ -35,11 +35,11 @@ const HeroCarousel = () => {
       pos: 'center 10%' 
     },
     { 
-      image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_office.jpg`, 
-      titleKey: 'home.slide3.title', 
-      subKey: 'home.slide3.sub', 
-      tag: lang === 'hi' ? 'नागरिक सेवा व जनसंवाद' : 'Civic Dedication & Service',
-      pos: 'center 25%' 
+      image: `${import.meta.env.BASE_URL}images/real/fb_ram_mandir_darshan.jpg`, 
+      titleKey: 'home.slide2.title', 
+      subKey: 'home.slide2.sub', 
+      tag: lang === 'hi' ? 'जनता की अटूट आस्था व विश्वास' : 'Faith & Public Solidarity',
+      pos: 'center 8%' 
     },
   ];
 
