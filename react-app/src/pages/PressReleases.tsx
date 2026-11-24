@@ -157,7 +157,7 @@ const PressReleases = () => {
           </Reveal>
 
           <Reveal delay={150}>
-            <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-amber-100 font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
               {isHi
                 ? 'संजीव सिंह के आधिकारिक बयान, विकासात्मक पहलों की रिपोर्ट एवं जनहित घोषणाओं का प्रामाणिक स्रोत।'
                 : 'Verified statements, policy announcements, and civic development briefings issued by the office of Sanjeev Singh.'}
@@ -271,38 +271,50 @@ const PressReleases = () => {
 
       {/* Full Article Modal */}
       {selectedArticle && (
-        <div className="fixed inset-0 z-[150] flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+        <div 
+          onClick={() => setSelectedArticle(null)}
+          className="fixed inset-0 z-[150] flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-3 sm:p-5 md:p-6 animate-in fade-in duration-200"
+        >
           <div 
             onClick={(e) => e.stopPropagation()} 
-            className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 relative"
+            className="bg-white rounded-3xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-slate-200 p-4 sm:p-7 md:p-8 relative"
           >
-            <button
-              onClick={() => setSelectedArticle(null)}
-              className="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors"
-              aria-label="Close"
-            >
-              <X size={18} />
-            </button>
-
-            {/* Header info */}
-            <div className="space-y-3 pr-8">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#ff7e54] uppercase tracking-wider">
-                <span className="bg-orange-50 px-2.5 py-0.5 rounded-full border border-orange-200">
-                  {isHi ? selectedArticle.tagHi : selectedArticle.tagEn}
-                </span>
-                <span>•</span>
-                <span className="text-slate-500">{selectedArticle.date}</span>
-                <span>•</span>
-                <span className="text-slate-500">{isHi ? selectedArticle.locationHi : selectedArticle.locationEn}</span>
+            {/* Top Control Bar: Tag on Left, Close Button on Right (No Congestion) */}
+            <div className="flex items-center justify-between gap-3 mb-3">
+              <div className="inline-flex items-center gap-1.5 bg-orange-50 text-[#ff7e54] px-3 py-1 rounded-full border border-orange-200 text-[10.5px] sm:text-xs font-black uppercase tracking-wider">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ff7e54]" />
+                <span>{isHi ? selectedArticle.tagHi : selectedArticle.tagEn}</span>
               </div>
 
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-headline font-black text-slate-900 leading-tight">
-                {isHi ? selectedArticle.titleHi : selectedArticle.titleEn}
-              </h2>
+              <button
+                onClick={() => setSelectedArticle(null)}
+                className="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 flex items-center justify-center transition-colors shrink-0"
+                aria-label="Close"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Title (Spans Full Width, Zero Congestion) */}
+            <h2 className="text-lg sm:text-2xl md:text-3xl font-headline font-black text-slate-950 leading-snug sm:leading-tight mb-2.5">
+              {isHi ? selectedArticle.titleHi : selectedArticle.titleEn}
+            </h2>
+
+            {/* Date & Location Row (Spacious & Clean) */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-semibold text-slate-500 mb-4 pb-3 border-b border-slate-100">
+              <div className="flex items-center gap-1.5 text-slate-600">
+                <Calendar size={13} className="text-[#ff7e54]" />
+                <span>{selectedArticle.date}</span>
+              </div>
+              <span className="text-slate-300">•</span>
+              <div className="flex items-center gap-1.5 text-slate-600">
+                <MapPin size={13} className="text-[#ff7e54]" />
+                <span>{isHi ? selectedArticle.locationHi : selectedArticle.locationEn}</span>
+              </div>
             </div>
 
             {/* Image */}
-            <div className="my-5 rounded-2xl overflow-hidden aspect-[16/9] bg-slate-900">
+            <div className="my-4 rounded-2xl overflow-hidden aspect-[16/9] bg-slate-900 shadow-sm">
               <img
                 src={selectedArticle.image}
                 alt={isHi ? selectedArticle.titleHi : selectedArticle.titleEn}
@@ -311,21 +323,21 @@ const PressReleases = () => {
             </div>
 
             {/* Content text */}
-            <div className="space-y-4 text-slate-700 leading-relaxed font-body text-sm sm:text-base">
-              <p className="font-semibold text-slate-900 leading-relaxed">
+            <div className="space-y-3.5 sm:space-y-4 text-slate-700 leading-relaxed font-body text-xs sm:text-sm md:text-base">
+              <p className="font-semibold text-slate-900 leading-relaxed bg-orange-50/50 p-3.5 sm:p-4 rounded-xl border border-orange-100">
                 {isHi ? selectedArticle.summaryHi : selectedArticle.summaryEn}
               </p>
-              <p>
+              <p className="leading-relaxed whitespace-pre-line">
                 {isHi ? selectedArticle.fullContentHi : selectedArticle.fullContentEn}
               </p>
             </div>
 
             {/* Footer */}
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-              <span className="font-bold text-[#ff7e54]">Official Press & Media Secretariat</span>
+              <span className="font-bold text-[#ff7e54] text-[11px] sm:text-xs">Official Press & Media Secretariat</span>
               <button
                 onClick={() => setSelectedArticle(null)}
-                className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-bold text-xs transition-colors"
+                className="px-4 py-2 bg-slate-900 hover:bg-[#ff7e54] text-white rounded-xl font-bold text-xs transition-colors"
               >
                 {isHi ? 'बंद करें' : 'Close'}
               </button>
