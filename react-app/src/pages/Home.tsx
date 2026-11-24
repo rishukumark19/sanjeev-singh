@@ -183,7 +183,7 @@ const Home = () => {
                   {/* Image Card */}
                   <div className="rounded-3xl overflow-hidden shadow-2xl relative bg-[#091322] border-4 border-white group">
                     <img 
-                      src={`${import.meta.env.BASE_URL}images/real/sanjeev_portrait_hd.jpg`} 
+                      src={`${import.meta.env.BASE_URL}images/real/sanjeev_namaste_portrait.jpg`} 
                       alt="Sanjeev Singh Official Portrait" 
                       className="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700" 
                       style={{ objectPosition: 'center 15%' }}
