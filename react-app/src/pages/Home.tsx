@@ -90,6 +90,13 @@ const Home = () => {
       date: 'Sep 2026'
     },
     {
+      img: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_council_meeting.jpg`,
+      title: isHi ? 'नगर निगम महापौर कक्ष में प्रशासनिक समीक्षा बैठक' : 'Administrative Review at Mayor Office',
+      subtitle: isHi ? 'अधिकारियों व नागरिकों के साथ विकास योजनाओं व जनसमस्याओं पर मंथन' : 'Chairing high-level civic review with representatives and municipal officers',
+      tag: isHi ? 'सुशासन' : 'Governance',
+      date: 'Aug 2026'
+    },
+    {
       img: `${import.meta.env.BASE_URL}images/real/fb_diwali_greeting_crop.jpg`,
       title: isHi ? 'दीपावली महापर्व पर दीप प्रज्वलन व शुभकामनाएं' : 'Diwali Celebration with Smt. Ragini Singh',
       subtitle: isHi ? 'झरिया व सम्पूर्ण धनबाद वासियों के सुख-समृद्धि की मंगलकामना' : 'Lighting festive deepam and extending warm greetings to all families',

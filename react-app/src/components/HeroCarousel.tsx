@@ -35,6 +35,13 @@ const HeroCarousel = () => {
       pos: 'center 25%' 
     },
     { 
+      image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_council_meeting.jpg`, 
+      titleKey: 'home.slide4.title', 
+      subKey: 'home.slide4.sub', 
+      tag: lang === 'hi' ? 'प्रशासनिक समीक्षा व सुशासन' : 'Civic Review & Governance',
+      pos: 'center 25%' 
+    },
+    { 
       image: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`, 
       titleKey: 'home.slide1.title', 
       subKey: 'home.slide1.sub', 

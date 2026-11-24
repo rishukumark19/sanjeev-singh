@@ -38,6 +38,18 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     locationHi: 'महापौर कार्यालय, धनबाद नगर निगम'
   },
   {
+    id: 'photo-council-1',
+    image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_council_meeting.jpg`,
+    category: 'civic',
+    titleEn: 'Administrative Review & Citizen Deliberations at Mayor Office, Dhanbad',
+    titleHi: 'धनबाद नगर निगम महापौर कक्ष में प्रशासनिक समीक्षा व नागरिक संवाद',
+    descEn: 'Chairing a comprehensive review meeting with civic delegates, officials, and regional representatives at Dhanbad Municipal Corporation to address public grievances and expedite civic welfare projects.',
+    descHi: 'धनबाद नगर निगम के महापौर कक्ष में क्षेत्र के प्रबुद्ध नागरिकों, जनप्रतिनिधियों एवं अधिकारियों के साथ बैठक कर विकास योजनाओं की समीक्षा की और जनसमस्याओं के त्वरित समाधान हेतु दिशा-निर्देश दिए।',
+    date: 'Aug 2026',
+    locationEn: 'Mayor Chamber, Dhanbad Municipal Corporation',
+    locationHi: 'महापौर कक्ष, धनबाद नगर निगम'
+  },
+  {
     id: 'photo-ram-1',
     image: `${import.meta.env.BASE_URL}images/real/fb_ram_mandir_darshan.jpg`,
     category: 'community',
