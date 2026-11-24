@@ -78,7 +78,7 @@ const HeroCarousel = () => {
 
   return (
     <section 
-      className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:aspect-auto md:h-[78vh] md:min-h-[540px] lg:h-[85vh] max-h-[820px] overflow-hidden bg-[#fff7ed] select-none"
+      className="relative w-full h-[88vh] min-h-[580px] max-h-[860px] overflow-hidden bg-[#fff7ed] select-none"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -106,53 +106,53 @@ const HeroCarousel = () => {
             />
 
             {/* Warm Saffron & Soft Light Vignette (NO dark dimming) */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
 
             {/* Slide Content */}
-            <div className="absolute inset-0 flex items-end pb-3.5 sm:pb-8 md:pb-20 z-20">
-              <div className="max-w-[1440px] mx-auto px-3 sm:px-6 md:px-8 w-full">
+            <div className="absolute inset-0 flex items-end pb-16 sm:pb-20 md:pb-24 z-20">
+              <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 w-full">
                 <div className="max-w-3xl text-left">
                   {/* Badge */}
-                  <div className={`inline-flex items-center gap-1 sm:gap-2 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#ff7e54] text-white shadow-md mb-1 sm:mb-2 transition-all duration-700 ${
+                  <div className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff7e54] text-white shadow-md mb-3 sm:mb-4 transition-all duration-700 ${
                     isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}>
                     <span className="w-1.5 h-1.5 rounded-full bg-white opacity-90" />
-                    <span className="text-[9px] sm:text-xs font-black uppercase tracking-wider">
+                    <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider">
                       {slide.tag}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h1 className={`text-sm xs:text-base sm:text-2xl md:text-4xl lg:text-5xl font-headline font-black text-white leading-tight mb-1 sm:mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] tracking-tight line-clamp-1 sm:line-clamp-none transition-all duration-700 delay-150 ${
+                  <h1 className={`text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-black text-white leading-[1.12] mb-3 sm:mb-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)] tracking-tight transition-all duration-700 delay-150 ${
                     isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                   }`}>
                     {t(slide.titleKey)}
                   </h1>
 
                   {/* Subtitle */}
-                  <p className={`text-[10px] sm:text-sm md:text-base text-white/95 font-body font-medium max-w-2xl leading-snug mb-2 sm:mb-5 line-clamp-1 sm:line-clamp-none drop-shadow-[0_1px_5px_rgba(0,0,0,0.6)] transition-all duration-700 delay-300 ${
+                  <p className={`text-sm sm:text-base md:text-lg text-white font-body font-medium max-w-2xl leading-relaxed mb-6 sm:mb-8 drop-shadow-[0_1px_5px_rgba(0,0,0,0.6)] transition-all duration-700 delay-300 ${
                     isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                   }`}>
                     {t(slide.subKey)}
                   </p>
 
                   {/* Action CTAs */}
-                  <div className={`flex items-center gap-2 sm:gap-3 transition-all duration-700 delay-500 ${
+                  <div className={`flex flex-wrap items-center gap-3 sm:gap-4 transition-all duration-700 delay-500 ${
                     isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                   }`}>
                     <Link
                       to="/about"
-                      className="inline-flex items-center gap-1 px-2.5 py-1 sm:px-5 sm:py-2 rounded-md sm:rounded-xl bg-gradient-to-r from-[#ff7e54] to-[#e65100] hover:from-[#ff9933] hover:to-[#ff7e54] text-white font-headline font-black text-[10px] sm:text-xs uppercase tracking-wider shadow-md hover:scale-105 active:scale-95 transition-all"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-gradient-to-r from-[#ff7e54] to-[#e65100] hover:from-[#ff9933] hover:to-[#ff7e54] text-white font-headline font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/30 hover:scale-105 active:scale-95 transition-all"
                     >
-                      <span>{lang === 'hi' ? 'जीवनी' : 'Biography'}</span>
-                      <ArrowRight size={11} className="sm:w-3.5 sm:h-3.5" />
+                      <span>{lang === 'hi' ? 'जीवनी व परिचय' : 'View Biography'}</span>
+                      <ArrowRight size={16} />
                     </Link>
                     <Link
                       to="/gallery"
-                      className="inline-flex items-center gap-1 px-2.5 py-1 sm:px-5 sm:py-2 rounded-md sm:rounded-xl bg-white/90 hover:bg-white text-slate-900 font-headline font-black text-[10px] sm:text-xs uppercase tracking-wider shadow-sm transition-all hover:scale-105"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-xl bg-white/90 hover:bg-white text-slate-900 font-headline font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all hover:scale-105"
                     >
-                      <span>{lang === 'hi' ? 'गैलरी' : 'Gallery'}</span>
+                      <span>{lang === 'hi' ? 'फोटो गैलरी' : 'Photo Gallery'}</span>
                     </Link>
                   </div>
                 </div>
@@ -181,15 +181,15 @@ const HeroCarousel = () => {
       </div>
 
       {/* Slide Indicators / Dots */}
-      <div className="absolute bottom-1.5 sm:bottom-6 left-3 sm:left-6 md:left-8 z-30 flex items-center gap-1 sm:gap-2">
+      <div className="absolute bottom-6 sm:bottom-8 left-4 sm:left-6 md:left-8 z-30 flex items-center gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`transition-all duration-300 rounded-full ${
               index === currentSlide 
-                ? 'w-4 sm:w-8 h-1 sm:h-1.5 bg-gradient-to-r from-amber-400 to-[#ff7e54]' 
-                : 'w-1 sm:w-1.5 h-1 sm:h-1.5 bg-white/40 hover:bg-white/70'
+                ? 'w-7 sm:w-9 h-2 bg-gradient-to-r from-amber-400 to-[#ff7e54]' 
+                : 'w-2 h-2 bg-white/40 hover:bg-white/70'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
