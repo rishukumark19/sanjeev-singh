@@ -14,10 +14,10 @@ const HeroCarousel = () => {
 
   const slides = [
     { 
-      image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_office.jpg`, 
-      titleKey: 'home.slide3.title', 
-      subKey: 'home.slide3.sub', 
-      tag: lang === 'hi' ? 'नागरिक सेवा व जनसंवाद' : 'Civic Dedication & Service',
+      image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_council_meeting.jpg`, 
+      titleKey: 'home.slide4.title', 
+      subKey: 'home.slide4.sub', 
+      tag: lang === 'hi' ? 'प्रशासनिक समीक्षा व सुशासन' : 'Civic Review & Governance',
       pos: 'center 25%' 
     },
     { 
@@ -25,20 +25,20 @@ const HeroCarousel = () => {
       titleKey: 'home.slide2.title', 
       subKey: 'home.slide2.sub', 
       tag: lang === 'hi' ? 'जनता की अटूट आस्था व विश्वास' : 'Faith & Public Solidarity',
-      pos: 'center 20%' 
+      pos: 'center 8%' 
     },
     { 
       image: `${import.meta.env.BASE_URL}images/real/fb_hemant_soren_meeting.jpg`, 
       titleKey: 'home.slide5.title', 
       subKey: 'home.slide5.sub', 
       tag: lang === 'hi' ? 'राज्य संवाद व जनसमर्पण' : 'State Leadership & Dialogue',
-      pos: 'center 25%' 
+      pos: 'center 10%' 
     },
     { 
-      image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_council_meeting.jpg`, 
-      titleKey: 'home.slide4.title', 
-      subKey: 'home.slide4.sub', 
-      tag: lang === 'hi' ? 'प्रशासनिक समीक्षा व सुशासन' : 'Civic Review & Governance',
+      image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_office.jpg`, 
+      titleKey: 'home.slide3.title', 
+      subKey: 'home.slide3.sub', 
+      tag: lang === 'hi' ? 'नागरिक सेवा व जनसंवाद' : 'Civic Dedication & Service',
       pos: 'center 25%' 
     },
     { 

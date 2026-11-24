@@ -26,6 +26,18 @@ export interface PhotoArchiveItem {
 
 const officialPhotoArchive: PhotoArchiveItem[] = [
   {
+    id: 'photo-diwali-1',
+    image: `${import.meta.env.BASE_URL}images/real/fb_diwali_greeting.jpg`,
+    category: 'community',
+    titleEn: 'Diwali Festivities & Auspicious Lamp Lighting with Smt. Ragini Singh',
+    titleHi: 'दीपावली महापर्व पर श्रीमती रागिनी सिंह जी के साथ दीप प्रज्वलन',
+    descEn: 'Sanjeev Singh and prominent leader Smt. Ragini Singh lighting the festive Deepam on the auspicious occasion of Diwali, extending warm wishes for prosperity, good health, and peace to all families of Dhanbad and Jharia.',
+    descHi: 'प्रकाश के पावन महापर्व दीपावली पर श्रीमती रागिनी सिंह जी के साथ पारंपरिक दीप प्रज्वलित कर कोयलांचल एवं सम्पूर्ण झरिया-धनबाद वासियों के सुख, शांति, उत्तम स्वास्थ्य और समृद्धि की मंगलकामना की।',
+    date: 'Nov 2026',
+    locationEn: 'Singh Mansion, Dhanbad',
+    locationHi: 'सिंह मेंशन, धनबाद'
+  },
+  {
     id: 'photo-office-1',
     image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_office.jpg`,
     category: 'civic',
@@ -36,18 +48,6 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     date: 'Oct 2026',
     locationEn: 'Mayor Office, Dhanbad Municipal Corporation',
     locationHi: 'महापौर कार्यालय, धनबाद नगर निगम'
-  },
-  {
-    id: 'photo-council-1',
-    image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_council_meeting.jpg`,
-    category: 'civic',
-    titleEn: 'Administrative Review & Citizen Deliberations at Mayor Office, Dhanbad',
-    titleHi: 'धनबाद नगर निगम महापौर कक्ष में प्रशासनिक समीक्षा व नागरिक संवाद',
-    descEn: 'Chairing a comprehensive review meeting with civic delegates, officials, and regional representatives at Dhanbad Municipal Corporation to address public grievances and expedite civic welfare projects.',
-    descHi: 'धनबाद नगर निगम के महापौर कक्ष में क्षेत्र के प्रबुद्ध नागरिकों, जनप्रतिनिधियों एवं अधिकारियों के साथ बैठक कर विकास योजनाओं की समीक्षा की और जनसमस्याओं के त्वरित समाधान हेतु दिशा-निर्देश दिए।',
-    date: 'Aug 2026',
-    locationEn: 'Mayor Chamber, Dhanbad Municipal Corporation',
-    locationHi: 'महापौर कक्ष, धनबाद नगर निगम'
   },
   {
     id: 'photo-ram-1',
@@ -62,66 +62,6 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     locationHi: 'सिंह मेंशन, धनबाद'
   },
   {
-    id: 'photo-soren-1',
-    image: `${import.meta.env.BASE_URL}images/real/fb_hemant_soren_meeting.jpg`,
-    category: 'civic',
-    titleEn: 'High-Level Meeting with Hon’ble Chief Minister Hemant Soren',
-    titleHi: 'माननीय मुख्यमंत्री श्री हेमंत सोरेन जी से आत्मीय भेंट व संवाद',
-    descEn: 'Sanjeev Singh and Smt. Ragini Singh in consultation with Hon’ble Chief Minister of Jharkhand Hemant Soren, discussing regional development, coal belt worker rights, and public welfare.',
-    descHi: 'माननीय मुख्यमंत्री श्री हेमंत सोरेन जी से श्रीमती रागिनी सिंह जी के साथ शिष्टाचार भेंट कर कोयलांचल के जनहित, नागरिक कल्याण और विकास प्राथमिकताओं पर विस्तृत विमर्श किया।',
-    date: 'Sep 2026',
-    locationEn: 'Nemra, Ramgarh',
-    locationHi: 'नेमरा, रामगढ़'
-  },
-  {
-    id: 'photo-diwali-1',
-    image: `${import.meta.env.BASE_URL}images/real/fb_diwali_greeting.jpg`,
-    category: 'community',
-    titleEn: 'Diwali Festivities & Auspicious Lamp Lighting with Smt. Ragini Singh',
-    titleHi: 'दीपावली महापर्व पर श्रीमती रागिनी सिंह जी के साथ दीप प्रज्वलन',
-    descEn: 'Sanjeev Singh and prominent leader Smt. Ragini Singh lighting the festive Deepam on the auspicious occasion of Diwali, extending warm wishes for prosperity, good health, and peace to all families of Dhanbad and Jharia.',
-    descHi: 'प्रकाश के पावन महापर्व दीपावली पर श्रीमती रागिनी सिंह जी के साथ पारंपरिक दीप प्रज्वलित कर कोयलांचल एवं सम्पूर्ण झरिया-धनबाद वासियों के सुख, शांति, उत्तम स्वास्थ्य और समृद्धि की मंगलकामना की।',
-    date: 'Nov 2026',
-    locationEn: 'Singh Mansion, Dhanbad',
-    locationHi: 'सिंह मेंशन, धनबाद'
-  },
-  {
-    id: 'photo-1',
-    image: `${import.meta.env.BASE_URL}images/real/fb_4.jpg`,
-    category: 'field',
-    titleEn: 'Citizen Grievance Resolution & Public Dialogue',
-    titleHi: 'जनसंवाद एवं नागरिक समस्याओं का समाधान',
-    descEn: 'Meeting hundreds of constituents and coal belt workers in Dhanbad. Listening attentively to local grievances and directing concerned officials for swift administrative redressal.',
-    descHi: 'धनबाद में आम नागरिकों व कामगारों से मिलकर प्रतिदिन की भांति क्षेत्रवासियों की समस्याएं सुनीं और उनके समाधान हेतु संबंधित अधिकारियों को आवश्यक दिशा-निर्देश दिए।',
-    date: '08 Oct 2026',
-    locationEn: 'Dhanbad, Jharkhand',
-    locationHi: 'धनबाद, झारखंड'
-  },
-  {
-    id: 'photo-2',
-    image: `${import.meta.env.BASE_URL}images/real/fb_10.jpg`,
-    category: 'civic',
-    titleEn: 'Cloth Distribution & Honor for Municipal Sanitation Workers',
-    titleHi: 'धनबाद नगर निगम के स्वच्छता कर्मियों का सम्मान व वस्त्र वितरण',
-    descEn: 'Felicitation and distribution of clothes to sanitation warriors at Dhanbad Municipal Corporation, recognizing their tireless round-the-clock commitment to public cleanliness and health.',
-    descHi: 'धनबाद नगर निगम कार्यालय परिसर में सफाई कर्मियों के बीच वस्त्र वितरण कर उनका सम्मान किया। दिन-रात निष्ठापूर्वक शहर को स्वच्छ रखने वाले हमारे स्वच्छता योद्धा समाज के सच्चे रक्षक हैं।',
-    date: '02 Oct 2026',
-    locationEn: 'Municipal Corporation, Dhanbad',
-    locationHi: 'नगर निगम परिसर, धनबाद'
-  },
-  {
-    id: 'photo-3',
-    image: `${import.meta.env.BASE_URL}images/real/fb_7.jpg`,
-    category: 'civic',
-    titleEn: 'District Development Coordination (DISHA) Review Meeting',
-    titleHi: 'धनबाद समाहरणालय में आयोजित DISHA समीक्षा बैठक',
-    descEn: 'Participating in the high-level DISHA committee meeting at Dhanbad Collectorate to review progress on central public welfare initiatives, pipeline projects, and expedited civic development.',
-    descHi: 'धनबाद समाहरणालय में आयोजित जिला विकास समन्वय एवं निगरानी समिति (DISHA) की समीक्षा बैठक में भाग लेकर जिले में संचालित केंद्रीय योजनाओं व विकास कार्यों की गहन समीक्षा की।',
-    date: '07 Oct 2026',
-    locationEn: 'Collectorate, Dhanbad',
-    locationHi: 'समाहरणालय, धनबाद'
-  },
-  {
     id: 'photo-4',
     image: `${import.meta.env.BASE_URL}images/real/fb_1.jpg`,
     category: 'community',
@@ -132,66 +72,6 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     date: '10 Oct 2026',
     locationEn: 'Nemra, Ramgarh',
     locationHi: 'नेमरा, रामगढ़'
-  },
-  {
-    id: 'photo-5',
-    image: `${import.meta.env.BASE_URL}images/real/fb_foodadda.jpg`,
-    category: 'community',
-    titleEn: 'Inauguration of Youth Entrepreneurship Enterprise in Dhanbad',
-    titleHi: 'धनबाद में स्थानीय युवाओं के स्वरोजगार प्रतिष्ठान का उद्घाटन',
-    descEn: 'Inaugurating local youth enterprise initiative to promote self-employment, youth entrepreneurship, and community business spirit in the heart of Dhanbad.',
-    descHi: 'धनबाद के स्थानीय उत्साही युवाओं द्वारा स्थापित नए व्यावसायिक प्रतिष्ठान का उद्घाटन कर उन्हें उज्ज्वल भविष्य हेतु शुभकामनाएं दीं। युवाओं का स्वावलंबन क्षेत्र की उन्नति का आधार है।',
-    date: '28 Sep 2026',
-    locationEn: 'Dhanbad City',
-    locationHi: 'धनबाद नगर'
-  },
-  {
-    id: 'photo-6',
-    image: `${import.meta.env.BASE_URL}images/real/fb_9.jpg`,
-    category: 'labor',
-    titleEn: 'National Small Savings Agents Union District Convention',
-    titleHi: 'राष्ट्रीय अल्प बचत अभिकर्ता संघ धनबाद सम्मेलन में भागीदारी',
-    descEn: 'Addressing the district conference of Small Savings Agents Union, discussing their commissions, operational challenges, and pledging ongoing support to raise their demands with authorities.',
-    descHi: 'राष्ट्रीय अल्प बचत अभिकर्ता संघ की धनबाद जिला इकाई द्वारा आयोजित सम्मेलन में सम्मिलित होकर साथियों की समस्याओं व कमीशन संबंधी मांगों को सुना और समाधान का पूर्ण भरोसा दिया।',
-    date: '02 Oct 2026',
-    locationEn: 'Union Hall, Dhanbad',
-    locationHi: 'यूनियन भवन, धनबाद'
-  },
-  {
-    id: 'photo-7',
-    image: `${import.meta.env.BASE_URL}images/real/fb_katras.jpg`,
-    category: 'field',
-    titleEn: 'Mass Outreach and Field Interaction Across Katras Coal Belt',
-    titleHi: 'कतरास व कोयलांचल क्षेत्र में जनसंपर्क व जनसंवाद',
-    descEn: 'Direct grassroots interaction with mining families, laborers, and regional representatives across the Katras coal belt to discuss civic needs and village connectivity.',
-    descHi: 'कतरास व आसपास के कोयलांचल क्षेत्रों में देवतुल्य जनता एवं कामगार साथियों से मिलकर क्षेत्र की समस्याओं, सड़क निर्माण और स्वच्छ जलापूर्ति के विषयों पर विस्तृत चर्चा की।',
-    date: '25 Sep 2026',
-    locationEn: 'Katras, Dhanbad',
-    locationHi: 'कतरास, धनबाद'
-  },
-  {
-    id: 'photo-8',
-    image: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`,
-    category: 'civic',
-    titleEn: 'Civic Project & Rail Coach Landmark Inauguration',
-    titleHi: 'रेल कोच नागरिक परियोजना का उद्घाटन समारोह',
-    descEn: 'Inauguration of modern civic landmark and passenger convenience amenity in Dhanbad, bringing progressive infrastructure to the coal capital.',
-    descHi: 'धनबाद में अभिनव रेल कोच नागरिक परियोजना का फीता काटकर उद्घाटन किया। क्षेत्र के सौंदर्य व नागरिक सुविधाओं के संवर्धन के लिए यह महत्वपूर्ण कदम है।',
-    date: '20 Sep 2026',
-    locationEn: 'Dhanbad Junction Area',
-    locationHi: 'धनबाद स्टेशन परिसर'
-  },
-  {
-    id: 'photo-9',
-    image: `${import.meta.env.BASE_URL}images/real/fb_6.jpg`,
-    category: 'field',
-    titleEn: 'Delegation Meetings & Grassroots Review in Dhanbad',
-    titleHi: 'विभिन्न क्षेत्रों से आए प्रतिनिधिमंडलों से सीधा संवाद',
-    descEn: 'Consultation with worker delegations, youth sports clubs, and neighborhood committees in Dhanbad, addressing developmental proposals.',
-    descHi: 'कोयलांचल के विभिन्न अंचलों से आए प्रतिनिधिमंडलों से संवाद कर स्थानीय आवश्यकताओं और विकास कार्यों की प्रगति की समीक्षा की।',
-    date: '07 Oct 2026',
-    locationEn: 'Dhanbad, Jharkhand',
-    locationHi: 'धनबाद, झारखंड'
   },
   {
     id: 'photo-10',
@@ -206,16 +86,16 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     locationHi: 'चिरकुंडा, धनबाद'
   },
   {
-    id: 'photo-11',
-    image: `${import.meta.env.BASE_URL}images/real/fb_8.jpg`,
-    category: 'community',
-    titleEn: 'Family & Auspicious Community Occasion in Manaitand',
-    titleHi: 'मनईटांड़ में आयोजित मांगलिक पारिवारिक समारोह में आशीर्वाद',
-    descEn: 'Attending community family gathering at Yamuna Banquet Hall, Manaitand to bless young children and share in regional families’ milestones.',
-    descHi: 'मनईटांड़ में श्री सागर गुप्ता जी की सुपुत्री के प्रथम जन्मदिन समारोह में सम्मिलित होकर बिटिया को स्नेह और मंगलमय जीवन का आशीर्वाद दिया।',
-    date: '07 Oct 2026',
-    locationEn: 'Manaitand, Dhanbad',
-    locationHi: 'मनईटांड़, धनबाद'
+    id: 'photo-1',
+    image: `${import.meta.env.BASE_URL}images/real/fb_4.jpg`,
+    category: 'field',
+    titleEn: 'Citizen Grievance Resolution & Public Dialogue',
+    titleHi: 'जनसंवाद एवं नागरिक समस्याओं का समाधान',
+    descEn: 'Meeting hundreds of constituents and coal belt workers in Dhanbad. Listening attentively to local grievances and directing concerned officials for swift administrative redressal.',
+    descHi: 'धनबाद में आम नागरिकों व कामगारों से मिलकर प्रतिदिन की भांति क्षेत्रवासियों की समस्याएं सुनीं और उनके समाधान हेतु संबंधित अधिकारियों को आवश्यक दिशा-निर्देश दिए।',
+    date: '08 Oct 2026',
+    locationEn: 'Dhanbad, Jharkhand',
+    locationHi: 'धनबाद, झारखंड'
   },
   {
     id: 'photo-12',
@@ -228,6 +108,126 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     date: '08 Oct 2026',
     locationEn: 'Raj Clinic, Dhanbad',
     locationHi: 'राज क्लिनिक, धनबाद'
+  },
+  {
+    id: 'photo-16',
+    image: `${import.meta.env.BASE_URL}images/real/fb_3.jpg`,
+    category: 'community',
+    titleEn: 'Tribute to Former Union Minister Late Ram Vilas Paswan',
+    titleHi: 'पूर्व केंद्रीय मंत्री स्व. रामविलास पासवान जी की पुण्यतिथि पर नमन',
+    descEn: 'Paying reverent homage on the death anniversary of visionary social justice advocate and former Union Minister Late Ram Vilas Paswan ji.',
+    descHi: 'सामाजिक न्याय, वंचितों और शोषितों के उत्थान के लिए आजीवन समर्पित रहे पूर्व केंद्रीय मंत्री स्व. रामविलास पासवान जी की पुण्यतिथि पर सादर नमन।',
+    date: '08 Oct 2026',
+    locationEn: 'Dhanbad',
+    locationHi: 'धनबाद'
+  },
+  {
+    id: 'photo-3',
+    image: `${import.meta.env.BASE_URL}images/real/fb_7.jpg`,
+    category: 'civic',
+    titleEn: 'District Development Coordination (DISHA) Review Meeting',
+    titleHi: 'धनबाद समाहरणालय में आयोजित DISHA समीक्षा बैठक',
+    descEn: 'Participating in the high-level DISHA committee meeting at Dhanbad Collectorate to review progress on central public welfare initiatives, pipeline projects, and expedited civic development.',
+    descHi: 'धनबाद समाहरणालय में आयोजित जिला विकास समन्वय एवं निगरानी समिति (DISHA) की समीक्षा बैठक में भाग लेकर जिले में संचालित केंद्रीय योजनाओं व विकास कार्यों की गहन समीक्षा की।',
+    date: '07 Oct 2026',
+    locationEn: 'Collectorate, Dhanbad',
+    locationHi: 'समाहरणालय, धनबाद'
+  },
+  {
+    id: 'photo-9',
+    image: `${import.meta.env.BASE_URL}images/real/fb_6.jpg`,
+    category: 'field',
+    titleEn: 'Delegation Meetings & Grassroots Review in Dhanbad',
+    titleHi: 'विभिन्न क्षेत्रों से आए प्रतिनिधिमंडलों से सीधा संवाद',
+    descEn: 'Consultation with worker delegations, youth sports clubs, and neighborhood committees in Dhanbad, addressing developmental proposals.',
+    descHi: 'कोयलांचल के विभिन्न अंचलों से आए प्रतिनिधिमंडलों से संवाद कर स्थानीय आवश्यकताओं और विकास कार्यों की प्रगति की समीक्षा की।',
+    date: '07 Oct 2026',
+    locationEn: 'Dhanbad, Jharkhand',
+    locationHi: 'धनबाद, झारखंड'
+  },
+  {
+    id: 'photo-11',
+    image: `${import.meta.env.BASE_URL}images/real/fb_8.jpg`,
+    category: 'community',
+    titleEn: 'Family & Auspicious Community Occasion in Manaitand',
+    titleHi: 'मनईटांड़ में आयोजित मांगलिक पारिवारिक समारोह में आशीर्वाद',
+    descEn: 'Attending community family gathering at Yamuna Banquet Hall, Manaitand to bless young children and share in regional families’ milestones.',
+    descHi: 'मनईटांड़ में श्री सागर गुप्ता जी की सुपुत्री के प्रथम जन्मदिन समारोह में सम्मिलित होकर बिटिया को स्नेह और मंगलमय जीवन का आशीर्वाद दिया।',
+    date: '07 Oct 2026',
+    locationEn: 'Manaitand, Dhanbad',
+    locationHi: 'मनईटांड़, धनबाद'
+  },
+  {
+    id: 'photo-2',
+    image: `${import.meta.env.BASE_URL}images/real/fb_10.jpg`,
+    category: 'civic',
+    titleEn: 'Cloth Distribution & Honor for Municipal Sanitation Workers',
+    titleHi: 'धनबाद नगर निगम के स्वच्छता कर्मियों का सम्मान व वस्त्र वितरण',
+    descEn: 'Felicitation and distribution of clothes to sanitation warriors at Dhanbad Municipal Corporation, recognizing their tireless round-the-clock commitment to public cleanliness and health.',
+    descHi: 'धनबाद नगर निगम कार्यालय परिसर में सफाई कर्मियों के बीच वस्त्र वितरण कर उनका सम्मान किया। दिन-रात निष्ठापूर्वक शहर को स्वच्छ रखने वाले हमारे स्वच्छता योद्धा समाज के सच्चे रक्षक हैं।',
+    date: '02 Oct 2026',
+    locationEn: 'Municipal Corporation, Dhanbad',
+    locationHi: 'नगर निगम परिसर, धनबाद'
+  },
+  {
+    id: 'photo-6',
+    image: `${import.meta.env.BASE_URL}images/real/fb_9.jpg`,
+    category: 'labor',
+    titleEn: 'National Small Savings Agents Union District Convention',
+    titleHi: 'राष्ट्रीय अल्प बचत अभिकर्ता संघ धनबाद सम्मेलन में भागीदारी',
+    descEn: 'Addressing the district conference of Small Savings Agents Union, discussing their commissions, operational challenges, and pledging ongoing support to raise their demands with authorities.',
+    descHi: 'राष्ट्रीय अल्प बचत अभिकर्ता संघ की धनबाद जिला इकाई द्वारा आयोजित सम्मेलन में सम्मिलित होकर साथियों की समस्याओं व कमीशन संबंधी मांगों को सुना और समाधान का पूर्ण भरोसा दिया।',
+    date: '02 Oct 2026',
+    locationEn: 'Union Hall, Dhanbad',
+    locationHi: 'यूनियन भवन, धनबाद'
+  },
+  {
+    id: 'photo-5',
+    image: `${import.meta.env.BASE_URL}images/real/fb_foodadda.jpg`,
+    category: 'community',
+    titleEn: 'Inauguration of Youth Entrepreneurship Enterprise in Dhanbad',
+    titleHi: 'धनबाद में स्थानीय युवाओं के स्वरोजगार प्रतिष्ठान का उद्घाटन',
+    descEn: 'Inaugurating local youth enterprise initiative to promote self-employment, youth entrepreneurship, and community business spirit in the heart of Dhanbad.',
+    descHi: 'धनबाद के स्थानीय उत्साही युवाओं द्वारा स्थापित नए व्यावसायिक प्रतिष्ठान का उद्घाटन कर उन्हें उज्ज्वल भविष्य हेतु शुभकामनाएं दीं। युवाओं का स्वावलंबन क्षेत्र की उन्नति का आधार है।',
+    date: '28 Sep 2026',
+    locationEn: 'Dhanbad City',
+    locationHi: 'धनबाद नगर'
+  },
+  {
+    id: 'photo-7',
+    image: `${import.meta.env.BASE_URL}images/real/fb_katras.jpg`,
+    category: 'field',
+    titleEn: 'Mass Outreach and Field Interaction Across Katras Coal Belt',
+    titleHi: 'कतरास व कोयलांचल क्षेत्र में जनसंपर्क व जनसंवाद',
+    descEn: 'Direct grassroots interaction with mining families, laborers, and regional representatives across the Katras coal belt to discuss civic needs and village connectivity.',
+    descHi: 'कतरास व आसपास के कोयलांचल क्षेत्रों में देवतुल्य जनता एवं कामगार साथियों से मिलकर क्षेत्र की समस्याओं, सड़क निर्माण और स्वच्छ जलापूर्ति के विषयों पर विस्तृत चर्चा की।',
+    date: '25 Sep 2026',
+    locationEn: 'Katras, Dhanbad',
+    locationHi: 'कतरास, धनबाद'
+  },
+  {
+    id: 'photo-soren-1',
+    image: `${import.meta.env.BASE_URL}images/real/fb_hemant_soren_meeting.jpg`,
+    category: 'civic',
+    titleEn: 'High-Level Meeting with Hon’ble Chief Minister Hemant Soren',
+    titleHi: 'माननीय मुख्यमंत्री श्री हेमंत सोरेन जी से आत्मीय भेंट व संवाद',
+    descEn: 'Sanjeev Singh and Smt. Ragini Singh in consultation with Hon’ble Chief Minister of Jharkhand Hemant Soren, discussing regional development, coal belt worker rights, and public welfare.',
+    descHi: 'माननीय मुख्यमंत्री श्री हेमंत सोरेन जी से श्रीमती रागिनी सिंह जी के साथ शिष्टाचार भेंट कर कोयलांचल के जनहित, नागरिक कल्याण और विकास प्राथमिकताओं पर विस्तृत विमर्श किया।',
+    date: 'Sep 2026',
+    locationEn: 'Nemra, Ramgarh',
+    locationHi: 'नेमरा, रामगढ़'
+  },
+  {
+    id: 'photo-8',
+    image: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`,
+    category: 'civic',
+    titleEn: 'Civic Project & Rail Coach Landmark Inauguration',
+    titleHi: 'रेल कोच नागरिक परियोजना का उद्घाटन समारोह',
+    descEn: 'Inauguration of modern civic landmark and passenger convenience amenity in Dhanbad, bringing progressive infrastructure to the coal capital.',
+    descHi: 'धनबाद में अभिनव रेल कोच नागरिक परियोजना का फीता काटकर उद्घाटन किया। क्षेत्र के सौंदर्य व नागरिक सुविधाओं के संवर्धन के लिए यह महत्वपूर्ण कदम है।',
+    date: '20 Sep 2026',
+    locationEn: 'Dhanbad Junction Area',
+    locationHi: 'धनबाद स्टेशन परिसर'
   },
   {
     id: 'photo-13',
@@ -266,16 +266,16 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     locationHi: 'टाउन हॉल, धनबाद'
   },
   {
-    id: 'photo-16',
-    image: `${import.meta.env.BASE_URL}images/real/fb_3.jpg`,
-    category: 'community',
-    titleEn: 'Tribute to Former Union Minister Late Ram Vilas Paswan',
-    titleHi: 'पूर्व केंद्रीय मंत्री स्व. रामविलास पासवान जी की पुण्यतिथि पर नमन',
-    descEn: 'Paying reverent homage on the death anniversary of visionary social justice advocate and former Union Minister Late Ram Vilas Paswan ji.',
-    descHi: 'सामाजिक न्याय, वंचितों और शोषितों के उत्थान के लिए आजीवन समर्पित रहे पूर्व केंद्रीय मंत्री स्व. रामविलास पासवान जी की पुण्यतिथि पर सादर नमन।',
-    date: '08 Oct 2026',
-    locationEn: 'Dhanbad',
-    locationHi: 'धनबाद'
+    id: 'photo-council-1',
+    image: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_council_meeting.jpg`,
+    category: 'civic',
+    titleEn: 'Administrative Review & Citizen Deliberations at Mayor Office, Dhanbad',
+    titleHi: 'धनबाद नगर निगम महापौर कक्ष में प्रशासनिक समीक्षा व नागरिक संवाद',
+    descEn: 'Chairing a comprehensive review meeting with civic delegates, officials, and regional representatives at Dhanbad Municipal Corporation to address public grievances and expedite civic welfare projects.',
+    descHi: 'धनबाद नगर निगम के महापौर कक्ष में क्षेत्र के प्रबुद्ध नागरिकों, जनप्रतिनिधियों एवं अधिकारियों के साथ बैठक कर विकास योजनाओं की समीक्षा की और जनसमस्याओं के त्वरित समाधान हेतु दिशा-निर्देश दिए।',
+    date: 'Aug 2026',
+    locationEn: 'Mayor Chamber, Dhanbad Municipal Corporation',
+    locationHi: 'महापौर कक्ष, धनबाद नगर निगम'
   },
   {
     id: 'photo-17',
@@ -289,9 +289,7 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     locationEn: 'Dhanbad, Jharkhand',
     locationHi: 'धनबाद, झारखंड'
   }
-];
-
-const Gallery = () => {
+];const Gallery = () => {
   const { lang } = useLanguage();
   const isHi = lang === 'hi';
 

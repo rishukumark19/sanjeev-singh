@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Play, X, MapPin, Video as VideoIcon } from 'lucide-react';
+import { Play, X, MapPin, Video as VideoIcon, ExternalLink } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -26,7 +26,8 @@ const videosList: VideoItem[] = [
     descHi: 'कोयलांचल की जनता को संबोधित करते हुए झरिया के सर्वांगीण विकास एवं कामगारों के सम्मान व सुरक्षा की प्रतिबद्धता दोहराई।',
     date: 'Sep 2026',
     locationEn: 'Katras, Dhanbad',
-    locationHi: 'कतरास, धनबाद'
+    locationHi: 'कतरास, धनबाद',
+    youtubeId: 'CRXTez7UZys'
   },
   {
     id: 'vid-2',
@@ -37,7 +38,8 @@ const videosList: VideoItem[] = [
     descHi: 'बीसीसीएल कर्मियों के वेतन समझौते, चिकित्सा सुविधाओं व खान सुरक्षा मानकों को लेकर संघ प्रतिनिधियों से सीधा संवाद।',
     date: 'Oct 2026',
     locationEn: 'Town Hall, Dhanbad',
-    locationHi: 'टाउन हॉल, धनबाद'
+    locationHi: 'टाउन हॉल, धनबाद',
+    youtubeId: 'slHQ2NKohBs'
   },
   {
     id: 'vid-3',
@@ -48,7 +50,8 @@ const videosList: VideoItem[] = [
     descHi: 'धनबाद नगर के आधुनिकीकरण एवं जनसुविधाओं के विस्तार पर विस्तृत विचार रखे।',
     date: 'Sep 2026',
     locationEn: 'Dhanbad Station',
-    locationHi: 'धनबाद स्टेशन'
+    locationHi: 'धनबाद स्टेशन',
+    youtubeId: 'GYi59uEvdNw'
   },
   {
     id: 'vid-4',
@@ -59,7 +62,8 @@ const videosList: VideoItem[] = [
     descHi: 'धनबाद को स्वच्छ व सुंदर बनाने वाले हमारे स्वच्छता योद्धाओं के प्रति कृतज्ञता ज्ञापन।',
     date: 'Oct 2026',
     locationEn: 'Municipal Corp, Dhanbad',
-    locationHi: 'नगर निगम, धनबाद'
+    locationHi: 'नगर निगम, धनबाद',
+    youtubeId: '9bWoql4qbgQ'
   },
   {
     id: 'vid-5',
@@ -70,7 +74,8 @@ const videosList: VideoItem[] = [
     descHi: 'केंद्रीय योजनाओं के पारदर्शी क्रियान्वयन एवं लंबित विकास कार्यों में तेजी लाने पर बल दिया।',
     date: 'Oct 2026',
     locationEn: 'Collectorate, Dhanbad',
-    locationHi: 'समाहरणालय, धनबाद'
+    locationHi: 'समाहरणालय, धनबाद',
+    youtubeId: 'BOm9FUOqB78'
   },
   {
     id: 'vid-6',
@@ -81,7 +86,8 @@ const videosList: VideoItem[] = [
     descHi: 'युवाओं को आत्मनिर्भर बनने और स्वरोजगार के नए अवसर सृजित करने हेतु प्रेरित किया।',
     date: 'Sep 2026',
     locationEn: 'Dhanbad City',
-    locationHi: 'धनबाद नगर'
+    locationHi: 'धनबाद नगर',
+    youtubeId: '2m6aGoeWMQc'
   }
 ];
 
@@ -194,29 +200,54 @@ const Videos = () => {
             </button>
 
             <div className="relative aspect-video bg-black flex items-center justify-center">
-              <img
-                src={activeVideo.img}
-                alt={isHi ? activeVideo.titleHi : activeVideo.titleEn}
-                className="w-full h-full object-cover opacity-60"
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
-                <div className="w-16 h-16 rounded-full bg-[#ff7e54] text-white flex items-center justify-center shadow-xl">
-                  <Play size={28} className="ml-1 fill-white" />
+              {activeVideo.youtubeId ? (
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${activeVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+                  title={isHi ? activeVideo.titleHi : activeVideo.titleEn}
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <img
+                    src={activeVideo.img}
+                    alt={isHi ? activeVideo.titleHi : activeVideo.titleEn}
+                    className="w-full h-full object-cover opacity-60"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
+                    <div className="w-16 h-16 rounded-full bg-[#ff7e54] text-white flex items-center justify-center shadow-xl">
+                      <Play size={28} className="ml-1 fill-white" />
+                    </div>
+                    <p className="text-xs uppercase tracking-widest text-amber-300 font-bold">
+                      {isHi ? 'आधिकारिक वीडियो आर्काइव' : 'Official Speech Highlight'}
+                    </p>
+                    <p className="text-sm font-semibold max-w-md">
+                      {isHi ? activeVideo.titleHi : activeVideo.titleEn}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-xs uppercase tracking-widest text-amber-300 font-bold">
-                  {isHi ? 'आधिकारिक वीडियो आर्काइव' : 'Official Speech Highlight'}
-                </p>
-                <p className="text-sm font-semibold max-w-md">
-                  {isHi ? activeVideo.titleHi : activeVideo.titleEn}
-                </p>
-              </div>
+              )}
             </div>
 
-            <div className="p-6 space-y-2">
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase">
-                <span>{activeVideo.date}</span>
-                <span>•</span>
-                <span>{isHi ? activeVideo.locationHi : activeVideo.locationEn}</span>
+            <div className="p-6 space-y-3">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase">
+                  <span>{activeVideo.date}</span>
+                  <span>•</span>
+                  <span>{isHi ? activeVideo.locationHi : activeVideo.locationEn}</span>
+                </div>
+                {activeVideo.youtubeId && (
+                  <a
+                    href={`https://www.youtube.com/watch?v=${activeVideo.youtubeId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff7e54] hover:text-[#e65100] transition-colors"
+                  >
+                    <span>{isHi ? 'यूट्यूब पर देखें' : 'Watch on YouTube'}</span>
+                    <ExternalLink size={13} />
+                  </a>
+                )}
               </div>
               <h2 className="text-xl font-headline font-bold text-slate-900">
                 {isHi ? activeVideo.titleHi : activeVideo.titleEn}
