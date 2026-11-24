@@ -13,7 +13,9 @@ import {
   Landmark,
   Compass,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Play,
+  MapPin
 } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import HeroCarousel from '../components/HeroCarousel';
@@ -134,6 +136,31 @@ const Home = () => {
     });
     setActiveHighlight(index);
   };
+
+  // Official Facebook Video Highlights
+  const facebookVideos = [
+    {
+      img: `${import.meta.env.BASE_URL}images/real/fb_katras.jpg`,
+      title: isHi ? 'कतरास व कोयलांचल क्षेत्र में विशाल जनसभा को ओजस्वी संबोधन' : 'Public Address and Mass Outreach across Katras Coal Belt',
+      desc: isHi ? 'कोयलांचल की जनता को संबोधित करते हुए झरिया के सर्वांगीण विकास एवं कामगारों के सम्मान व सुरक्षा की प्रतिबद्धता दोहराई।' : 'Addressing thousands of workers and families, highlighting generational commitment to Dhanbad.',
+      location: isHi ? 'कतरास, धनबाद' : 'Katras, Dhanbad',
+      date: 'Sep 2026'
+    },
+    {
+      img: `${import.meta.env.BASE_URL}images/real/fb_townhall.jpg`,
+      title: isHi ? 'जनता मजदूर संघ महाधिवेशन में खनिकों के अधिकारों पर मुख्य वक्तव्य' : 'Keynote Speech at Janta Mazdoor Sangh Delegates Convention',
+      desc: isHi ? 'बीसीसीएल कर्मियों के वेतन समझौते, चिकित्सा सुविधाओं व खान सुरक्षा मानकों को लेकर संघ प्रतिनिधियों से सीधा संवाद।' : 'Articulating BCCL worker wage parity, occupational safety nets, and social health security policies.',
+      location: isHi ? 'टाउन हॉल, धनबाद' : 'Town Hall, Dhanbad',
+      date: 'Oct 2026'
+    },
+    {
+      img: `${import.meta.env.BASE_URL}images/real/fb_10.jpg`,
+      title: isHi ? 'स्वच्छता कर्मियों के सम्मान समारोह में प्रेरक संबोधन' : 'Speech Honoring Municipal Sanitation Staff as Frontline Heroes',
+      desc: isHi ? 'धनबाद को स्वच्छ व सुंदर बनाने वाले हमारे स्वच्छता योद्धाओं के प्रति कृतज्ञता ज्ञापन।' : 'Expressing gratitude to the tireless municipal sanitation workers who ensure Dhanbad remains healthy and pristine.',
+      location: isHi ? 'नगर निगम, धनबाद' : 'Municipal Corp, Dhanbad',
+      date: 'Oct 2026'
+    }
+  ];
 
   return (
     <div className="animate-in fade-in duration-500 overflow-x-hidden bg-[#fdfbf7]">
@@ -485,6 +512,109 @@ const Home = () => {
                 }`}
                 aria-label={`Go to highlight ${idx + 1}`}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6.5 Official Facebook Video Speeches Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-[#f8f9fa] relative overflow-hidden border-b border-slate-200">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-10">
+            <div>
+              <Reveal>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="h-1 w-10 bg-[#1877f2] rounded-full" />
+                  <span className="text-xs font-black text-[#1877f2] uppercase tracking-[0.25em] flex items-center gap-1.5">
+                    <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
+                      <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                    </svg>
+                    <span>{isHi ? 'फेसबुक वीडियो व संबोधन' : 'Facebook Video Speeches'}</span>
+                  </span>
+                </div>
+              </Reveal>
+              <Reveal delay={100}>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-headline font-black text-slate-950">
+                  {isHi ? 'जनसंवाद व महत्वपूर्ण भाषण' : 'Public Speeches & Addresses'}
+                </h2>
+              </Reveal>
+            </div>
+
+            <Reveal delay={150}>
+              <Link 
+                to="/videos" 
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#1877f2] hover:text-blue-800 uppercase tracking-wider"
+              >
+                <span>{isHi ? 'सभी वीडियो देखें' : 'View All Videos'}</span>
+                <ArrowRight size={16} />
+              </Link>
+            </Reveal>
+          </div>
+
+          {/* Facebook Video Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {facebookVideos.map((vid, idx) => (
+              <Reveal key={idx} delay={idx * 80}>
+                <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                  <div className="relative aspect-video overflow-hidden bg-slate-900">
+                    <img 
+                      src={vid.img} 
+                      alt={vid.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95" 
+                    />
+                    <div className="absolute inset-0 bg-slate-950/25 group-hover:bg-slate-950/10 transition-colors" />
+
+                    {/* Facebook Video Badge */}
+                    <div className="absolute top-3 left-3 bg-[#1877f2] text-white font-bold text-[10px] px-2.5 py-0.5 rounded-md uppercase tracking-wider flex items-center gap-1.5 shadow-md">
+                      <svg fill="currentColor" viewBox="0 0 24 24" className="w-3 h-3">
+                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                      </svg>
+                      <span>Facebook Video</span>
+                    </div>
+
+                    <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md">
+                      {vid.date}
+                    </div>
+
+                    {/* Play Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-full bg-[#1877f2] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <Play size={18} className="ml-0.5 fill-white" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+                    <div>
+                      <div className="flex items-center gap-1.5 text-xs text-[#1877f2] font-bold mb-1">
+                        <MapPin size={12} />
+                        <span>{vid.location}</span>
+                      </div>
+                      <h4 className="font-headline font-bold text-base text-slate-900 leading-snug group-hover:text-[#1877f2] transition-colors line-clamp-2">
+                        {vid.title}
+                      </h4>
+                      <p className="text-xs text-slate-600 line-clamp-2 mt-1 leading-relaxed">
+                        {vid.desc}
+                      </p>
+                    </div>
+
+                    <a 
+                      href="https://www.facebook.com/profile.php?id=100069661650642"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-between w-full pt-3 mt-2 border-t border-slate-100 text-xs font-bold text-[#1877f2] hover:text-blue-800"
+                    >
+                      <span className="flex items-center gap-1.5">
+                        <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
+                          <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+                        </svg>
+                        <span>{isHi ? 'फेसबुक पर देखें' : 'Watch on Facebook'}</span>
+                      </span>
+                      <ExternalLink size={13} />
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
