@@ -22,6 +22,7 @@ export interface PhotoArchiveItem {
   date: string;
   locationEn: string;
   locationHi: string;
+  pos?: string;
 }
 
 const officialPhotoArchive: PhotoArchiveItem[] = [
@@ -35,7 +36,8 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     descHi: 'प्रकाश के पावन महापर्व दीपावली पर श्रीमती रागिनी सिंह जी के साथ पारंपरिक दीप प्रज्वलित कर कोयलांचल एवं सम्पूर्ण झरिया-धनबाद वासियों के सुख, शांति, उत्तम स्वास्थ्य और समृद्धि की मंगलकामना की।',
     date: 'Nov 2026',
     locationEn: 'Singh Mansion, Dhanbad',
-    locationHi: 'सिंह मेंशन, धनबाद'
+    locationHi: 'सिंह मेंशन, धनबाद',
+    pos: 'center 12%'
   },
   {
     id: 'photo-office-1',
@@ -413,6 +415,7 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
                     src={photo.image} 
                     alt={isHi ? photo.titleHi : photo.titleEn} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    style={{ objectPosition: photo.pos || 'center center' }}
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-300" />

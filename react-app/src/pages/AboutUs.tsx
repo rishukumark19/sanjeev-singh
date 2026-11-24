@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   User, 
@@ -12,6 +13,14 @@ import { useLanguage } from '../context/LanguageContext';
 const AboutUs = () => {
   const { lang, t } = useLanguage();
   const isHi = lang === 'hi';
+  const [activePortraitIndex, setActivePortraitIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActivePortraitIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   const milestones = [
     {
@@ -102,14 +111,42 @@ const AboutUs = () => {
             <Reveal delay={100}>
               <div className="relative group max-w-md mx-auto lg:max-w-none">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10 border-4 border-white bg-[#091322]">
+                  {/* Photo 1: Traditional Festival / Chhath Attire */}
                   <img 
-                    alt="Sanjeev Singh Official Portrait" 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
+                    alt="Sanjeev Singh & Smt. Ragini Singh" 
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                      activePortraitIndex === 0 ? 'opacity-100' : 'opacity-0'
+                    }`}
                     style={{ objectPosition: 'center 15%' }}
-                    src={`${import.meta.env.BASE_URL}images/real/sanjeev_portrait_hd.jpg`} 
+                    src={`${import.meta.env.BASE_URL}images/real/sanjeev_about_portrait.jpg`} 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#060c18] via-transparent to-transparent opacity-85" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
+
+                  {/* Photo 2: Diwali Celebration with Diya (Crossfade) */}
+                  <img 
+                    alt="Sanjeev Singh & Smt. Ragini Singh - Diwali" 
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                      activePortraitIndex === 1 ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    style={{ objectPosition: 'center 15%' }}
+                    src={`${import.meta.env.BASE_URL}images/real/sanjeev_diwali_about_portrait.jpg`} 
+                  />
+
+                  {/* Indicator Dots */}
+                  <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/15">
+                    <button
+                      onClick={() => setActivePortraitIndex(0)}
+                      aria-label="View portrait 1"
+                      className={`h-1.5 rounded-full transition-all ${activePortraitIndex === 0 ? 'bg-[#ff7e54] w-4' : 'bg-white/40 w-1.5 hover:bg-white/70'}`}
+                    />
+                    <button
+                      onClick={() => setActivePortraitIndex(1)}
+                      aria-label="View portrait 2"
+                      className={`h-1.5 rounded-full transition-all ${activePortraitIndex === 1 ? 'bg-[#ff7e54] w-4' : 'bg-white/40 w-1.5 hover:bg-white/70'}`}
+                    />
+                  </div>
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#060c18] via-black/20 to-transparent opacity-85 pointer-events-none" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white pointer-events-none">
                     <div className="flex items-center gap-2 mb-1">
                       <Logo size="sm" showBadge />
                       <span className="text-xs font-bold uppercase tracking-widest text-amber-300 flex items-center gap-1">
