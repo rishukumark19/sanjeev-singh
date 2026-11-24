@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Landmark, ArrowRight, MapPin, ExternalLink, ShieldCheck, Home, User, Image, Newspaper, Video } from 'lucide-react';
+import { Landmark, ArrowRight, MapPin, ExternalLink, ShieldCheck, Home, User, Image, Newspaper } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import Logo from './Logo';
 
@@ -12,7 +12,6 @@ const Footer = () => {
     { label: t('footer.bio'), to: '/about', icon: User },
     { label: t('nav.gallery'), to: '/gallery', icon: Image },
     { label: isHi ? 'समाचार व विज्ञप्ति' : 'Press & Bulletins', to: '/press', icon: Newspaper },
-    { label: isHi ? 'वीडियो' : 'Videos', to: '/videos', icon: Video },
     { label: isHi ? 'प्राइवेसी पॉलिसी' : 'Privacy Policy', to: '/privacy', icon: ShieldCheck },
   ];
 

@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Gallery from './pages/Gallery';
 import PressReleases from './pages/PressReleases';
-import Videos from './pages/Videos';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 
@@ -23,7 +22,7 @@ function App() {
             <Route path="press" element={<PressReleases />} />
             <Route path="updates" element={<PressReleases />} />
             <Route path="news" element={<PressReleases />} />
-            <Route path="videos" element={<Videos />} />
+            <Route path="videos" element={<Navigate to="/" replace />} />
             {/* Any legacy contact URLs gracefully redirect to Home */}
             <Route path="contact" element={<Navigate to="/" replace />} />
             <Route path="contact-us" element={<Navigate to="/" replace />} />

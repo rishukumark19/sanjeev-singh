@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Home, User, Image, Newspaper, Globe, X, ChevronRight, Video as VideoIcon, Landmark } from 'lucide-react';
+import { Home, User, Image, Newspaper, Globe, X, ChevronRight, Landmark } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import Logo from './Logo';
 
@@ -28,7 +28,6 @@ const Header = () => {
     { label: t('nav.about'), to: '/about', icon: User },
     { label: t('nav.gallery'), to: '/gallery', icon: Image },
     { label: lang === 'hi' ? 'समाचार व विज्ञप्ति' : 'Press & News', to: '/press', icon: Newspaper },
-    { label: lang === 'hi' ? 'वीडियो' : 'Videos', to: '/videos', icon: VideoIcon },
   ];
 
   return (
