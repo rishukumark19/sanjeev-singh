@@ -165,10 +165,10 @@ const Home = () => {
                   {/* Image Card */}
                   <div className="rounded-3xl overflow-hidden shadow-2xl relative bg-[#091322] border-4 border-white group">
                     <img 
-                      src={`${import.meta.env.BASE_URL}images/real/fb_4.jpg`} 
+                      src={`${import.meta.env.BASE_URL}images/real/sanjeev_portrait_hd.jpg`} 
                       alt="Sanjeev Singh Official Portrait" 
                       className="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-700" 
-                      style={{ objectPosition: '42% 18%' }}
+                      style={{ objectPosition: 'center 15%' }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#060c18] via-transparent to-transparent opacity-85" />
                     

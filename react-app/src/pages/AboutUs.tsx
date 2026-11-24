@@ -105,8 +105,8 @@ const AboutUs = () => {
                   <img 
                     alt="Sanjeev Singh Official Portrait" 
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                    style={{ objectPosition: '42% 18%' }}
-                    src={`${import.meta.env.BASE_URL}images/real/fb_4.jpg`} 
+                    style={{ objectPosition: 'center 15%' }}
+                    src={`${import.meta.env.BASE_URL}images/real/sanjeev_portrait_hd.jpg`} 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#060c18] via-transparent to-transparent opacity-85" />
                   <div className="absolute bottom-6 left-6 right-6 text-white">

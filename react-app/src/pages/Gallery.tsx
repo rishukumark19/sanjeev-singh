@@ -219,7 +219,7 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
   },
   {
     id: 'photo-17',
-    image: `${import.meta.env.BASE_URL}images/real/fb_profile.jpg`,
+    image: `${import.meta.env.BASE_URL}images/real/sanjeev_portrait_hd.jpg`,
     category: 'field',
     titleEn: 'Official Portrait — Sanjeev Singh, Former MLA',
     titleHi: 'आधिकारिक छवि — संजीव सिंह, पूर्व विधायक झरिया',
