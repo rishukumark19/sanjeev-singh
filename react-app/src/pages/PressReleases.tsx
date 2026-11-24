@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Calendar, 
   MapPin, 
@@ -6,8 +7,7 @@ import {
   Newspaper, 
   Search,
   X,
-  Landmark,
-  ShieldCheck
+  Landmark
 } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import { useLanguage } from '../context/LanguageContext';
@@ -241,7 +241,7 @@ const PressReleases = () => {
         {/* Media Desk Box: Official Press Secretariat */}
         <Reveal delay={200}>
           <div className="mt-16 bg-gradient-to-r from-[#fff7ed] via-white to-[#fff1e6] rounded-3xl p-6 sm:p-10 text-slate-800 shadow-xl border-2 border-orange-200 grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-            <div className="md:col-span-8 space-y-2">
+            <div className="md:col-span-9 space-y-2">
               <span className="text-xs font-black text-[#ff7e54] uppercase tracking-[0.25em] flex items-center gap-1.5">
                 <Landmark size={14} className="text-[#ff7e54]" />
                 <span>{isHi ? 'प्रेस एवं मीडिया सेल' : 'Press & Media Cell'}</span>
@@ -256,16 +256,14 @@ const PressReleases = () => {
               </p>
             </div>
 
-            <div className="md:col-span-4 flex flex-col gap-2.5">
-              <div className="p-3.5 rounded-xl bg-orange-50 border border-orange-200 text-center">
-                <p className="text-[11px] font-black text-[#ff7e54] uppercase tracking-wider flex items-center justify-center gap-1.5">
-                  <ShieldCheck size={14} className="text-emerald-600" />
-                  <span>{isHi ? 'प्रमाणित आधिकारिक स्रोत' : 'Verified Official Record'}</span>
-                </p>
-                <p className="text-[10px] text-slate-500 font-bold mt-0.5">
-                  Dhanbad, Jharkhand
-                </p>
-              </div>
+            <div className="md:col-span-3 flex md:justify-end">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#ff7e54] hover:bg-[#e56233] text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-sm"
+              >
+                <span>{isHi ? 'होम पर जाएं' : 'Return Home'}</span>
+                <ArrowRight size={14} />
+              </Link>
             </div>
           </div>
         </Reveal>

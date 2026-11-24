@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, ArrowRight, ShieldCheck } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const HeroCarousel = () => {
@@ -124,7 +124,7 @@ const HeroCarousel = () => {
                   <div className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ff7e54] text-white shadow-md mb-3 sm:mb-4 transition-all duration-700 ${
                     isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}>
-                    <ShieldCheck size={14} className="text-white" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white opacity-90" />
                     <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider">
                       {slide.tag}
                     </span>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { 
-  ShieldCheck, 
+  User, 
   ArrowRight,
   Landmark,
   Compass
@@ -134,7 +134,7 @@ const AboutUs = () => {
             <Reveal delay={200}>
               <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-7 space-y-4 shadow-sm max-w-md mx-auto lg:max-w-none">
                 <h4 className="text-sm font-headline font-black text-slate-900 uppercase tracking-wider border-b border-slate-200 pb-3 flex items-center gap-2">
-                  <ShieldCheck size={18} className="text-[#ff7e54]" />
+                  <User size={18} className="text-[#ff7e54]" />
                   <span>{isHi ? 'संक्षिप्त परिचय व विवरण' : 'Profile & Quick Facts'}</span>
                 </h4>
                 
@@ -161,17 +161,6 @@ const AboutUs = () => {
                   <div className="flex flex-col sm:flex-row sm:justify-between gap-1">
                     <span className="text-slate-500 font-semibold">{t('about.union_label')}</span>
                     <span className="text-[#ff7e54] font-bold sm:text-right">{t('about.union_val')}</span>
-                  </div>
-                </div>
-
-                <div className="pt-3 border-t border-slate-100">
-                  <div className="p-3 bg-amber-50 rounded-xl border border-amber-200/80 text-center">
-                    <p className="text-[11px] font-bold text-amber-900 uppercase tracking-wider">
-                      {isHi ? 'जनता मजदूर संघ — जनसेवा व श्रमिक सम्मान' : 'Janta Mazdoor Sangh — Labor Rights & Trust'}
-                    </p>
-                    <p className="text-[10px] text-amber-700 mt-0.5">
-                      {isHi ? 'धनबाद, झारखंड · झरिया विधानसभा' : 'Dhanbad, Jharkhand · Jharia Constituency'}
-                    </p>
                   </div>
                 </div>
               </div>
@@ -203,16 +192,16 @@ const AboutUs = () => {
               </Reveal>
             </div>
 
-            {/* Quote Callout */}
+            {/* Quote Callout (Warm Saffron & White) */}
             <Reveal delay={150}>
-              <div className="rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-[#070d19] to-[#0d1728] text-white border-l-4 border-[#ff7e54] shadow-xl">
-                <p className="text-base sm:text-lg md:text-xl font-headline font-semibold italic leading-relaxed text-amber-200">
+              <div className="rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-orange-50 via-white to-amber-50 text-slate-900 border-l-4 border-[#ff7e54] shadow-md border border-orange-200/60">
+                <p className="text-base sm:text-lg md:text-xl font-headline font-semibold italic leading-relaxed text-slate-900">
                   {t('about.quote')}
                 </p>
-                <p className="text-xs text-slate-300 font-bold uppercase tracking-wider mt-3 flex items-center gap-2">
+                <p className="text-xs text-slate-600 font-bold uppercase tracking-wider mt-3 flex items-center gap-2">
                   <span>— Sanjeev Singh, Former MLA (Jharia)</span>
                   <span>•</span>
-                  <span className="text-amber-400">Jharia, Dhanbad</span>
+                  <span className="text-[#ff7e54]">Jharia, Dhanbad</span>
                 </p>
               </div>
             </Reveal>

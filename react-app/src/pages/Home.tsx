@@ -10,7 +10,6 @@ import {
   Sparkles,
   ExternalLink,
   Landmark,
-  ShieldCheck,
   Compass
 } from 'lucide-react';
 import Reveal from '../components/Reveal';
@@ -221,7 +220,7 @@ const Home = () => {
                   <p>
                     {t('home.about.p2')}
                   </p>
-                  <p className="text-xs sm:text-sm text-slate-600 bg-amber-50/70 p-4 rounded-xl border-l-4 border-amber-500">
+                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-body">
                     {isHi
                       ? 'दिवंगत सूर्यदेव सिंह जी के पदचिन्हों पर चलते हुए, संजीव सिंह ने दशकों से जनता की आवाज को मजबूती दी है। जनता मजदूर संघ के जरिए खनिकों के अधिकारों की रक्षा और क्षेत्र के बुनियादी विकास के लिए वे निरंतर तत्पर हैं।'
                       : 'Carrying forward the towering legacy of Late Suryadeo Singh, Sanjeev Singh has anchored public solidarity across Dhanbad—advocating for coal miners’ dignity and leading transformative civic infrastructure.'}
@@ -596,20 +595,6 @@ const Home = () => {
                       {isHi ? 'आधिकारिक परिसर' : 'Official Residence'}
                     </span>
                   </div>
-                </div>
-              </Reveal>
-
-              <Reveal delay={120}>
-                <div className="p-5 rounded-2xl bg-[#fdfbf7] border border-amber-300/60 space-y-3 text-sm text-slate-800">
-                  <div className="flex items-center gap-2 text-amber-700 font-bold text-xs uppercase tracking-wider">
-                    <ShieldCheck size={16} className="text-[#ff7e54]" />
-                    <span>{isHi ? 'सिंह मैंशन · जनता मजदूर संघ' : 'Singh Mansion · Janta Mazdoor Sangh'}</span>
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {isHi
-                      ? 'बीसीसीएल के हजारों कोयला कामगारों के अधिकारों और झरिया के प्रत्येक नागरिक के हित की रक्षा हेतु समर्पित।'
-                      : 'Dedicated to safeguarding the constitutional rights of BCCL coal workers and advancing civic prosperity across Jharia.'}
-                  </p>
                 </div>
               </Reveal>
 
