@@ -83,6 +83,13 @@ const Home = () => {
       date: 'Oct 2026'
     },
     {
+      img: `${import.meta.env.BASE_URL}images/real/fb_hemant_soren_meeting.jpg`,
+      title: isHi ? 'माननीय मुख्यमंत्री श्री हेमंत सोरेन जी से आत्मीय भेंट' : 'Meeting with Hon’ble CM Hemant Soren',
+      subtitle: isHi ? 'श्रीमती रागिनी सिंह जी के साथ शिष्टाचार भेंट एवं जनहित विषयों पर विमर्श' : 'Consultation alongside Smt. Ragini Singh discussing public welfare',
+      tag: isHi ? 'राज्य संवाद' : 'State Dialogue',
+      date: 'Sep 2026'
+    },
+    {
       img: `${import.meta.env.BASE_URL}images/real/fb_diwali_greeting_crop.jpg`,
       title: isHi ? 'दीपावली महापर्व पर दीप प्रज्वलन व शुभकामनाएं' : 'Diwali Celebration with Smt. Ragini Singh',
       subtitle: isHi ? 'झरिया व सम्पूर्ण धनबाद वासियों के सुख-समृद्धि की मंगलकामना' : 'Lighting festive deepam and extending warm greetings to all families',

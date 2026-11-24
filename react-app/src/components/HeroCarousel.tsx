@@ -28,6 +28,13 @@ const HeroCarousel = () => {
       pos: 'center 20%' 
     },
     { 
+      image: `${import.meta.env.BASE_URL}images/real/fb_hemant_soren_meeting.jpg`, 
+      titleKey: 'home.slide5.title', 
+      subKey: 'home.slide5.sub', 
+      tag: lang === 'hi' ? 'राज्य संवाद व जनसमर्पण' : 'State Leadership & Dialogue',
+      pos: 'center 25%' 
+    },
+    { 
       image: `${import.meta.env.BASE_URL}images/real/fb_railcoach.jpg`, 
       titleKey: 'home.slide1.title', 
       subKey: 'home.slide1.sub', 

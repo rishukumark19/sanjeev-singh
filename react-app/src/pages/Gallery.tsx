@@ -50,6 +50,18 @@ const officialPhotoArchive: PhotoArchiveItem[] = [
     locationHi: 'सिंह मेंशन, धनबाद'
   },
   {
+    id: 'photo-soren-1',
+    image: `${import.meta.env.BASE_URL}images/real/fb_hemant_soren_meeting.jpg`,
+    category: 'civic',
+    titleEn: 'High-Level Meeting with Hon’ble Chief Minister Hemant Soren',
+    titleHi: 'माननीय मुख्यमंत्री श्री हेमंत सोरेन जी से आत्मीय भेंट व संवाद',
+    descEn: 'Sanjeev Singh and Smt. Ragini Singh in consultation with Hon’ble Chief Minister of Jharkhand Hemant Soren, discussing regional development, coal belt worker rights, and public welfare.',
+    descHi: 'माननीय मुख्यमंत्री श्री हेमंत सोरेन जी से श्रीमती रागिनी सिंह जी के साथ शिष्टाचार भेंट कर कोयलांचल के जनहित, नागरिक कल्याण और विकास प्राथमिकताओं पर विस्तृत विमर्श किया।',
+    date: 'Sep 2026',
+    locationEn: 'Nemra, Ramgarh',
+    locationHi: 'नेमरा, रामगढ़'
+  },
+  {
     id: 'photo-diwali-1',
     image: `${import.meta.env.BASE_URL}images/real/fb_diwali_greeting.jpg`,
     category: 'community',
