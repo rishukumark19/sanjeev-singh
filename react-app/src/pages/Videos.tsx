@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Play, X, MapPin, Video as VideoIcon, ExternalLink } from 'lucide-react';
+import { Play, MapPin, Video as VideoIcon, ExternalLink } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -13,7 +12,7 @@ export interface VideoItem {
   date: string;
   locationEn: string;
   locationHi: string;
-  youtubeId?: string;
+  facebookUrl: string;
 }
 
 const videosList: VideoItem[] = [
@@ -27,7 +26,7 @@ const videosList: VideoItem[] = [
     date: 'Sep 2026',
     locationEn: 'Katras, Dhanbad',
     locationHi: 'कतरास, धनबाद',
-    youtubeId: 'CRXTez7UZys'
+    facebookUrl: 'https://www.facebook.com/profile.php?id=100069661650642&sk=videos'
   },
   {
     id: 'vid-2',
@@ -39,7 +38,7 @@ const videosList: VideoItem[] = [
     date: 'Oct 2026',
     locationEn: 'Town Hall, Dhanbad',
     locationHi: 'टाउन हॉल, धनबाद',
-    youtubeId: 'slHQ2NKohBs'
+    facebookUrl: 'https://www.facebook.com/profile.php?id=100069661650642&sk=videos'
   },
   {
     id: 'vid-3',
@@ -51,7 +50,7 @@ const videosList: VideoItem[] = [
     date: 'Sep 2026',
     locationEn: 'Dhanbad Station',
     locationHi: 'धनबाद स्टेशन',
-    youtubeId: 'GYi59uEvdNw'
+    facebookUrl: 'https://www.facebook.com/profile.php?id=100069661650642&sk=videos'
   },
   {
     id: 'vid-4',
@@ -63,7 +62,7 @@ const videosList: VideoItem[] = [
     date: 'Oct 2026',
     locationEn: 'Municipal Corp, Dhanbad',
     locationHi: 'नगर निगम, धनबाद',
-    youtubeId: '9bWoql4qbgQ'
+    facebookUrl: 'https://www.facebook.com/profile.php?id=100069661650642&sk=videos'
   },
   {
     id: 'vid-5',
@@ -75,7 +74,7 @@ const videosList: VideoItem[] = [
     date: 'Oct 2026',
     locationEn: 'Collectorate, Dhanbad',
     locationHi: 'समाहरणालय, धनबाद',
-    youtubeId: 'BOm9FUOqB78'
+    facebookUrl: 'https://www.facebook.com/profile.php?id=100069661650642&sk=videos'
   },
   {
     id: 'vid-6',
@@ -87,14 +86,13 @@ const videosList: VideoItem[] = [
     date: 'Sep 2026',
     locationEn: 'Dhanbad City',
     locationHi: 'धनबाद नगर',
-    youtubeId: '2m6aGoeWMQc'
+    facebookUrl: 'https://www.facebook.com/profile.php?id=100069661650642&sk=videos'
   }
 ];
 
 const Videos = () => {
   const { lang } = useLanguage();
   const isHi = lang === 'hi';
-  const [activeVideo, setActiveVideo] = useState<VideoItem | null>(null);
 
   return (
     <div className="bg-[#f8f9fa] min-h-screen pt-[74px] md:pt-[82px] pb-16 sm:pb-24">
@@ -105,22 +103,22 @@ const Videos = () => {
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 border border-white text-white backdrop-blur-md">
               <VideoIcon size={14} className="text-white" />
               <span className="text-[11px] font-black uppercase tracking-widest">
-                {isHi ? 'वीडियो व भाषण संग्रह' : 'Video Insights & Speeches'}
+                {isHi ? 'आधिकारिक फेसबुक वीडियो व भाषण' : 'Official Facebook Videos & Speeches'}
               </span>
             </div>
           </Reveal>
 
           <Reveal delay={100}>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-black text-white tracking-tight leading-tight drop-shadow-sm">
-              {isHi ? 'जनसंवाद व महत्वपूर्ण संबोधन' : 'Speeches & Media Highlights'}
+              {isHi ? 'जनसंवाद व महत्वपूर्ण संबोधन' : 'Speeches & Public Addresses'}
             </h1>
           </Reveal>
 
           <Reveal delay={150}>
             <p className="text-sm sm:text-base md:text-lg text-amber-100 font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
               {isHi
-                ? 'संजीव सिंह के प्रमुख भाषण, जनसभाएं एवं मीडिया संवाद की वीडियो झलकियां।'
-                : 'Key addresses, public townhalls, and legislative statements delivered by Sanjeev Singh.'}
+                ? 'संजीव सिंह के आधिकारिक फेसबुक पेज से प्रमुख भाषण, जनसभाएं एवं मीडिया संवाद की वीडियो श्रृंखला।'
+                : 'Key addresses, public townhalls, and legislative statements directly from Sanjeev Singh’s official Facebook page.'}
             </p>
           </Reveal>
 
@@ -130,7 +128,7 @@ const Videos = () => {
                 href="https://www.facebook.com/profile.php?id=100069661650642&sk=videos"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#1877f2] hover:bg-slate-100 font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all hover:scale-105"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-[#1877f2] hover:bg-slate-100 font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg transition-all hover:scale-105 active:scale-95"
               >
                 <svg fill="currentColor" viewBox="0 0 24 24" className="w-4 h-4">
                   <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
@@ -143,16 +141,18 @@ const Videos = () => {
         </div>
       </section>
 
-      {/* Grid */}
+      {/* Grid of Direct Facebook Video Cards */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 mt-10 sm:mt-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {videosList.map((vid, idx) => (
             <Reveal key={vid.id} delay={idx * 60}>
-              <div 
-                onClick={() => setActiveVideo(vid)}
-                className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col h-full"
+              <a 
+                href={vid.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full hover:border-[#1877f2] cursor-pointer"
               >
-                {/* Thumbnail with Play Badge */}
+                {/* Thumbnail with Facebook Play Badge */}
                 <div className="relative aspect-video overflow-hidden bg-slate-900">
                   <img
                     src={vid.img}
@@ -171,7 +171,7 @@ const Videos = () => {
 
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#1877f2] to-[#ff7e54] text-white flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
+                    <div className="w-14 h-14 rounded-full bg-[#1877f2] text-white flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-transform">
                       <Play size={22} className="ml-1 fill-white" />
                     </div>
                   </div>
@@ -203,95 +203,16 @@ const Videos = () => {
                       <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
                         <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
                       </svg>
-                      <span>{isHi ? 'फेसबुक पर देखें' : 'Watch on Facebook'}</span>
+                      <span>{isHi ? 'फेसबुक पर सीधे देखें' : 'Watch Directly on Facebook'}</span>
                     </span>
                     <ExternalLink size={13} />
                   </div>
                 </div>
-              </div>
+              </a>
             </Reveal>
           ))}
         </div>
       </div>
-
-      {/* Video Modal */}
-      {activeVideo && (
-        <div className="fixed inset-0 z-[150] flex items-center justify-center bg-slate-950/90 backdrop-blur-md p-4 animate-in fade-in duration-200">
-          <div 
-            onClick={(e) => e.stopPropagation()} 
-            className="bg-white rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-slate-200 relative"
-          >
-            <button
-              onClick={() => setActiveVideo(null)}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white flex items-center justify-center transition-colors"
-              aria-label="Close video"
-            >
-              <X size={18} />
-            </button>
-
-            <div className="relative aspect-video bg-black flex items-center justify-center">
-              {activeVideo.youtubeId ? (
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${activeVideo.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
-                  title={isHi ? activeVideo.titleHi : activeVideo.titleEn}
-                  className="w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              ) : (
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <img
-                    src={activeVideo.img}
-                    alt={isHi ? activeVideo.titleHi : activeVideo.titleEn}
-                    className="w-full h-full object-cover opacity-60"
-                  />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
-                    <div className="w-16 h-16 rounded-full bg-[#ff7e54] text-white flex items-center justify-center shadow-xl">
-                      <Play size={28} className="ml-1 fill-white" />
-                    </div>
-                    <p className="text-xs uppercase tracking-widest text-amber-300 font-bold">
-                      {isHi ? 'आधिकारिक वीडियो आर्काइव' : 'Official Speech Highlight'}
-                    </p>
-                    <p className="text-sm font-semibold max-w-md">
-                      {isHi ? activeVideo.titleHi : activeVideo.titleEn}
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="p-6 space-y-3">
-              <div className="flex items-center justify-between flex-wrap gap-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase">
-                  <span>{activeVideo.date}</span>
-                  <span>•</span>
-                  <span>{isHi ? activeVideo.locationHi : activeVideo.locationEn}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <a
-                    href="https://www.facebook.com/profile.php?id=100069661650642"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#1877f2] hover:bg-blue-700 text-white font-bold text-xs shadow transition-colors"
-                  >
-                    <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
-                      <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
-                    </svg>
-                    <span>{isHi ? 'फेसबुक पर देखें' : 'Watch on Facebook'}</span>
-                    <ExternalLink size={13} />
-                  </a>
-                </div>
-              </div>
-              <h2 className="text-xl font-headline font-bold text-slate-900">
-                {isHi ? activeVideo.titleHi : activeVideo.titleEn}
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 font-body leading-relaxed">
-                {isHi ? activeVideo.descHi : activeVideo.descEn}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

@@ -555,7 +555,12 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {facebookVideos.map((vid, idx) => (
               <Reveal key={idx} delay={idx * 80}>
-                <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+                <a 
+                  href="https://www.facebook.com/profile.php?id=100069661650642&sk=videos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full hover:border-[#1877f2] cursor-pointer"
+                >
                   <div className="relative aspect-video overflow-hidden bg-slate-900">
                     <img 
                       src={vid.img} 
@@ -598,22 +603,17 @@ const Home = () => {
                       </p>
                     </div>
 
-                    <a 
-                      href="https://www.facebook.com/profile.php?id=100069661650642"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-between w-full pt-3 mt-2 border-t border-slate-100 text-xs font-bold text-[#1877f2] hover:text-blue-800"
-                    >
+                    <div className="inline-flex items-center justify-between w-full pt-3 mt-2 border-t border-slate-100 text-xs font-bold text-[#1877f2] group-hover:text-blue-800">
                       <span className="flex items-center gap-1.5">
                         <svg fill="currentColor" viewBox="0 0 24 24" className="w-3.5 h-3.5">
                           <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
                         </svg>
-                        <span>{isHi ? 'फेसबुक पर देखें' : 'Watch on Facebook'}</span>
+                        <span>{isHi ? 'फेसबुक पर सीधे देखें' : 'Watch Directly on Facebook'}</span>
                       </span>
                       <ExternalLink size={13} />
-                    </a>
+                    </div>
                   </div>
-                </div>
+                </a>
               </Reveal>
             ))}
           </div>
