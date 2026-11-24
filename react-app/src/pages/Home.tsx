@@ -69,17 +69,17 @@ const Home = () => {
   // Key Photo Highlights from Facebook
   const photoHighlights = [
     {
-      img: `${import.meta.env.BASE_URL}images/real/fb_ram_mandir_darshan.jpg`,
-      title: isHi ? 'प्रभु श्री राम की पावन छवि भेंट व अभिनंदन' : 'Sacred Ram Mandir Portrait Presentation',
-      subtitle: isHi ? 'सिंह मेंशन में श्रद्धालुओं व नागरिकों द्वारा अंगवस्त्र व प्रभु राम की छवि भेंट' : 'Devotees and community members honoring Sanjeev Singh at Singh Mansion',
-      tag: isHi ? 'आस्था व सम्मान' : 'Faith & Honor',
-      date: 'Oct 2026'
-    },
-    {
       img: `${import.meta.env.BASE_URL}images/real/fb_dhanbad_office.jpg`,
       title: isHi ? 'धनबाद नगर निगम कार्यालय में जनसंवाद' : 'Civic Dialogue at Dhanbad Municipal Corporation',
       subtitle: isHi ? 'महापौर कक्ष में नागरिकों व जनसमूह का अभिवादन व समस्याओं पर चर्चा' : 'Welcoming citizens with folded hands and reviewing civic amenities',
       tag: isHi ? 'नागरिक संवाद' : 'Civic Engagement',
+      date: 'Oct 2026'
+    },
+    {
+      img: `${import.meta.env.BASE_URL}images/real/fb_ram_mandir_darshan.jpg`,
+      title: isHi ? 'प्रभु श्री राम की पावन छवि भेंट व अभिनंदन' : 'Sacred Ram Mandir Portrait Presentation',
+      subtitle: isHi ? 'सिंह मेंशन में श्रद्धालुओं व नागरिकों द्वारा अंगवस्त्र व प्रभु राम की छवि भेंट' : 'Devotees and community members honoring Sanjeev Singh at Singh Mansion',
+      tag: isHi ? 'आस्था व सम्मान' : 'Faith & Honor',
       date: 'Oct 2026'
     },
     {
