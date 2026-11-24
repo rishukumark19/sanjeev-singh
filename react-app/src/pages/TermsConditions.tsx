@@ -245,8 +245,8 @@ const TermsConditions = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/contact" className="text-gray-600 hover:text-[#ff7e54] flex items-center gap-1.5">
-                      <span>{isHi ? 'नागरिक संवाद' : 'Public Inquiries'}</span>
+                    <Link to="/about" className="text-gray-600 hover:text-[#ff7e54] flex items-center gap-1.5">
+                      <span>{isHi ? 'नागरिक संवाद व परिचय' : 'Public Inquiries & Office'}</span>
                       <span>→</span>
                     </Link>
                   </li>

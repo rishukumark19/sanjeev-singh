@@ -266,8 +266,8 @@ const PrivacyPolicy = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/contact" className="text-gray-600 hover:text-[#ff7e54] flex items-center gap-1.5">
-                      <span>{isHi ? 'संपर्क एवं जनसुनवाई' : 'Citizen Contact Chambers'}</span>
+                    <Link to="/about" className="text-gray-600 hover:text-[#ff7e54] flex items-center gap-1.5">
+                      <span>{isHi ? 'परिचय एवं जनसुनवाई' : 'Citizen Contact & Chambers'}</span>
                       <span>→</span>
                     </Link>
                   </li>

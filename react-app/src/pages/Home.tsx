@@ -335,7 +335,7 @@ const Home = () => {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch">
             {pillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
@@ -357,18 +357,24 @@ const Home = () => {
                         {pillar.desc}
                       </p>
                     </div>
-
-                    <div className="pt-5 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#ff7e54]">
-                      <Link to="/about" className="inline-flex items-center gap-1 group-hover:underline">
-                        <span>{isHi ? 'विस्तार से जानें' : 'Read details'}</span>
-                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </div>
                   </div>
                 </Reveal>
               );
             })}
           </div>
+
+          {/* Unified Action Banner for all Pillars */}
+          <Reveal delay={200}>
+            <div className="mt-10 sm:mt-12 text-center">
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#ff7e54] to-[#e65100] hover:from-[#ff9933] hover:to-[#ff7e54] text-white font-headline font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-orange-500/25 hover:scale-105 active:scale-95 transition-all"
+              >
+                <span>{isHi ? 'संजीव सिंह का संपूर्ण विज़न व जीवनी पढ़ें' : 'Read Sanjeev Singh’s Full Leadership Profile & Vision'}</span>
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -434,7 +440,10 @@ const Home = () => {
                 key={idx}
                 className="w-[82vw] max-w-[310px] sm:w-auto sm:max-w-none shrink-0 snap-center flex flex-col"
               >
-                <div className="group bg-[#fdfbf7] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                <Link 
+                  to="/gallery" 
+                  className="group bg-[#fdfbf7] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:border-[#ff7e54]"
+                >
                   <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
                     <img 
                       src={item.img} 
@@ -450,25 +459,15 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-2">
-                    <div>
-                      <h4 className="font-headline font-bold text-sm sm:text-base text-slate-900 leading-snug group-hover:text-[#ff7e54] transition-colors line-clamp-2">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs text-slate-600 line-clamp-2 mt-1 leading-relaxed">
-                        {item.subtitle}
-                      </p>
-                    </div>
-
-                    <Link 
-                      to="/gallery" 
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#ff7e54] pt-2 mt-2 border-t border-slate-200/70"
-                    >
-                      <span>{isHi ? 'गैलरी में देखें' : 'Enlarge Photo'}</span>
-                      <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                  <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-1.5">
+                    <h4 className="font-headline font-bold text-sm sm:text-base text-slate-900 leading-snug group-hover:text-[#ff7e54] transition-colors line-clamp-2">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                      {item.subtitle}
+                    </p>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
